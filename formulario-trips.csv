@@ -1,0 +1,2900 @@
+,,Posición,Tipo de salida,Marca temporal,Team,Fecha,Comentarios generales,Horario de intervención,M101 - SN del módulo,M101 - Ángulo (RA),M102 - SN del módulo,M102 - Ángulo (RA),M103 - SN del módulo,M103 - Ángulo (RA),SN Panel Solar,SN Regulador,SN Batería 1,SN Batería 2,Comentarios (Deployment Cañerias),SN Battery Box,Instalación de térmica,M101 - SN del ekit,M102 - SN del ekit,M103 - SN del ekit,SN Distribuidora,Cableado de Superficie,Descripción de la tarea,M101 - Ekit viejo,M101 - Ekit nuevo,M102 - Ekit viejo,M103 - Ekit viejo,M102 - Ekit nuevo,M103 - Ekit nuevo,Distribuidora vieja,Distribuidora nueva,Regulador viejo,Regulador nuevo,Panel Solar viejo,Panel Solar nuevo,Se apagó UUB? ,Otros comentarios,Mikrotik vieja,Mikrotik nueva,,M101 instalado por:,M102 instalado por:,M103 instalado por:,Cableado Subterraneo,Maleza,Erosión,Acceso,Reporta,Se colocó cable de tierra entre BBox de AMIGA y SD?,Fotos (Opcional),Comentarios (Deployment Módulos),Comentarios (Deployment Potencia),Comentarios (Deployment Ekits),Comentarios (Cableado Superficie),Comentarios (Cableado Subterraneo),Fotos (Opcional),Fotos (Opcional),Añadir fotos:
+Salida a Campo AMIGA - 31-03-2023,"# PLANCK (id=1774) - vie 31/03/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 09:10
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: 
+",PLANCK (id=1774),Cableado de Superficie,9/05/2023 12:06:22,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",31/03/2023,,9:10:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 31-03-2023,"# PLANCK (id=1774) - vie 31/03/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 11:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: 114
+   - M101 instalado por: Nicolas Sepúlveda
+   - M102 - SN del ekit: 153
+   - M102 instalado por: Nicolas Sepúlveda
+   - M103 - SN del ekit: 144
+   - M103 instalado por: Nicolas Sepúlveda
+   - Comentarios: 
+",PLANCK (id=1774),Deployment E-Kits,9/05/2023 12:09:13,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",31/03/2023,,11:00:00,,,,,,,,,,,,,,114,153,144,,,,,,,,,,,,,,,,No,,,,,Nicolas Sepúlveda,Nicolas Sepúlveda,Nicolas Sepúlveda,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 04-04-2023,"# FRANQUITO (id=1776) - mar 04/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: 
+",FRANQUITO (id=1776),Cableado de Superficie,9/05/2023 12:02:06,"Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda",4/04/2023,,10:00:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 04-04-2023,"# PAUL SOMMERS (id=1763) - mar 04/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 13:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Problema del T1 en Paul somers: estaba mal conectado en la distribuidora
+",PAUL SOMMERS (id=1763),Mantenimiento general,9/05/2023 12:03:57,"Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda",4/04/2023,,13:00:00,,,,,,,,,,,,,,,,,,,Problema del T1 en Paul somers: estaba mal conectado en la distribuidora,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 05-04-2023,"# CATHERINA (id=12) - mié 05/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Nicolás Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: - Cambio de cables del M101
+- Cañería en Catherina (se le saco el agua acumulada y se volvió a tapar bien) cambio de cables M101
+",CATHERINA (id=12),Mantenimiento general,9/05/2023 11:58:03,"Gustavo Rios, Gabriel Morales, Luciana Torres",5/04/2023,,10:00:00,,,,,,,,,,,,,,,,,,,"- Cambio de cables del M101
+- Cañería en Catherina (se le saco el agua acumulada y se volvió a tapar bien) cambio de cables M101",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 05-04-2023,"# CONSTANZA (id=734) - mié 05/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Nicolás Leal
+### Hora: 13:00
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: 
+",CONSTANZA (id=734),Cableado de Superficie,9/05/2023 11:59:47,"Gustavo Rios, Gabriel Morales, Luciana Torres",5/04/2023,,13:00:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 11-04-2023,"# TOUNE (id=688) - mar 11/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 09:10
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Distribuidora vieja: 0013 --> Nuevo: 0039
+   - Descripción de la tarea: Chequeo de cables de módulos:
+- M101: OK
+- M102:  (tiene bolsas grandes) 
+- M103: Cookie con hormigas. Se limpió y se colocó nuevamente
+- M3: Desconectado. PMT atascado en cookie
+- M4: Desconectado
+
+- Mikrotik vieja
+",TOUNE (id=688),Mantenimiento general,8/05/2023 11:45:30,"Gustavo Rios, Agustin Morales, Nicolas Sepúlveda",11/04/2023,,9:10:00,,,,,,,,,,,,,,,,,,,"Chequeo de cables de módulos:
+- M101: OK
+- M102:  (tiene bolsas grandes) 
+- M103: Cookie con hormigas. Se limpió y se colocó nuevamente
+- M3: Desconectado. PMT atascado en cookie
+- M4: Desconectado
+
+- Mikrotik vieja",,,,,,,0013,0039,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 19-04-2023,"# TOUNE (id=688) - mié 19/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Nicolás Leal
+### Hora: 09:10
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: 
+",TOUNE (id=688),Cableado de Superficie,8/05/2023 11:40:36,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",19/04/2023,,9:10:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 25-04-2023,"# PHIL COLLINS (id=1622) - mar 25/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres
+### Reporta: Nicolás Leal
+### Hora: 09:15
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: •Cambio de distribuidoras. 
+•Reemplazo de cableado T1,Serial y Poe por cableado mallado.
+
+Batery box principal
+Colocada  SN 0003
+Retiramos SN 0029
+Colocada Master: SN 0040
+Batery box 2 
+Colocada   SN 0047 
+Retirada     SN 0050  
+Batery box 3 
+Colocada   SN 0066 
+Retirada     SN 0073 
+
+",PHIL COLLINS (id=1622),Mantenimiento general,8/05/2023 11:37:43,"Agustin Morales, Luciana Torres",25/04/2023,,9:15:00,,,,,,,,,,,,,,,,,,,"•Cambio de distribuidoras. 
+•Reemplazo de cableado T1,Serial y Poe por cableado mallado.
+
+Batery box principal
+Colocada  SN 0003
+Retiramos SN 0029
+Colocada Master: SN 0040
+Batery box 2 
+Colocada   SN 0047 
+Retirada     SN 0050  
+Batery box 3 
+Colocada   SN 0066 
+Retirada     SN 0073 
+",,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 26-04-2023,"# PEA (id=698) - mié 26/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolás Leal
+### Hora: 14:00
+### Comentarios generales: Salida fuera de planificación
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: levantar el ekit de Pea 101, revisar la MAC, anotar bien el SN, y revisar el cableado /crimpeado. También ver si está afectado el cable por algún roedor.
+Se encuentra que la MAC del 101 estaba equivocada
+",PEA (id=698),Mantenimiento general,8/05/2023 11:33:01,"Agustin Morales, Nicolas Sepúlveda",26/04/2023,Salida fuera de planificación,14:00:00,,,,,,,,,,,,,,,,,,,"levantar el ekit de Pea 101, revisar la MAC, anotar bien el SN, y revisar el cableado /crimpeado. También ver si está afectado el cable por algún roedor.
+Se encuentra que la MAC del 101 estaba equivocada",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 27-04-2023,"# PEA (id=698) - jue 27/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Maximiliano Maciel
+### Reporta: Nicolás Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: 
+",PEA (id=698),Cableado de Superficie,8/05/2023 11:27:56,"Gustavo Rios, Gabriel Morales, Maximiliano Maciel",27/04/2023,,10:00:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 27-04-2023,"# CONSTELACI (id=1771) - jue 27/04/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Maximiliano Maciel
+### Reporta: Nicolás Leal
+### Hora: 13:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: se chequeo el ekit 103 de Constelación. En ese caso no había apoyado bien el ekit en el cookie, realizamos la maniobra para colocarlo (fue básicamente unos movimientos del ekit girando de derecha a izquierda varias veces con las varillas puestas haciendo presión hacia abajo) y calzo bien.
+",CONSTELACI (id=1771),Mantenimiento general,8/05/2023 11:29:31,"Gustavo Rios, Gabriel Morales, Maximiliano Maciel",27/04/2023,,13:00:00,,,,,,,,,,,,,,,,,,,"se chequeo el ekit 103 de Constelación. En ese caso no había apoyado bien el ekit en el cookie, realizamos la maniobra para colocarlo (fue básicamente unos movimientos del ekit girando de derecha a izquierda varias veces con las varillas puestas haciendo presión hacia abajo) y calzo bien.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolás Leal,,,,,,,,,,
+Salida a Campo AMIGA - 02-05-2023,"# ROSALIA (id=695) - mar 02/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: 
+- Erosión: 
+- Acceso: 
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-120 / Ángulo (RA): 0
+   - M102 - SN: M-122 / Ángulo (RA): 90
+   - M103 - SN: M-121 / Ángulo (RA): 90
+   - Comentarios: 
+",ROSALIA (id=695),Deployment Módulos,3/05/2023 16:02:39,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",2/05/2023,,10:00:00,M-120,0,M-122,90,M-121,90,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,,,,Nicolas Leal,,,,,,,,,,
+Salida a Campo AMIGA - 03-05-2023,"# ROSALIA (id=695) - mié 03/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: 
+- Erosión: 
+- Acceso: 
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Quedó realizado el Deployment de cañerías y se dejó estaqueado para pozo de tubing.
+",ROSALIA (id=695),Deployment Cañerías,3/05/2023 15:56:39,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",3/05/2023,,10:00:00,,,,,,,,,,,Quedó realizado el Deployment de cañerías y se dejó estaqueado para pozo de tubing.,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,,,,Nicolas Leal,,,,,,,,,,
+Salida a Campo AMIGA - 03-05-2023,"# GIORGIO MA (id=1766) - mié 03/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Leal
+### Hora: 12:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: 
+- Erosión: 
+- Acceso: 
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se retiró ekit M103, y estaba medio acoplado. Se limpio y se volvió a colocar, la cual quedó bien acoplado. Se testearon los cables de Poe y T1 del módulo.
+",GIORGIO MA (id=1766),Mantenimiento general,3/05/2023 15:58:03,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",3/05/2023,,12:00:00,,,,,,,,,,,,,,,,,,,"Se retiró ekit M103, y estaba medio acoplado. Se limpio y se volvió a colocar, la cual quedó bien acoplado. Se testearon los cables de Poe y T1 del módulo.",,,,,,,,,,,,,No,,,,,,,,,,,,Nicolas Leal,,,,,,,,,,
+Salida a Campo AMIGA - 03-05-2023,"# F. CONTRER (id=1775) - mié 03/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Leal
+### Hora: 13:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: 
+- Erosión: 
+- Acceso: 
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: El ekit del M102 estaba sin acoplar. Se retiró, se limpio y se volvió a colocar, realizando el acople correctamente. Se testearon Poe y T1 de módulo.
+",F. CONTRER (id=1775),Mantenimiento general,3/05/2023 15:59:27,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",3/05/2023,,13:00:00,,,,,,,,,,,,,,,,,,,"El ekit del M102 estaba sin acoplar. Se retiró, se limpio y se volvió a colocar, realizando el acople correctamente. Se testearon Poe y T1 de módulo.",,,,,,,,,,,,,No,,,,,,,,,,,,Nicolas Leal,,,,,,,,,,
+Salida a Campo AMIGA - 04-05-2023,"# ABELARDO (id=707) - jue 04/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Maximiliano Maciel
+### Reporta: Nicolas Leal
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Leve
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-117 / Ángulo (RA): 1
+   - M102 - SN: M-119 / Ángulo (RA): 91
+   - M103 - SN: M-118 / Ángulo (RA): 91
+   - Comentarios: 
+",ABELARDO (id=707),Deployment Módulos,5/05/2023 10:45:33,"Gustavo Rios, Gabriel Morales, Maximiliano Maciel",4/05/2023,,10:00:00,M-117,1,M-119,91,M-118,91,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Leve,Fácil,Nicolas Leal,,,,,,,,,,
+Salida a Campo AMIGA - 05-05-2023,"# VALENTIN C (id=1768) - vie 05/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres
+### Reporta: Gustavo Rios
+### Hora: 10:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-114 / Ángulo (RA): 1° N
+   - M102 - SN: M-116 / Ángulo (RA): 91° E
+   - M103 - SN: M-115 / Ángulo (RA): 91° E
+   - Comentarios: 
+",VALENTIN C (id=1768),Deployment Módulos,5/05/2023 15:08:08,"Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres",5/05/2023,,10:15:00,M-114,1° N,M-116,91° E,M-115,91° E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 05-05-2023,"# ESPERANZA (id=1625) - vie 05/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres
+### Reporta: Gustavo Rios
+### Hora: 12:45
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Marcado de pozos
+",ESPERANZA (id=1625),Mantenimiento general,5/05/2023 15:36:15,"Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres",5/05/2023,,12:45:00,,,,,,,,,,,,,,,,,,,Marcado de pozos,,,,,,,,,,,,,No,"Se modificó la posición normal del marcado de pozos por qué el cercado de los terrenos está junto al SD Esperanza, se marcó pozos hacia oeste (M101) y el norte (M102 y M103) del SD, además se movió 3 m hacia el norte de la posición normal de marcado.",,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 09-05-2023,"# NIELS BOHR (id=1772) - mar 09/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-113 / Ángulo (RA): 1° (N)
+   - M102 - SN: M-124 / Ángulo (RA): 91° (E)
+   - M103 - SN: M-123 / Ángulo (RA): 91° (E)
+   - Comentarios: 
+",NIELS BOHR (id=1772),Deployment Módulos,9/05/2023 14:19:49,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",9/05/2023,,10:00:00,M-113,1° (N),M-124,91° (E),M-123,91° (E),,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 09-05-2023,"# LOCOS (id=1627) - mar 09/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 12:45
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Intermedio
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Marcado de pozos para módulos
+",LOCOS (id=1627),Mantenimiento general,9/05/2023 14:23:32,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",9/05/2023,,12:45:00,,,,,,,,,,,,,,,,,,,Marcado de pozos para módulos,,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Intermedio,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 10-05-2023,"# NIELS BOHR (id=1772) - mié 10/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 15:00
+### Comentarios generales: Nublado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo OK 
+",NIELS BOHR (id=1772),Deployment Cañerías,10/05/2023 14:26:29,"Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda",10/05/2023,Nublado,15:00:00,,,,,,,,,,,Todo OK ,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 10-05-2023,"# ABELARDO (id=707) - mié 10/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 15:00
+### Comentarios generales: Nublado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo OK.
+",ABELARDO (id=707),Deployment Cañerías,10/05/2023 14:30:39,"Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda",10/05/2023,Nublado,15:00:00,,,,,,,,,,,Todo OK.,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 10-05-2023,"# VALENTIN JR. (id=1830) - mié 10/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 15:00
+### Comentarios generales: Nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo OK. 
+",VALENTIN JR. (id=1830),Deployment Cañerías,10/05/2023 14:39:47,"Agustin Morales, Luciana Torres, Maximiliano Maciel, Nicolas Sepúlveda",10/05/2023,Nublado ,15:00:00,,,,,,,,,,,Todo OK. ,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 19-05-2023,"# CORRIENTES (id=93) - vie 19/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Gabriel Morales
+### Hora: 10:25
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Distribuidora vieja: SN 0002 --> Nuevo: SN 0037
+   - Descripción de la tarea: Cambio de distribuidora. Se realizo conexión y cañería nueva de SD corrientes a SD Oye.
+",CORRIENTES (id=93),Mantenimiento general,22/05/2023 10:02:58,"Gustavo Rios, Gabriel Morales, Agustin Morales",19/05/2023,,10:25:00,,,,,,,,,,,,,,,,,,,Cambio de distribuidora. Se realizo conexión y cañería nueva de SD corrientes a SD Oye.,,,,,,,SN 0002,SN 0037,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 19-05-2023,"# OYE (id=710) - vie 19/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Gabriel Morales
+### Hora: 10:10
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: Se apago UUB, se realizó conexión y cañeria nueva(T1, POE, SERIE Y 4 ETH) de SD Corrientes a SD Oye.
+",OYE (id=710),Cableado de Superficie,22/05/2023 10:06:50,"Gustavo Rios, Gabriel Morales, Agustin Morales",19/05/2023,,10:10:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,"Se apago UUB, se realizó conexión y cañeria nueva(T1, POE, SERIE Y 4 ETH) de SD Corrientes a SD Oye.",,,,
+Salida a Campo AMIGA - 19-05-2023,"# PEA (id=698) - vie 19/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Gabriel Morales
+### Hora: 12:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Chequeo General de conexion de BB a Modulos y chequeo en piletas por roedores. Posiblemente cambio de cables de modulos.
+",PEA (id=698),Mantenimiento general,22/05/2023 10:12:06,"Gustavo Rios, Gabriel Morales, Agustin Morales",19/05/2023,,12:30:00,,,,,,,,,,,,,,,,,,,Chequeo General de conexion de BB a Modulos y chequeo en piletas por roedores. Posiblemente cambio de cables de modulos.,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-05-2023,"# LUISA (id=702) - mar 30/05/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 09:20
+### Comentarios generales: Nublado 
+### Se apagó UUB?: Si 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: 
+   - Comentarios: Cambio de manojo de cable, por cable mallado. 
+",LUISA (id=702),Cableado de Superficie,30/05/2023 13:52:04,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",30/05/2023,Nublado ,9:20:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Intermedio,Sin erosión,Fácil,Luciana Torres,,,,,,"Cambio de manojo de cable, por cable mallado. ",,,,
+Salida a Campo AMIGA - 13-06-2023,"# ESPERANZA (id=1625) - mar 13/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-128 / Ángulo (RA): 1° (N)
+   - M102 - SN: M-130 / Ángulo (RA): 90° (E)
+   - M103 - SN: M-129 / Ángulo (RA): 90° (E)
+   - Comentarios: Poca durabilidad de baterías de percha para movimiento de módulos. Necesario comprar nuevas.
+",ESPERANZA (id=1625),Deployment Módulos,13/06/2023 15:59:54,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",13/06/2023,,10:00:00,M-128,1° (N),M-130,90° (E),M-129,90° (E),,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,Poca durabilidad de baterías de percha para movimiento de módulos. Necesario comprar nuevas.,,,,,,,
+Salida a Campo AMIGA - 14-06-2023,"# LOCOS (id=1627) - mié 14/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel
+### Reporta: Gustavo Rios
+### Hora: 11:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-125 / Ángulo (RA): 1° (N)
+   - M102 - SN: M-127 / Ángulo (RA): 90° (E)
+   - M103 - SN: M-126 / Ángulo (RA): 90° (E)
+   - Comentarios: Traslado de módulos desde huella cercana al SD, hasta el pozo ( distancia de movimiento a pie y retroexcavadora, con percha y un módulo por viaje cerca de 30 m aprox. ) Se realizaron 3 viajes. Sin inconvenientes. Es importante tener baterías en buen estado.
+",LOCOS (id=1627),Deployment Módulos,14/06/2023 15:41:29,"Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel",14/06/2023,,11:00:00,M-125,1° (N),M-127,90° (E),M-126,90° (E),,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,"Traslado de módulos desde huella cercana al SD, hasta el pozo ( distancia de movimiento a pie y retroexcavadora, con percha y un módulo por viaje cerca de 30 m aprox. ) Se realizaron 3 viajes. Sin inconvenientes. Es importante tener baterías en buen estado.",,,,,,,
+Salida a Campo AMIGA - 15-06-2023,"# LOCOS (id=1627) - jue 15/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo en perfecto estado, sin inconvenientes. 
+",LOCOS (id=1627),Deployment Cañerías,15/06/2023 14:47:59,"Gustavo Rios, Gabriel Morales, Luciana Torres",15/06/2023,,10:00:00,,,,,,,,,,,"Todo en perfecto estado, sin inconvenientes. ",,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 15-06-2023,"# ESPERANZA (id=1625) - jue 15/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 11:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo perfecto, sin inconvenientes. 
+",ESPERANZA (id=1625),Deployment Cañerías,15/06/2023 14:49:29,"Gustavo Rios, Gabriel Morales, Luciana Torres",15/06/2023,,11:30:00,,,,,,,,,,,"Todo perfecto, sin inconvenientes. ",,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 15-06-2023,"# F. CONTRER (id=1775) - jue 15/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 12:50
+### Comentarios generales: Soleado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Chequear M-102. Se encontró un mal crimpeado en el BBox
+",F. CONTRER (id=1775),Mantenimiento general,15/06/2023 14:51:53,"Gustavo Rios, Gabriel Morales, Luciana Torres",15/06/2023,Soleado ,12:50:00,,,,,,,,,,,,,,,,,,,Chequear M-102. Se encontró un mal crimpeado en el BBox,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# ROSALIA (id=695) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:14
+### Comentarios generales: Nublado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medidas de distancia y ángulos de los módulos, a la orilla del tanque.
+M101= 7.30m. 10°Negro. 55° Rojo 
+M102= 5,94m.  3°Negro.  15°Rojo 
+M103 = 7,20m.  3°Negro. 15° Rojo 
+Relevamiento; 
+Potencia= No 
+Cámaras = No 
+Cable mallado = No 
+Tubos = Ok 
+",ROSALIA (id=695),Mantenimiento general,28/06/2023 15:34:36,"Gabriel Morales, Luciana Torres",28/06/2023,Nublado,10:14:00,,,,,,,,,,,,,,,,,,,"Medidas de distancia y ángulos de los módulos, a la orilla del tanque.
+M101= 7.30m. 10°Negro. 55° Rojo 
+M102= 5,94m.  3°Negro.  15°Rojo 
+M103 = 7,20m.  3°Negro. 15° Rojo 
+Relevamiento; 
+Potencia= No 
+Cámaras = No 
+Cable mallado = No 
+Tubos = Ok ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# GIORGIO MA (id=1766) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:42
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,40m 10°Negro 50°Rojo
+M102: 6,10m. 3°Negro.  20°Rojo 
+M103: 7,50m.  3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si 
+•Camaras : Si 
+• Mallado: No 
+•Tubos: Okey. 
+",GIORGIO MA (id=1766),Mantenimiento general,28/06/2023 15:39:01,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,10:42:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,40m 10°Negro 50°Rojo
+M102: 6,10m. 3°Negro.  20°Rojo 
+M103: 7,50m.  3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si 
+•Camaras : Si 
+• Mallado: No 
+•Tubos: Okey. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# VALENTIN C (id=1768) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 11:10
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,50m 9,2°Negro 55°Rojo
+M102: 6,30m. 3°Negro.  15°Rojo 
+M103: 7,80m.  2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey. 
+",VALENTIN C (id=1768),Mantenimiento general,28/06/2023 15:41:08,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,11:10:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,50m 9,2°Negro 55°Rojo
+M102: 6,30m. 3°Negro.  15°Rojo 
+M103: 7,80m.  2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# NIELS BOHR (id=1772) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 11:30
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,60m 9,3°Negro 54°Rojo
+M102: 6,40m. 3,1°Negro.  15,2°Rojo 
+M103: 7,70m.  2,3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey.
+",NIELS BOHR (id=1772),Mantenimiento general,28/06/2023 15:43:17,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,11:30:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,60m 9,3°Negro 54°Rojo
+M102: 6,40m. 3,1°Negro.  15,2°Rojo 
+M103: 7,70m.  2,3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# ABELARDO (id=707) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 11:50
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,80m 10°Negro 55°Rojo
+M102: 6,30°m. 4°Negro.  20°Rojo 
+M103: 7,70m.  3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey.
+",ABELARDO (id=707),Mantenimiento general,28/06/2023 15:45:20,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,11:50:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,80m 10°Negro 55°Rojo
+M102: 6,30°m. 4°Negro.  20°Rojo 
+M103: 7,70m.  3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No 
+•Tubos: Okey.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# FECHE (id=736) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 12:20
+### Comentarios generales: Clima: nublado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 8m 9,4°Negro 55°Rojo
+M102: 6,60°m. 3,2°Negro.  20°Rojo 
+M103: 7,97m.  2,4°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",FECHE (id=736),Mantenimiento general,28/06/2023 15:47:12,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado,12:20:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 8m 9,4°Negro 55°Rojo
+M102: 6,60°m. 3,2°Negro.  20°Rojo 
+M103: 7,97m.  2,4°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# F. CONTRER (id=1775) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 12:30
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,8m 8,4°Negro 50°Rojo
+M102: 6,40°m. 4°Negro.  20°Rojo 
+M103: 7,54m.  2°Negro. 10°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",F. CONTRER (id=1775),Mantenimiento general,28/06/2023 15:48:42,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,12:30:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,8m 8,4°Negro 50°Rojo
+M102: 6,40°m. 4°Negro.  20°Rojo 
+M103: 7,54m.  2°Negro. 10°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# CONSTELACI (id=1771) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 12:45
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,60m 10°Negro 55°Rojo
+M102: 6,10°m. 3°Negro.  15°Rojo 
+M103: 7,50m.  2,3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",CONSTELACI (id=1771),Mantenimiento general,28/06/2023 15:50:20,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,12:45:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,60m 10°Negro 55°Rojo
+M102: 6,10°m. 3°Negro.  15°Rojo 
+M103: 7,50m.  2,3°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# TRAUDEL (id=819) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 12:55
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,40m 54°Negro 305°Rojo
+M102: 6,20°m. 64°Negro.  360°Rojo 
+M103: 7,70m.  62°Negro. 345°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",TRAUDEL (id=819),Mantenimiento general,28/06/2023 15:52:28,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,12:55:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,40m 54°Negro 305°Rojo
+M102: 6,20°m. 64°Negro.  360°Rojo 
+M103: 7,70m.  62°Negro. 345°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# PAUL SOMMERS (id=1763) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 13:05
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,30m 10°Negro 55°Rojo
+M102: 5,80°m. 3°Negro.  15°Rojo 
+M103: 7,35m.  2,2°Negro. 10°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",PAUL SOMMERS (id=1763),Mantenimiento general,28/06/2023 15:53:48,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,13:05:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,30m 10°Negro 55°Rojo
+M102: 5,80°m. 3°Negro.  15°Rojo 
+M103: 7,35m.  2,2°Negro. 10°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# PLANCK (id=1774) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 13:15
+### Comentarios generales: Clima,: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,30m 8,3°Negro 55°Rojo
+M102: 5,90°m. 2°Negro.  15°Rojo 
+M103: 7,40m.  2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey
+",PLANCK (id=1774),Mantenimiento general,28/06/2023 15:55:21,"Gabriel Morales, Luciana Torres",28/06/2023,"Clima,: nublado ",13:15:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,30m 8,3°Negro 55°Rojo
+M102: 5,90°m. 2°Negro.  15°Rojo 
+M103: 7,40m.  2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: Si
+•Camaras : No
+• Mallado: Si 
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# ESPERANZA (id=1625) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 13:30
+### Comentarios generales: Clima: nublado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 9,30m 30°Negro 170°Rojo
+M102: 8,90°m. 28,3°Negro.  165°Rojo 
+M103: 10,40m.  4,2°Negro. 135°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No
+•Tubos: Okey
+",ESPERANZA (id=1625),Mantenimiento general,28/06/2023 15:57:01,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado,13:30:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 9,30m 30°Negro 170°Rojo
+M102: 8,90°m. 28,3°Negro.  165°Rojo 
+M103: 10,40m.  4,2°Negro. 135°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 28-06-2023,"# LOCOS (id=1627) - mié 28/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 13:50
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,55m 8,3°Negro 55°Rojo
+M102: 6,20°m. 3°Negro.  20°Rojo 
+M103: 7,55m.  2,2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No
+•Tubos: Okey
+",LOCOS (id=1627),Mantenimiento general,28/06/2023 15:58:36,"Gabriel Morales, Luciana Torres",28/06/2023,Clima: nublado ,13:50:00,,,,,,,,,,,,,,,,,,,"Medicion de distancias y ángulos de los módulos desde la orilla del tanque. 
+M101: 7,55m 8,3°Negro 55°Rojo
+M102: 6,20°m. 3°Negro.  20°Rojo 
+M103: 7,55m.  2,2°Negro. 15°Rojo 
+Relevamiento; 
+•Potencia: No
+•Camaras : No
+• Mallado: No
+•Tubos: Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# KATHY TURNER (id=1764) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 10:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Distribuidora vieja: BB 1 (Sn 0061) BB2 (Sn 0059) --> Nuevo: BB 1 (Sn 0064)  BB 2 (Sn0065)
+   - Descripción de la tarea: Chequeo de cables T1, todo andando bien.
+Cambio de distribuidora en BB1 ( se retiró sn 0061 y se coloco SN 0064).
+Cambio de distribuidora BB2 (se retiro sn 0059 y se coloco sn 0065).
+",KATHY TURNER (id=1764),Mantenimiento general,30/06/2023 15:29:52,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,10:15:00,,,,,,,,,,,,,,,,,,,"Chequeo de cables T1, todo andando bien.
+Cambio de distribuidora en BB1 ( se retiró sn 0061 y se coloco SN 0064).
+Cambio de distribuidora BB2 (se retiro sn 0059 y se coloco sn 0065).",,,,,,,BB 1 (Sn 0061) BB2 (Sn 0059),BB 1 (Sn 0064)  BB 2 (Sn0065),,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# ESPERANZA (id=1625) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 11:50
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizo nuevamente medición de ángulos y módulos.
+M-101: 9,30 m 24° negro 135° rojo
+M-102: 8,95 m 30° negro 165° rojo
+M-103: 10,35 m 30° negro 170° rojo
+",ESPERANZA (id=1625),Mantenimiento general,30/06/2023 15:36:34,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,11:50:00,,,,,,,,,,,,,,,,,,,"Se realizo nuevamente medición de ángulos y módulos.
+M-101: 9,30 m 24° negro 135° rojo
+M-102: 8,95 m 30° negro 165° rojo
+M-103: 10,35 m 30° negro 170° rojo",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# CASA RONAL (id=1777) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 12:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posicion.
+Realizar deployment de cable mallado 
+",CASA RONAL (id=1777),Mantenimiento general,30/06/2023 15:40:18,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,12:00:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posicion.
+Realizar deployment de cable mallado ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# PEA (id=698) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 12:05
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+",PEA (id=698),Mantenimiento general,30/06/2023 15:41:43,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,12:05:00,,,,,,,,,,,,,,,,,,,Relevamiento de posición: ok ,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# CORREO ARG (id=1767) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 12:20
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Cambio de cables de módulos, Poe y T1.
+",CORREO ARG (id=1767),Mantenimiento general,30/06/2023 15:43:49,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,12:20:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Cambio de cables de módulos, Poe y T1.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# E.T. (id=1770) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 12:50
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Cambio de cables de módulos, Poe y T1.
+",E.T. (id=1770),Mantenimiento general,30/06/2023 15:45:19,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,12:50:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Cambio de cables de módulos, Poe y T1.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# FRANQUITO (id=1776) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 13:10
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+Cambio de cables de módulos, Poe y T1.
+",FRANQUITO (id=1776),Mantenimiento general,30/06/2023 15:46:54,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,13:10:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posición: ok 
+Cambio de cables de módulos, Poe y T1.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# MORA (id=1769) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 13:25
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+",MORA (id=1769),Mantenimiento general,30/06/2023 15:48:02,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,13:25:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-06-2023,"# TORIBIO (id=669) - vie 30/06/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gabriel Morales
+### Hora: 14:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Se encontró cable poe sin conectar en distribuidora. 
+Consultar el motivo y ver si se puede volver a conectar.
+",TORIBIO (id=669),Mantenimiento general,30/06/2023 15:50:44,"Gabriel Morales, Nicolas Sepúlveda",30/06/2023,,14:00:00,,,,,,,,,,,,,,,,,,,"Relevamiento de posición: ok 
+Realizar deploymen de cable mallado.
+Se encontró cable poe sin conectar en distribuidora. 
+Consultar el motivo y ver si se puede volver a conectar.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# TORIBIO (id=669) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Agustin Morales
+### Hora: 10:20
+### Comentarios generales: Viento fuerte.
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se chequeo cable Poe y se conecto en distribuidora que estaba sin conectar.
+Se realizó chequeo general, condiciones de Batery Box, Potencia, y Módulos. Estado Okey
+",TORIBIO (id=669),Mantenimiento general,4/07/2023 15:03:45,"Agustin Morales, Maximiliano Maciel",4/07/2023,Viento fuerte.,10:20:00,,,,,,,,,,,,,,,,,,,"Se chequeo cable Poe y se conecto en distribuidora que estaba sin conectar.
+Se realizó chequeo general, condiciones de Batery Box, Potencia, y Módulos. Estado Okey",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# OYE (id=710) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 10:42
+### Comentarios generales: Viento Fuerte
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Medición de ángulos y distancia en Oye.
+M101: Rojo SE  140°     Negro SE 25°      Distancia: 21,30 m
+M102: Rojo SE 155°      Negro SE 28°      Distancia: 22,30 m
+M103: Rojo SE 150°      Negro SE 26°      Distancia 20,20 m
+M104: Rojo SE 158°      Negro SE 28°      Distancia 20,7 m
+",OYE (id=710),Mantenimiento general,4/07/2023 15:12:30,"Agustin Morales, Maximiliano Maciel",4/07/2023,Viento Fuerte,10:42:00,,,,,,,,,,,,,,,,,,,"Medición de ángulos y distancia en Oye.
+M101: Rojo SE  140°     Negro SE 25°      Distancia: 21,30 m
+M102: Rojo SE 155°      Negro SE 28°      Distancia: 22,30 m
+M103: Rojo SE 150°      Negro SE 26°      Distancia 20,20 m
+M104: Rojo SE 158°      Negro SE 28°      Distancia 20,7 m",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# MELA (id=701) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Agustin Morales
+### Hora: 11:40
+### Comentarios generales: Viento Fuerte
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Mantenimiento general.
+Chequeo de:
+Potencia: OK
+Camaras: OK
+Mallados: NO
+Tubos: Estan bien, no hay cables rotos y no tienen revestimiento.
+",MELA (id=701),Mantenimiento general,4/07/2023 15:15:37,"Agustin Morales, Maximiliano Maciel",4/07/2023,Viento Fuerte,11:40:00,,,,,,,,,,,,,,,,,,,"Mantenimiento general.
+Chequeo de:
+Potencia: OK
+Camaras: OK
+Mallados: NO
+Tubos: Estan bien, no hay cables rotos y no tienen revestimiento.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# WIWI (id=1762) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 12:27
+### Comentarios generales: Viento fuerte
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: No
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento
+",WIWI (id=1762),Mantenimiento general,4/07/2023 15:18:37,"Agustin Morales, Maximiliano Maciel",4/07/2023,Viento fuerte,12:27:00,,,,,,,,,,,,,,,,,,,"Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: No
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# LUISA (id=702) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Agustin Morales
+### Hora: 12:56
+### Comentarios generales: viento fuerte
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: Si
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento
+",LUISA (id=702),Mantenimiento general,4/07/2023 15:21:41,"Agustin Morales, Maximiliano Maciel",4/07/2023,viento fuerte,12:56:00,,,,,,,,,,,,,,,,,,,"Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: Si
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# NORBERTO W (id=1761) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 13:10
+### Comentarios generales: viento fuerte
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Intermedio
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI (en el M103 esta la tapa rota)
+Mallados: No
+Tubos: Okey, sin daños en los cables, cables recubiertos por cinta ductape 
+OBSERVACIONES: se ve expuesta cañeria de pvc correspondiente al cableado de Módulos.
+",NORBERTO W (id=1761),Mantenimiento general,4/07/2023 15:25:04,"Agustin Morales, Maximiliano Maciel",4/07/2023,viento fuerte,13:10:00,,,,,,,,,,,,,,,,,,,"Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI (en el M103 esta la tapa rota)
+Mallados: No
+Tubos: Okey, sin daños en los cables, cables recubiertos por cinta ductape 
+OBSERVACIONES: se ve expuesta cañeria de pvc correspondiente al cableado de Módulos.",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Intermedio,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# COMENIUS (id=1760) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 13:32
+### Comentarios generales: viento fuerte
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: No
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento
+",COMENIUS (id=1760),Mantenimiento general,4/07/2023 15:26:39,"Agustin Morales, Maximiliano Maciel",4/07/2023,viento fuerte,13:32:00,,,,,,,,,,,,,,,,,,,"Mantenimiento General.
+Se chequeo:
+Potencia: okey
+Cámaras: SI
+Mallados: No
+Tubos: Okey, sin daños en los cables pero falta colocar recubrimiento",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 04-07-2023,"# KATHY TURNER (id=1764) - mar 04/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 12:42
+### Comentarios generales: fuerte viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se bajo térmica y se desconectaron cables SERIAL de ambos Batery Box, Se levanto térmica.
+",KATHY TURNER (id=1764),Mantenimiento general,4/07/2023 15:29:12,"Agustin Morales, Maximiliano Maciel",4/07/2023,fuerte viento,12:42:00,,,,,,,,,,,,,,,,,,,"Se bajo térmica y se desconectaron cables SERIAL de ambos Batery Box, Se levanto térmica.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 06-07-2023,"# FRANQUITO (id=1776) - jue 06/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales
+### Reporta: Gustavo Rios
+### Hora: 10:40
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Cables de módulos Poe y T1 rotos. Cambio de cables Poe y T1 en M101, M102 y M103.
+Se colocó y probó recubrimiento de roedores, no hubo problema. Y no es difícil de colocar. 
+Se retiraron Ekits, se realizó limpieza por suciedad. Se volvieron a colocar.
+",FRANQUITO (id=1776),Mantenimiento general,6/07/2023 15:26:12,"Gustavo Rios, Gabriel Morales",6/07/2023,,10:40:00,,,,,,,,,,,,,,,,,,,"Cables de módulos Poe y T1 rotos. Cambio de cables Poe y T1 en M101, M102 y M103.
+Se colocó y probó recubrimiento de roedores, no hubo problema. Y no es difícil de colocar. 
+Se retiraron Ekits, se realizó limpieza por suciedad. Se volvieron a colocar.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 18-07-2023,"# E.T. (id=1770) - mar 18/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Agustin Morales
+### Reporta: Agustin Morales
+### Hora: 10:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se bajo termina 10:15, se realizo chequeo de cables de módulos, detectamos varias mordidas en los cables, se cambiaron los cables de los 3 módulos 101, 102 y 103, para eso se levantaron ekits y se limpiaron, los colocamos nuevamente con los cables nuevos, se bajaron nuevamente, radio prendió 13:55 
+",E.T. (id=1770),Mantenimiento general,18/07/2023 15:52:28,"Gustavo Rios, Agustin Morales",18/07/2023,,10:15:00,,,,,,,,,,,,,,,,,,,"Se bajo termina 10:15, se realizo chequeo de cables de módulos, detectamos varias mordidas en los cables, se cambiaron los cables de los 3 módulos 101, 102 y 103, para eso se levantaron ekits y se limpiaron, los colocamos nuevamente con los cables nuevos, se bajaron nuevamente, radio prendió 13:55 ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 19-07-2023,"# CORREO ARG (id=1767) - mié 19/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Maximiliano Maciel
+### Reporta: Gabriel Morales
+### Hora: 09:58
+### Comentarios generales: Se encontraron en tubo de acceso morcetos muy oxidados
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizo cambio de cableado de módulos, como así también relevamiento general de la posición 
+",CORREO ARG (id=1767),Mantenimiento general,19/07/2023 15:23:15,"Gabriel Morales, Maximiliano Maciel",19/07/2023,Se encontraron en tubo de acceso morcetos muy oxidados,9:58:00,,,,,,,,,,,,,,,,,,,"Se realizo cambio de cableado de módulos, como así también relevamiento general de la posición ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 19-07-2023,"# LETY JR (id=97) - mié 19/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Maximiliano Maciel
+### Reporta: Gabriel Morales
+### Hora: 13:44
+### Comentarios generales: Comenzaron a haber fuertes rafagas de viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Leve
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó relevamiento general de posición (potencia, cableados y batery box)
+",LETY JR (id=97),Mantenimiento general,19/07/2023 15:26:22,"Gabriel Morales, Maximiliano Maciel",19/07/2023,Comenzaron a haber fuertes rafagas de viento,13:44:00,,,,,,,,,,,,,,,,,,,"Se realizó relevamiento general de posición (potencia, cableados y batery box)",,,,,,,,,,,,,No,,,,,,,,,Leve,Leve,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 19-07-2023,"# CATHERINA (id=12) - mié 19/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 13:54
+### Comentarios generales: Fuertes rafagas de viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizo relevamiento general y a su vez se colocaron abrazaderas en cable de panel
+",CATHERINA (id=12),Mantenimiento general,19/07/2023 15:29:18,"Gabriel Morales, Maximiliano Maciel",19/07/2023,Fuertes rafagas de viento,13:54:00,,,,,,,,,,,,,,,,,,,Se realizo relevamiento general y a su vez se colocaron abrazaderas en cable de panel,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 19-07-2023,"# CHICHINO JR (id=30) - mié 19/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 14:03
+### Comentarios generales: Fuertes rafagas de viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó relevamiento general y se colocaron abrazaderas en cable de panel
+",CHICHINO JR (id=30),Mantenimiento general,19/07/2023 15:31:50,"Gabriel Morales, Maximiliano Maciel",19/07/2023,Fuertes rafagas de viento,14:03:00,,,,,,,,,,,,,,,,,,,Se realizó relevamiento general y se colocaron abrazaderas en cable de panel,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# ALBERTO JR (id=28) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:15
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y estado general del tanque 
+",ALBERTO JR (id=28),Mantenimiento general,20/07/2023 14:54:58,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,10:15:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y estado general del tanque ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# GUILI JR (id=47) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:35
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque general 
+",GUILI JR (id=47),Mantenimiento general,20/07/2023 14:58:08,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,10:35:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque general ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# MUONES JR (id=54) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 11:00
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque 
+en general
+",MUONES JR (id=54),Mantenimiento general,20/07/2023 15:01:03,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,11:00:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque 
+en general",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# PETER MAZUR (id=1765) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 11:20
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque en general 
+",PETER MAZUR (id=1765),Mantenimiento general,20/07/2023 15:02:45,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,11:20:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque en general ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# CONSTANZA (id=734) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 11:40
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Leve
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque en general
+",CONSTANZA (id=734),Mantenimiento general,20/07/2023 15:05:16,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,11:40:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque en general",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Leve,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# VANESA JR (id=27) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 11:56
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque en general
+",VANESA JR (id=27),Mantenimiento general,20/07/2023 15:06:41,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,11:56:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque en general",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# ALEXIS JR (id=29) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolás Leal
+### Reporta: Nicolas Sepúlveda
+### Hora: 12:10
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de antena, radio y de tanque general, también se hizo revisión de estado de tuvo, cables y cámaras. Todo ok 
+Falta mallado 
+",ALEXIS JR (id=29),Mantenimiento general,20/07/2023 15:10:22,"Agustin Morales, Nicolás Leal",20/07/2023,Viento sonda ,12:10:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de antena, radio y de tanque general, también se hizo revisión de estado de tuvo, cables y cámaras. Todo ok 
+Falta mallado ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# LOCOS (id=1627) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 12:30
+### Comentarios generales: Viento Sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo control de la intalación de tubing y estado de tubos.
+Faltan cámaras 
+",LOCOS (id=1627),Mantenimiento general,20/07/2023 15:13:07,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento Sonda ,12:30:00,,,,,,,,,,,,,,,,,,,"Se hizo control de la intalación de tubing y estado de tubos.
+Faltan cámaras ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# ESPERANZA (id=1625) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 12:45
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo control de la intalación de tubing y estado de tubos.
+No tiene cámaras 
+",ESPERANZA (id=1625),Mantenimiento general,20/07/2023 15:14:50,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,12:45:00,,,,,,,,,,,,,,,,,,,"Se hizo control de la intalación de tubing y estado de tubos.
+No tiene cámaras ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# NIELS BOHR (id=1772) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 12:55
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo control de la intalación de tubing y estado de tubos.
+No tiene cámaras. 
+",NIELS BOHR (id=1772),Mantenimiento general,20/07/2023 15:16:31,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,12:55:00,,,,,,,,,,,,,,,,,,,"Se hizo control de la intalación de tubing y estado de tubos.
+No tiene cámaras. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# ABELARDO (id=707) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 13:00
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras.
+",ABELARDO (id=707),Mantenimiento general,20/07/2023 15:18:30,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,13:00:00,,,,,,,,,,,,,,,,,,,"Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# ROSALIA (id=695) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 13:10
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras. 
+",ROSALIA (id=695),Mantenimiento general,20/07/2023 15:22:21,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,13:10:00,,,,,,,,,,,,,,,,,,,"Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 20-07-2023,"# VALENTIN C (id=1768) - jue 20/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 13:40
+### Comentarios generales: Viento sonda 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras. 
+",VALENTIN C (id=1768),Mantenimiento general,20/07/2023 15:28:26,"Agustin Morales, Nicolas Sepúlveda",20/07/2023,Viento sonda ,13:40:00,,,,,,,,,,,,,,,,,,,"Se hizo relevamiento de posiciones, control de la intalación de tubing y estado de tubos. 
+No tiene cámaras. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 26-07-2023,"# ROSALIA (id=695) - mié 26/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 10:00
+### Comentarios generales: Clima: nublado. Camioneta: Ok
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: M1021303031477
+   - SN Battery Box: 17
+   - SN Regulador: 18170129
+   - SN Distribuidora: SN 0038
+   - SN Batería 1: 0010/ 117
+   - SN Batería 2: 0007/ 120
+   - Instalación de térmica: Si
+   - Comentarios: El caño tubing lo han dejado torcido
+",ROSALIA (id=695),Deployment Potencia,26/07/2023 14:43:43,"Agustin Morales, Luciana Torres, Maximiliano Maciel",26/07/2023,Clima: nublado. Camioneta: Ok,10:00:00,,,,,,,M1021303031477,18170129,0010/ 117,0007/ 120,,17,Si,,,,SN 0038,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,No,,,El caño tubing lo han dejado torcido,,,,,,
+Salida a Campo AMIGA - 28-07-2023,"# VALENTIN C (id=1768) - vie 28/07/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:54
+### Comentarios generales: Clima: nublado. Camioneta: Ok    Acceso principal: con bastante serrucho. 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: M1021303031460
+   - SN Battery Box: 56
+   - SN Regulador: 18170136
+   - SN Distribuidora: SN 0045
+   - SN Batería 1: SN 115/ 0006
+   - SN Batería 2: SN 113/ 0004
+   - Instalación de térmica: Si
+   - Comentarios: Colocación de caño tubing: Ok. 
+",VALENTIN C (id=1768),Deployment Potencia,28/07/2023 14:40:40,"Gabriel Morales, Luciana Torres, Nicolas Sepúlveda",28/07/2023,Clima: nublado. Camioneta: Ok    Acceso principal: con bastante serrucho. ,9:54:00,,,,,,,M1021303031460,18170136,SN 115/ 0006,SN 113/ 0004,,56,Si,,,,SN 0045,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,No,,,Colocación de caño tubing: Ok. ,,,,,,
+Salida a Campo AMIGA - 01-08-2023,"# ABELARDO (id=707) - mar 01/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Maximiliano Maciel
+### Hora: 10:20
+### Comentarios generales: Ráfagas de viento 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: M1031303022757
+   - SN Battery Box: N° 49
+   - SN Regulador: SN 18170346
+   - SN Distribuidora: SN 0068
+   - SN Batería 1: SN 114
+   - SN Batería 2: SN 0097
+   - Instalación de térmica: Si
+   - Comentarios: 
+",ABELARDO (id=707),Deployment Potencia,1/08/2023 15:21:56,"Gabriel Morales, Maximiliano Maciel, Nicolas Sepúlveda",1/08/2023,Ráfagas de viento ,10:20:00,,,,,,,M1031303022757,SN 18170346,SN 114,SN 0097,,N° 49,Si,,,,SN 0068,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,No,,,,,,,,,
+Salida a Campo AMIGA - 03-08-2023,"# NIELS BOHR (id=1772) - jue 03/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 10:30
+### Comentarios generales: Clima: Soleado.     Camioneta: no funciona el handi. 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: SN M1031303023730
+   - SN Battery Box: N°50
+   - SN Regulador: SN 18140202
+   - SN Distribuidora: SN 0043
+   - SN Batería 1: SN 118
+   - SN Batería 2: SN 119
+   - Instalación de térmica: Si
+   - Comentarios: Todo en buenas condiciones. 
+",NIELS BOHR (id=1772),Deployment Potencia,3/08/2023 15:05:36,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",3/08/2023,Clima: Soleado.     Camioneta: no funciona el handi. ,10:30:00,,,,,,,SN M1031303023730,SN 18140202,SN 118,SN 119,,N°50,Si,,,,SN 0043,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,Todo en buenas condiciones. ,,,,,,
+Salida a Campo AMIGA - 03-08-2023,"# GUILI JR (id=47) - jue 03/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 14:10
+### Comentarios generales: Clima: soleado Camioneta: no funciona el handi. 
+### Se apagó UUB?: No 
+- Maleza: Crítica
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se marcaron y midieron los pozos, para poder realizar deployment de módulos.  
+",GUILI JR (id=47),Mantenimiento general,3/08/2023 15:10:46,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",3/08/2023,Clima: soleado Camioneta: no funciona el handi. ,14:10:00,,,,,,,,,,,,,,,,,,,"Se marcaron y midieron los pozos, para poder realizar deployment de módulos.  ",,,,,,,,,,,,,No,,,,,,,,,Crítica,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 08-08-2023,"# LOCOS (id=1627) - mar 08/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 09:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: M1041303030294
+   - SN Battery Box: 47
+   - SN Regulador: 18140121
+   - SN Distribuidora: 0057
+   - SN Batería 1: 123
+   - SN Batería 2: 126
+   - Instalación de térmica: Si
+   - Comentarios: Se realizó Deployment de potencia, no hubo ningún inconveniente. Se testearon baterías y regulador, todo ok. 
+",LOCOS (id=1627),Deployment Potencia,8/08/2023 15:47:35,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",8/08/2023,,9:30:00,,,,,,,M1041303030294,18140121,123,126,,47,Si,,,,0057,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,"Se realizó Deployment de potencia, no hubo ningún inconveniente. Se testearon baterías y regulador, todo ok. ",,,,,,
+Salida a Campo AMIGA - 08-08-2023,"# PIPI JR (id=99) - mar 08/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 13:45
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó el marcado normal de pozos. Quedó con estacas y pintura roja, sin problemas. 
+",PIPI JR (id=99),Mantenimiento general,8/08/2023 15:52:11,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",8/08/2023,,13:45:00,,,,,,,,,,,,,,,,,,,"Se realizó el marcado normal de pozos. Quedó con estacas y pintura roja, sin problemas. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 10-08-2023,"# ESPERANZA (id=1625) - jue 10/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Agustin Morales, Maximiliano Maciel
+### Reporta: Agustin Morales
+### Hora: 10:00
+### Comentarios generales: Viento fuerte 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: No
+   - SN Battery Box: 51
+   - SN Regulador: Sn 18140212
+   - SN Distribuidora: Sn0056
+   - SN Batería 1: Sn 116
+   - SN Batería 2: Sn 121
+   - Instalación de térmica: Si
+   - Comentarios: Realizamos potencia (caja de baterías y panel con toda su conexión) antes que se venga el viento, no tuvimos en cuenta que en está posición movimos las distancias del pozo/módulos y nos faltó un caño para realizar la cañería completa. Asique dejamos todo lo demás conectado, provisorio para la próxima salida completar y pasar los cables de módulos a la caja de baterías, tambien faltaria anotar solamente el sn del panel solar. Se testearon baterias y regulador y quedo todo bien. Se largo muy fuerte el viento. 
+",ESPERANZA (id=1625),Deployment Potencia,10/08/2023 15:35:27,"Gustavo Rios, Agustin Morales, Maximiliano Maciel",10/08/2023,Viento fuerte ,10:00:00,,,,,,,No,Sn 18140212,Sn 116,Sn 121,,51,Si,,,,Sn0056,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,"Realizamos potencia (caja de baterías y panel con toda su conexión) antes que se venga el viento, no tuvimos en cuenta que en está posición movimos las distancias del pozo/módulos y nos faltó un caño para realizar la cañería completa. Asique dejamos todo lo demás conectado, provisorio para la próxima salida completar y pasar los cables de módulos a la caja de baterías, tambien faltaria anotar solamente el sn del panel solar. Se testearon baterias y regulador y quedo todo bien. Se largo muy fuerte el viento. ",,,,,,
+Salida a Campo AMIGA - 10-08-2023,"# ROSELLA (id=11) - jue 10/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Agustin Morales, Maximiliano Maciel
+### Reporta: Agustin Morales
+### Hora: 12:40
+### Comentarios generales: Fuerte viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se dejó marcado con estacas el pozo para los módulos. 
+- hay fibra óptica alrededor de la estación para tener en cuenta.
+",ROSELLA (id=11),Mantenimiento general,10/08/2023 15:37:33,"Gustavo Rios, Agustin Morales, Maximiliano Maciel",10/08/2023,Fuerte viento,12:40:00,,,,,,,,,,,,,,,,,,,"Se dejó marcado con estacas el pozo para los módulos. 
+- hay fibra óptica alrededor de la estación para tener en cuenta.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 15-08-2023,"# ESPERANZA (id=1625) - mar 15/08/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 10:00
+### Comentarios generales: Ráfagas de viento 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: - Se terminó pasaje de cables hacia el batery box de AMIGA. 
+- Se colocaron recubrimiento de cables, se crimpearon y se colocaron cámaras de hormigón.
+- Finalmente se tomaron los datos de los SN faltantes y se realizó un chequeo general.
+BB 51 OK 
+Regulador SN 18140212
+Distribuidora SN 0056
+Batería 1 SN 116
+Batería 2 SN 121
+Panel solar SN M1051303035557
+Cámaras de hormigón colocadas
+Protección en cables de módulos colocadas
+",ESPERANZA (id=1625),Mantenimiento general,15/08/2023 14:50:49,"Agustin Morales, Maximiliano Maciel",15/08/2023,Ráfagas de viento ,10:00:00,,,,,,,,,,,,,,,,,,,"- Se terminó pasaje de cables hacia el batery box de AMIGA. 
+- Se colocaron recubrimiento de cables, se crimpearon y se colocaron cámaras de hormigón.
+- Finalmente se tomaron los datos de los SN faltantes y se realizó un chequeo general.
+BB 51 OK 
+Regulador SN 18140212
+Distribuidora SN 0056
+Batería 1 SN 116
+Batería 2 SN 121
+Panel solar SN M1051303035557
+Cámaras de hormigón colocadas
+Protección en cables de módulos colocadas",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 01-09-2023,"# F. CONTRER (id=1775) - vie 01/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Agustin Morales
+### Hora: 10:20
+### Comentarios generales: Fuerte viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se levantaron los ekits mal acoplados, se limpiaron, se chequearon los cables y se volvieron a bajar, se noto que en la posición  101 si estaba mal acoplada, la cual se coloco nuevamente de manera correcta 
+",F. CONTRER (id=1775),Mantenimiento general,1/09/2023 15:42:03,"Gustavo Rios, Gabriel Morales, Agustin Morales",1/09/2023,Fuerte viento,10:20:00,,,,,,,,,,,,,,,,,,,"Se levantaron los ekits mal acoplados, se limpiaron, se chequearon los cables y se volvieron a bajar, se noto que en la posición  101 si estaba mal acoplada, la cual se coloco nuevamente de manera correcta ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 01-09-2023,"# NIELS BOHR (id=1772) - vie 01/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Agustin Morales
+### Hora: 12:00
+### Comentarios generales: Fuerte viento
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: La idea de esta posición era poder bajar los ekits pero con el fuerte viento que había solo pudimos dejar crimpeado los cables del batery box, tuvimos que abortar tareas planificadas. Se dio aviso al soporte 
+",NIELS BOHR (id=1772),Mantenimiento general,1/09/2023 15:44:25,"Gustavo Rios, Gabriel Morales, Agustin Morales",1/09/2023,Fuerte viento,12:00:00,,,,,,,,,,,,,,,,,,,"La idea de esta posición era poder bajar los ekits pero con el fuerte viento que había solo pudimos dejar crimpeado los cables del batery box, tuvimos que abortar tareas planificadas. Se dio aviso al soporte ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,,,,,,
+Salida a Campo AMIGA - 06-09-2023,"# F. CONTRER (id=1775) - mié 06/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:30
+### Comentarios generales: Clima: nublado.  Camioneta Beige: Excelente
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de M-101y M-103.
+Retiramos ekits, limpiamos, observamos que estuviera bien acoplado, ingresamos camara, lo cual se veía todo en perfectas condiciones. Luego, añadimos más peso a los ekits, colocamos grasa y los volvimos a colocar. 
+Esperamos el Ok de Nico. 
+Además, buscamos las cámaras en Katy.T y las dejamos colocadas. 
+Chequeamos cableado y crimpeado de M-102. Se veía todo perfecto. 
+Distribuidora: Ok.
+Regulador: Ok.
+Baterías: Ok 
+",F. CONTRER (id=1775),Mantenimiento general,6/09/2023 15:05:04,"Gustavo Rios, Gabriel Morales, Luciana Torres",6/09/2023,Clima: nublado.  Camioneta Beige: Excelente,10:30:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de M-101y M-103.
+Retiramos ekits, limpiamos, observamos que estuviera bien acoplado, ingresamos camara, lo cual se veía todo en perfectas condiciones. Luego, añadimos más peso a los ekits, colocamos grasa y los volvimos a colocar. 
+Esperamos el Ok de Nico. 
+Además, buscamos las cámaras en Katy.T y las dejamos colocadas. 
+Chequeamos cableado y crimpeado de M-102. Se veía todo perfecto. 
+Distribuidora: Ok.
+Regulador: Ok.
+Baterías: Ok ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 08-09-2023,"# F. CONTRER (id=1775) - vie 08/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:45
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Ekit 101 viejo: EKIT-SN139  --> Nuevo: EKIT-SN166
+   - Ekit 103 viejo: EKIT-SN0128 --> Nuevo: EKIT-SN167
+   - Descripción de la tarea: Se realizó levantamiento,chequeo y remplazo de ekits 101 y 103. El 101 no tenía grasa óptica. También reviso cableado desde módulo a BB. BB se testeo a Domo y ETH3 estaba mal conectado 
+",F. CONTRER (id=1775),Mantenimiento general,8/09/2023 15:47:08,"Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda",8/09/2023,,10:45:00,,,,,,,,,,,,,,,,,,,"Se realizó levantamiento,chequeo y remplazo de ekits 101 y 103. El 101 no tenía grasa óptica. También reviso cableado desde módulo a BB. BB se testeo a Domo y ETH3 estaba mal conectado ",EKIT-SN139 ,EKIT-SN166,,EKIT-SN0128,,EKIT-SN167,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 08-09-2023,"# PAUL SOMMERS (id=1763) - vie 08/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 11:55
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó levantamiento y chequeo de EKIT. Se logra ver cómo Cookie del 101 no se ha acoplado bien. También se realizó chequeo de cableado desde módulo a BB y se realizó colocación de cámara de hormigón a tubos.
+",PAUL SOMMERS (id=1763),Mantenimiento general,8/09/2023 15:50:48,"Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda",8/09/2023,,11:55:00,,,,,,,,,,,,,,,,,,,Se realizó levantamiento y chequeo de EKIT. Se logra ver cómo Cookie del 101 no se ha acoplado bien. También se realizó chequeo de cableado desde módulo a BB y se realizó colocación de cámara de hormigón a tubos.,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 12-09-2023,"# TOUNE (id=688) - mar 12/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:25
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Ekit 103 viejo: EKIT-SN0088 --> Nuevo: EKIT-SN162
+   - Descripción de la tarea: Se hizo levantamiento y chequeo de EKIT de módulo 103 ya que no acoplaba de manera correcta y se tuvo que realizar cambio del mismo. También se hizo tarea de chequeo y testeo de cable de M-103 a BB dónde se vio todo correcto.
+",TOUNE (id=688),Mantenimiento general,12/09/2023 15:35:50,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",12/09/2023,,10:25:00,,,,,,,,,,,,,,,,,,,Se hizo levantamiento y chequeo de EKIT de módulo 103 ya que no acoplaba de manera correcta y se tuvo que realizar cambio del mismo. También se hizo tarea de chequeo y testeo de cable de M-103 a BB dónde se vio todo correcto.,,,,EKIT-SN0088,,EKIT-SN162,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 12-09-2023,"# GIORGIO MA (id=1766) - mar 12/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 11:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se hizo levantamiento y chequeo de EKIT de M-103 ya que el mismo no había acoplado de formar correcta, al mismo se le hizo colocación nuevamente de grasa y se bajó, dónde pareció tener un acople correcto.
+También se realizó testeo de cable de m-103 a BB dónde se vio todo correcto 
+",GIORGIO MA (id=1766),Mantenimiento general,12/09/2023 15:43:42,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",12/09/2023,,11:30:00,,,,,,,,,,,,,,,,,,,"Se hizo levantamiento y chequeo de EKIT de M-103 ya que el mismo no había acoplado de formar correcta, al mismo se le hizo colocación nuevamente de grasa y se bajó, dónde pareció tener un acople correcto.
+También se realizó testeo de cable de m-103 a BB dónde se vio todo correcto ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 12-09-2023,"# F. CONTRER (id=1775) - mar 12/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 14:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se abrió y se hizo revisión de cables de BB, dónde se logró ver qué el cable  Poe del módulo 102 que se encontraba conectado a la distribuidora, estaba cortado por dentro debido al crimpeado, se hizo corte y nuevo crimpeado del mismo y se dejó conectado 
+",F. CONTRER (id=1775),Mantenimiento general,12/09/2023 15:53:00,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",12/09/2023,,14:00:00,,,,,,,,,,,,,,,,,,,"Se abrió y se hizo revisión de cables de BB, dónde se logró ver qué el cable  Poe del módulo 102 que se encontraba conectado a la distribuidora, estaba cortado por dentro debido al crimpeado, se hizo corte y nuevo crimpeado del mismo y se dejó conectado ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 14-09-2023,"# ABELARDO (id=707) - jue 14/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 09:35
+### Comentarios generales: Clima: Viento fuerte        Camioneta: Ok 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: 158
+   - M101 instalado por: Agustin Morales
+   - M102 - SN del ekit: 0173
+   - M102 instalado por: Luciana Torres
+   - M103 - SN del ekit: 0170
+   - M103 instalado por: Maximiliano Maciel
+   - Comentarios: No se pudo realizar chequeo del acople de los ekits, ya que todavía no se realiza superficie de cableado mallado. Se crimpearon y etiquetaron cables en el BB. Además, dejamos colocadas las cámaras de hormigón y el mallado para roedores.
+",ABELARDO (id=707),Deployment E-Kits,14/09/2023 14:57:44,"Agustin Morales, Luciana Torres, Maximiliano Maciel",14/09/2023,Clima: Viento fuerte        Camioneta: Ok ,9:35:00,,,,,,,,,,,,,,158,0173,0170,,,,,,,,,,,,,,,,No,,,,,Agustin Morales,Luciana Torres,Maximiliano Maciel,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,"No se pudo realizar chequeo del acople de los ekits, ya que todavía no se realiza superficie de cableado mallado. Se crimpearon y etiquetaron cables en el BB. Además, dejamos colocadas las cámaras de hormigón y el mallado para roedores.",,,,,
+Salida a Campo AMIGA - 19-09-2023,"# ABELARDO (id=707) - mar 19/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 09:44
+### Comentarios generales: Clima: Viento.        Camioneta: Ok  
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Todo perfecto. 
+",ABELARDO (id=707),Cableado de Superficie,19/09/2023 15:09:12,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",19/09/2023,Clima: Viento.        Camioneta: Ok  ,9:44:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,Si,,,,,Todo perfecto. ,,,,
+Salida a Campo AMIGA - 19-09-2023,"# HEISEMBERG (id=1773) - mar 19/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 13:15
+### Comentarios generales: Clima: viento.       camioneta: Ok 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Leve
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Bajamos térmica porque estaba caída la posición. El regulador funciona en perfectas condiciones al igual que la distribuidora.
+Desconectamos todo las fichas, soplamos, limpiamos y volvimos a conectar. 
+Prendió la radio perfecto. 
+Tener en cuenta que el bbox tenía muchísima tierra, y corría mucho viento. 
+",HEISEMBERG (id=1773),Mantenimiento general,19/09/2023 15:15:03,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",19/09/2023,Clima: viento.       camioneta: Ok ,13:15:00,,,,,,,,,,,,,,,,,,,"Bajamos térmica porque estaba caída la posición. El regulador funciona en perfectas condiciones al igual que la distribuidora.
+Desconectamos todo las fichas, soplamos, limpiamos y volvimos a conectar. 
+Prendió la radio perfecto. 
+Tener en cuenta que el bbox tenía muchísima tierra, y corría mucho viento. ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Leve,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 21-09-2023,"# GUILI JR (id=47) - jue 21/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda
+### Reporta: Agustin Morales
+### Hora: 10:40
+### Comentarios generales: Viento fuerte
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: 141 / Ángulo (RA): 1°N
+   - M102 - SN: 143 / Ángulo (RA): 91°E
+   - M103 - SN: 142 / Ángulo (RA): 91°E
+   - Comentarios: Se alcanzaron a bajar los modulos sin problema, hasta que llego el viento fuerte, se colocaron los tubos de acceso y se ayudo a desparramar la arena sobre los módulos. Se pego la vuelta a las 13 hs por el viento fuerte 
+",GUILI JR (id=47),Deployment Módulos,21/09/2023 15:14:15,"Gustavo Rios, Gabriel Morales, Agustin Morales, Nicolas Sepúlveda",21/09/2023,Viento fuerte,10:40:00,141,1°N,143,91°E,142,91°E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,,,"Se alcanzaron a bajar los modulos sin problema, hasta que llego el viento fuerte, se colocaron los tubos de acceso y se ayudo a desparramar la arena sobre los módulos. Se pego la vuelta a las 13 hs por el viento fuerte ",,,,,,,
+Salida a Campo AMIGA - 22-09-2023,"# PIPI JR (id=99) - vie 22/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 10:15
+### Comentarios generales: Ráfagas de viento en aumento 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-138 / Ángulo (RA): 1° N 
+   - M102 - SN: M-140 / Ángulo (RA): 91° E
+   - M103 - SN: M-139 / Ángulo (RA): 91° E
+   - Comentarios: Fuertes rafas de viento 
+",PIPI JR (id=99),Deployment Módulos,22/09/2023 14:29:58,"Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel",22/09/2023,Ráfagas de viento en aumento ,10:15:00,M-138,1° N ,M-140,91° E,M-139,91° E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,Fuertes rafas de viento ,,,,,,,
+Salida a Campo AMIGA - 25-09-2023,"# ROSELLA (id=11) - lun 25/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:30
+### Comentarios generales: Clima: nublado.  Camioneta: Ok
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-134 / Ángulo (RA): 1°N
+   - M102 - SN: M-136 / Ángulo (RA): 90°E
+   - M103 - SN: M-137 / Ángulo (RA): 91°E
+   - Comentarios: Salió todo perfecto, ningún inconveniente. 
+",ROSELLA (id=11),Deployment Módulos,25/09/2023 14:39:44,"Gustavo Rios, Gabriel Morales, Agustin Morales, Luciana Torres",25/09/2023,Clima: nublado.  Camioneta: Ok,10:30:00,M-134,1°N,M-136,90°E,M-137,91°E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,"Salió todo perfecto, ningún inconveniente. ",,,,,,,
+Salida a Campo AMIGA - 27-09-2023,"# ABELARDO (id=707) - mié 27/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 10:30
+### Comentarios generales: Clima: Soleado.   Camioneta: Todo Ok. 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Ekit 103 viejo: SN 0170 --> Nuevo: SN0150
+   - Descripción de la tarea: Bajamos térmica para poder chequear el  
+M-103/SN0170 ya que tenía un 50% acoplado, y el 50% no. Mientras esperamos el Ok de Nicolás, nos trasladamos a otra posición. Luego, 12:40hs volvimos a realizar cambio de electrónica, ya que podría ser falla de la electrónica. 
+Nueva electronica SN 0150.
+13:25 Levantamos térmica. 
+",ABELARDO (id=707),Mantenimiento general,27/09/2023 15:17:03,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",27/09/2023,Clima: Soleado.   Camioneta: Todo Ok. ,10:30:00,,,,,,,,,,,,,,,,,,,"Bajamos térmica para poder chequear el  
+M-103/SN0170 ya que tenía un 50% acoplado, y el 50% no. Mientras esperamos el Ok de Nicolás, nos trasladamos a otra posición. Luego, 12:40hs volvimos a realizar cambio de electrónica, ya que podría ser falla de la electrónica. 
+Nueva electronica SN 0150.
+13:25 Levantamos térmica. ",,,,SN 0170,,SN0150,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 27-09-2023,"# VALENTIN C (id=1768) - mié 27/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 11:10
+### Comentarios generales: Clima: Soleado.        Camioneta: Ok 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN181 
+   - M101 instalado por: Luciana Torres
+   - M102 - SN del ekit: SN0178
+   - M102 instalado por: Agustin Morales
+   - M103 - SN del ekit: SN168
+   - M103 instalado por: Nicolas Sepúlveda
+   - Comentarios: Todo perfecto. (Falta realizar superficie) 
+",VALENTIN C (id=1768),Deployment E-Kits,27/09/2023 15:21:50,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",27/09/2023,Clima: Soleado.        Camioneta: Ok ,11:10:00,,,,,,,,,,,,,,SN181 ,SN0178,SN168,,,,,,,,,,,,,,,,No,,,,,Luciana Torres,Agustin Morales,Nicolas Sepúlveda,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,Todo perfecto. (Falta realizar superficie) ,,,,,
+Salida a Campo AMIGA - 28-09-2023,"# VOLDEMORT JR (id=50) - jue 28/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 11:06
+### Comentarios generales: Leves ráfagas de viento, pero se notó en el viaje una vibración en el volante de la camioneta, posiblemente hay que hacerle alineación y balanceo 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-131 / Ángulo (RA): 0° N
+   - M102 - SN: M-133 / Ángulo (RA): 90° E
+   - M103 - SN: M-132 / Ángulo (RA): 90° E
+   - Comentarios: 
+",VOLDEMORT JR (id=50),Deployment Módulos,28/09/2023 14:22:07,"Gustavo Rios, Gabriel Morales, Agustin Morales, Maximiliano Maciel",28/09/2023,"Leves ráfagas de viento, pero se notó en el viaje una vibración en el volante de la camioneta, posiblemente hay que hacerle alineación y balanceo ",11:06:00,M-131,0° N,M-133,90° E,M-132,90° E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# VANESA JR (id=27) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 12:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento, en ese momento moderado.
+",VANESA JR (id=27),Mantenimiento general,29/09/2023 14:53:56,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,12:15:00,,,,,,,,,,,,,,,,,,,"Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento, en ese momento moderado.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# MUONES JR (id=54) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 12:50
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento en ese momento.
+",MUONES JR (id=54),Mantenimiento general,29/09/2023 14:55:29,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,12:50:00,,,,,,,,,,,,,,,,,,,Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento en ese momento.,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# ALBERTO JR (id=28) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 13:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento, en ese momento moderado.
+",ALBERTO JR (id=28),Mantenimiento general,29/09/2023 14:56:36,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,13:15:00,,,,,,,,,,,,,,,,,,,"Se realizó marcado de pozos para siguiente Deployment de módulos. Empezó a llegar viento, en ese momento moderado.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# VOLDEMORT JR (id=50) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:20
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: 
+",VOLDEMORT JR (id=50),Deployment Cañerías,29/09/2023 15:01:57,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,10:20:00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# GUILI JR (id=47) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 11:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: 
+",GUILI JR (id=47),Deployment Cañerías,29/09/2023 15:02:39,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,11:00:00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# PIPI JR (id=99) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 11:20
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: 
+",PIPI JR (id=99),Deployment Cañerías,29/09/2023 15:03:26,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,11:20:00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 29-09-2023,"# ROSELLA (id=11) - vie 29/09/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 12:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: 
+",ROSELLA (id=11),Deployment Cañerías,29/09/2023 15:04:05,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",29/09/2023,,12:00:00,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 03-10-2023,"# VALENTIN C (id=1768) - mar 03/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 09:30
+### Comentarios generales: Camioneta: OK          Clima: Nublado 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Todo perfecto. Sin comentarios 
+",VALENTIN C (id=1768),Cableado de Superficie,3/10/2023 15:02:20,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",3/10/2023,Camioneta: OK          Clima: Nublado ,9:30:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,Si,,,,,Todo perfecto. Sin comentarios ,,,,
+Salida a Campo AMIGA - 04-10-2023,"# VALENTIN C (id=1768) - mié 04/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 10:19
+### Comentarios generales: Clima: Nublado.   camioneta: Ok 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Chequeamos T1- M102 porque no estaba en funcionamiento. Quedó andando. 
+",VALENTIN C (id=1768),Mantenimiento general,4/10/2023 14:46:53,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",4/10/2023,Clima: Nublado.   camioneta: Ok ,10:19:00,,,,,,,,,,,,,,,,,,,Chequeamos T1- M102 porque no estaba en funcionamiento. Quedó andando. ,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 04-10-2023,"# ROSALIA (id=695) - mié 04/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 11:55
+### Comentarios generales: Clima: Nublado.     Camioneta: Ok 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN 174
+   - M101 instalado por: Nicolas Sepúlveda
+   - M102 - SN del ekit: SN 175
+   - M102 instalado por: Luciana Torres
+   - M103 - SN del ekit: SN159
+   - M103 instalado por: Agustin Morales
+   - Comentarios: Quedó todo perfecto. Posición sin superficie
+",ROSALIA (id=695),Deployment E-Kits,4/10/2023 14:49:26,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",4/10/2023,Clima: Nublado.     Camioneta: Ok ,11:55:00,,,,,,,,,,,,,,SN 174,SN 175,SN159,,,,,,,,,,,,,,,,No,,,,,Nicolas Sepúlveda,Luciana Torres,Agustin Morales,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,Quedó todo perfecto. Posición sin superficie,,,,,
+Salida a Campo AMIGA - 06-10-2023,"# GIORGIO MA (id=1766) - vie 06/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Agustin Morales, Nicolás Leal
+### Reporta: Nicolás Leal
+### Hora: 11:30
+### Comentarios generales: Camioneta Ok, viento moderado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Intermedio
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Ekit 101 viejo: 138 --> Nuevo: 151
+   - Ekit 103 viejo: 151 --> Nuevo: 138
+   - Descripción de la tarea: Intensidad promedio baja, se propuso realizar un enroque de eKits entre Giorgio Matthiae m101 y Giorgio Matthiae m103 para analizar el comportamiento tanto en intensidad y ancho de pulsos para descartar posibles problemas mecánicos y analizar las configuraciones de cada una.
+",GIORGIO MA (id=1766),Mantenimiento general,6/10/2023 13:26:48,"Gustavo Rios, Agustin Morales, Nicolás Leal",6/10/2023,"Camioneta Ok, viento moderado ",11:30:00,,,,,,,,,,,,,,,,,,,"Intensidad promedio baja, se propuso realizar un enroque de eKits entre Giorgio Matthiae m101 y Giorgio Matthiae m103 para analizar el comportamiento tanto en intensidad y ancho de pulsos para descartar posibles problemas mecánicos y analizar las configuraciones de cada una.",138,151,,151,,138,,,,,,,No,,,,,,,,,Leve,Sin erosión,Intermedio,Nicolás Leal,,https://drive.google.com/open?id=1bUj73a-OVdJ4CI9a4mD2wsc6sf5FBJAn,,,,,,,,
+Salida a Campo AMIGA - 10-10-2023,"# ROSALIA (id=695) - mar 10/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Maximiliano Maciel
+### Reporta: Luciana Torres
+### Hora: 09:45
+### Comentarios generales: Clima: Viento fuerte         Camioneta: Ok. 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Todo perfecto, sin comentarios. Además, quedó con cámaras. 
+",ROSALIA (id=695),Cableado de Superficie,10/10/2023 14:29:20,"Gabriel Morales, Luciana Torres, Maximiliano Maciel",10/10/2023,Clima: Viento fuerte         Camioneta: Ok. ,9:45:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,Si,,,,,"Todo perfecto, sin comentarios. Además, quedó con cámaras. ",,,,
+Salida a Campo AMIGA - 11-10-2023,"# GUILI JR (id=47) - mié 11/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda
+### Reporta: Maximiliano Maciel
+### Hora: 09:55
+### Comentarios generales: Ráfagas de viento fuertes
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN 189
+   - M101 instalado por: Agustin Morales
+   - M102 - SN del ekit: SN 0176
+   - M102 instalado por: Nicolas Sepúlveda
+   - M103 - SN del ekit: SN 156
+   - M103 instalado por: Maximiliano Maciel
+   - Comentarios: 
+",GUILI JR (id=47),Deployment E-Kits,11/10/2023 14:24:12,"Agustin Morales, Maximiliano Maciel, Nicolas Sepúlveda",11/10/2023,Ráfagas de viento fuertes,9:55:00,,,,,,,,,,,,,,SN 189,SN 0176,SN 156,,,,,,,,,,,,,,,,No,,,,,Agustin Morales,Nicolas Sepúlveda,Maximiliano Maciel,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 12-10-2023,"# PIPI JR (id=99) - jue 12/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 09:45
+### Comentarios generales: Clima: Soleado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN165/M-138
+   - M101 instalado por: Luciana Torres
+   - M102 - SN del ekit: SN157/M-140
+   - M102 instalado por: Gabriel Morales
+   - M103 - SN del ekit: SN183/M-139
+   - M103 instalado por: Gustavo Rios
+   - Comentarios: A tener en cuenta que esta posición no tiene cámaras, no tiene realizado potencia, ni superficie. Los ekits quedaron colocados perfectos con sus macs correspondientes. Lo demás, salió todo perfecto. 
+",PIPI JR (id=99),Deployment E-Kits,12/10/2023 15:03:03,"Gustavo Rios, Gabriel Morales, Luciana Torres",12/10/2023,Clima: Soleado ,9:45:00,,,,,,,,,,,,,,SN165/M-138,SN157/M-140,SN183/M-139,,,,,,,,,,,,,,,,No,,,,,Luciana Torres,Gabriel Morales,Gustavo Rios,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,"A tener en cuenta que esta posición no tiene cámaras, no tiene realizado potencia, ni superficie. Los ekits quedaron colocados perfectos con sus macs correspondientes. Lo demás, salió todo perfecto. ",,,,,
+Salida a Campo AMIGA - 19-10-2023,"# ROSELLA (id=11) - jue 19/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales
+### Reporta: Gabriel Morales
+### Hora: 10:00
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: 186
+   - M101 instalado por: Gustavo Rios
+   - M102 - SN del ekit: 164
+   - M102 instalado por: Gabriel Morales
+   - M103 - SN del ekit: 064
+   - M103 instalado por: Gustavo Rios
+   - Comentarios: 
+",ROSELLA (id=11),Deployment E-Kits,19/10/2023 15:33:34,"Gustavo Rios, Gabriel Morales",19/10/2023,,10:00:00,,,,,,,,,,,,,,186,164,064,,,,,,,,,,,,,,,,No,,,,,Gustavo Rios,Gabriel Morales,Gustavo Rios,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 19-10-2023,"# TRAUDEL (id=819) - jue 19/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales
+### Reporta: Gabriel Morales
+### Hora: 12:50
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Radio apagada. Voltajes de baterías muy bajos , aparentemente es cambio de regulador y baterías.
+Bat N1:SN0093-11,74 v
+Bat N2: SN0096- 11,79 v 
+Panel en regulador: 17,80 v
+Baterías en regulador: 23,53 v
+Carga: 22,87 v
+Panel desconectado: 40,86 v 
+Se dejó la posición con térmica baja.
+Cuando llegamos el indicador LED rojo estaba fijo, desconectamos, volvimos a conectar ,parpadeo un rato. Y antes de volver ,volvió a quedar fijo.
+",TRAUDEL (id=819),Mantenimiento general,19/10/2023 15:40:47,"Gustavo Rios, Gabriel Morales",19/10/2023,,12:50:00,,,,,,,,,,,,,,,,,,,"Radio apagada. Voltajes de baterías muy bajos , aparentemente es cambio de regulador y baterías.
+Bat N1:SN0093-11,74 v
+Bat N2: SN0096- 11,79 v 
+Panel en regulador: 17,80 v
+Baterías en regulador: 23,53 v
+Carga: 22,87 v
+Panel desconectado: 40,86 v 
+Se dejó la posición con térmica baja.
+Cuando llegamos el indicador LED rojo estaba fijo, desconectamos, volvimos a conectar ,parpadeo un rato. Y antes de volver ,volvió a quedar fijo.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 20-10-2023,"# TRAUDEL (id=819) - vie 20/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 10:31
+### Comentarios generales: Clima:Nublado  
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Regulador viejo: 18170211 --> Nuevo: 18170291
+   - Descripción de la tarea: Realizamos cambio de regulador, ya que el que estaba no funcionaba. Además, chequeamos baterías, ya que tenían una potencia muy baja. 
+Colocamos el regulador nuevo: 18170291. 
+Las baterías empezaron a cargar muy lentamente ya que el día no ayudaba. Recibimos ayuda de Óscar y Raúl, ya que el tanque está caído, y le están solucionando el problema. 
+",TRAUDEL (id=819),Mantenimiento general,20/10/2023 14:47:04,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",20/10/2023,Clima:Nublado  ,10:31:00,,,,,,,,,,,,,,,,,,,"Realizamos cambio de regulador, ya que el que estaba no funcionaba. Además, chequeamos baterías, ya que tenían una potencia muy baja. 
+Colocamos el regulador nuevo: 18170291. 
+Las baterías empezaron a cargar muy lentamente ya que el día no ayudaba. Recibimos ayuda de Óscar y Raúl, ya que el tanque está caído, y le están solucionando el problema. ",,,,,,,,,18170211,18170291,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 20-10-2023,"# PETER MAZUR (id=1765) - vie 20/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 11:44
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Chequeamos cableado, y además conectamos M-102. Lo demás estaba todo perfecto. 
+",PETER MAZUR (id=1765),Mantenimiento general,20/10/2023 14:49:19,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",20/10/2023,Clima: nublado ,11:44:00,,,,,,,,,,,,,,,,,,,"Chequeamos cableado, y además conectamos M-102. Lo demás estaba todo perfecto. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 20-10-2023,"# ABELARDO (id=707) - vie 20/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 11:56
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Ekit 103 viejo: SN 0150 --> Nuevo: SN 0117
+   - Descripción de la tarea: Realizamos cambio de ekit en M-103 
+",ABELARDO (id=707),Mantenimiento general,20/10/2023 14:51:05,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",20/10/2023,Clima: nublado ,11:56:00,,,,,,,,,,,,,,,,,,,Realizamos cambio de ekit en M-103 ,,,,SN 0150,,SN 0117,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 25-10-2023,"# TRAUDEL (id=819) - mié 25/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Maximiliano Maciel
+### Reporta: Maximiliano Maciel
+### Hora: 09:45
+### Comentarios generales: Día nublado con brisa moderada 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó mantenimiento correctivo para lograr hacer funcionar Traudel.
+Aparentemente era mal contacto de parte de las fichas y a su vez se realizó testeo y cambio de baterías para descartar posibles fallas.
+Cambio de baterías
+Retiradas
+0093
+0096
+Colocadas
+0128
+0122
+",TRAUDEL (id=819),Mantenimiento general,25/10/2023 14:52:26,"Gustavo Rios, Gabriel Morales, Maximiliano Maciel",25/10/2023,Día nublado con brisa moderada ,9:45:00,,,,,,,,,,,,,,,,,,,"Se realizó mantenimiento correctivo para lograr hacer funcionar Traudel.
+Aparentemente era mal contacto de parte de las fichas y a su vez se realizó testeo y cambio de baterías para descartar posibles fallas.
+Cambio de baterías
+Retiradas
+0093
+0096
+Colocadas
+0128
+0122",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Maximiliano Maciel,,,,,,,,,,
+Salida a Campo AMIGA - 26-10-2023,"# PETER MAZUR (id=1765) - jue 26/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Nicolas Sepúlveda
+### Hora: 10:12
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de cableado, dónde se observo que el cableado del módulo 102 (T1 y poe) se encontraban dañados, se retiró el mismo y se hizo colocación de unos nuevos.
+",PETER MAZUR (id=1765),Mantenimiento general,26/10/2023 15:15:31,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",26/10/2023,,10:12:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de cableado, dónde se observo que el cableado del módulo 102 (T1 y poe) se encontraban dañados, se retiró el mismo y se hizo colocación de unos nuevos.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Nicolas Sepúlveda,,,,,,,,,,
+Salida a Campo AMIGA - 27-10-2023,"# LOCOS (id=1627) - vie 27/10/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales
+### Reporta: Gustavo Rios
+### Hora: 10:00
+### Comentarios generales: Cerca del mediodía empezó a llegar viento muy fuerte, la cual impidió seguir trabajando cómodamente en la posición.
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Todo el trabajo adentro del tanque se alcanzó a realizar antes del viento, la cual evita que entre tierra dentro de tanque. Después, el trabajo restante se hizo después, durante el viento, pero quedó el cableado mallado de superficie. Falta llevar y colocar ekits, crimpear cables de módulos y conectar todo.
+",LOCOS (id=1627),Cableado de Superficie,27/10/2023 14:26:18,"Gustavo Rios, Gabriel Morales",27/10/2023,"Cerca del mediodía empezó a llegar viento muy fuerte, la cual impidió seguir trabajando cómodamente en la posición.",10:00:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,Si,,,,,"Todo el trabajo adentro del tanque se alcanzó a realizar antes del viento, la cual evita que entre tierra dentro de tanque. Después, el trabajo restante se hizo después, durante el viento, pero quedó el cableado mallado de superficie. Falta llevar y colocar ekits, crimpear cables de módulos y conectar todo.",,,,
+Salida a Campo AMIGA - 03-11-2023,"# ESPERANZA (id=1625) - vie 03/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Agustin Morales
+### Hora: 10:00
+### Comentarios generales: Todo bien
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Se realizó el cableado de superficie y también fuimos a Peter Mazur a realizar una tarea extra (Aumentar la presión del botellón de gas de MARTA), salió todo bien, se dejó todo ordenado para que la próxima visita se bajen electrónicas y ya se levante la posición
+",ESPERANZA (id=1625),Cableado de Superficie,3/11/2023 14:22:31,"Gustavo Rios, Gabriel Morales, Agustin Morales",3/11/2023,Todo bien,10:00:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Agustin Morales,Si,,,,,"Se realizó el cableado de superficie y también fuimos a Peter Mazur a realizar una tarea extra (Aumentar la presión del botellón de gas de MARTA), salió todo bien, se dejó todo ordenado para que la próxima visita se bajen electrónicas y ya se levante la posición",,,,
+Salida a Campo AMIGA - 24-11-2023,"# ESPERANZA (id=1625) - vie 24/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:45
+### Comentarios generales: Clima: nublado.    
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: 218
+   - M101 instalado por: Luciana Torres
+   - M102 - SN del ekit: 216
+   - M102 instalado por: Gabriel Morales
+   - M103 - SN del ekit: 219
+   - M103 instalado por: Nicolas Sepúlveda
+   - Comentarios: Levantamos térmica 11:20.  Todo Ok! 
+",ESPERANZA (id=1625),Deployment E-Kits,24/11/2023 14:38:10,"Gabriel Morales, Luciana Torres, Nicolas Sepúlveda",24/11/2023,Clima: nublado.    ,9:45:00,,,,,,,,,,,,,,218,216,219,,,,,,,,,,,,,,,,Si,,,,,Luciana Torres,Gabriel Morales,Nicolas Sepúlveda,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,Levantamos térmica 11:20.  Todo Ok! ,,,,,
+Salida a Campo AMIGA - 28-11-2023,"# VANESA JR (id=27) - mar 28/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales, Gabriel Diaz 
+### Reporta: Gabriel Morales
+### Hora: 09:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-151  / Ángulo (RA): 1° N
+   - M102 - SN: M-153 / Ángulo (RA): 90° E
+   - M103 - SN: M-152 / Ángulo (RA): 90° E
+   - Comentarios: 
+",VANESA JR (id=27),Deployment Módulos,28/11/2023 13:53:06,"Gustavo Rios, Gabriel Morales, Agustin Morales, Gabriel Diaz ",28/11/2023,,9:30:00,M-151 ,1° N,M-153,90° E,M-152,90° E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 29-11-2023,"# ALBERTO JR (id=28) - mié 29/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz 
+### Reporta: Gabriel Morales
+### Hora: 09:15
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Módulos
+   - M101 - SN: M-148 / Ángulo (RA): 0° N
+   - M102 - SN: M-150 / Ángulo (RA): 89° E
+   - M103 - SN: M-149 / Ángulo (RA): 89° E
+   - Comentarios: 
+",ALBERTO JR (id=28),Deployment Módulos,29/11/2023 12:40:05,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz ",29/11/2023,,9:15:00,M-148,0° N,M-150,89° E,M-149,89° E,,,,,,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 29-11-2023,"# CATHERINA (id=12) - mié 29/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz
+### Reporta: Gabriel Morales
+### Hora: 10:40
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Distribuidora vieja: SN-0055 --> Nuevo: SN-0062
+   - Descripción de la tarea: Chequeo de T1 de distribuidora a UUB , Cambio de distribuidora ,chequeo cable Eth de distribuidora a radio
+",CATHERINA (id=12),Mantenimiento general,29/11/2023 12:45:52,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz",29/11/2023,,10:40:00,,,,,,,,,,,,,,,,,,,"Chequeo de T1 de distribuidora a UUB , Cambio de distribuidora ,chequeo cable Eth de distribuidora a radio",,,,,,,SN-0055,SN-0062,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 29-11-2023,"# TRAUDEL (id=819) - mié 29/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz
+### Reporta: Gustavo Rios
+### Hora: 11:25
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Traudel:
+Se pasó a chequear el voltaje de baterías que tenían bajo voltaje, para ver en qué condición se encontraban:
+La térmica estaba baja, con baterías cargandose.
+Bat 1: 13,57 v
+Bat 2: 13,60 v
+Bat total: 27,20 v
+Regulador panel: 41,37 v
+Regulador bat: 27,15 v
+Carga: 27,15 v
+- Se levantó térmica y prendió radio: 11:25
+Chequeo de voltaje con térmica arriba:
+Regulador panel: 39,41 v
+Regulador bat: 27,16 v
+Carga: 27,16 v.
+Las baterías se encontraban cargándose en buen estado en ese momento, accedimos a levantar térmica y dejar la estación en funcionamiento.
+",TRAUDEL (id=819),Mantenimiento general,29/11/2023 17:59:56,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz",29/11/2023,,11:25:00,,,,,,,,,,,,,,,,,,,"Traudel:
+Se pasó a chequear el voltaje de baterías que tenían bajo voltaje, para ver en qué condición se encontraban:
+La térmica estaba baja, con baterías cargandose.
+Bat 1: 13,57 v
+Bat 2: 13,60 v
+Bat total: 27,20 v
+Regulador panel: 41,37 v
+Regulador bat: 27,15 v
+Carga: 27,15 v
+- Se levantó térmica y prendió radio: 11:25
+Chequeo de voltaje con térmica arriba:
+Regulador panel: 39,41 v
+Regulador bat: 27,16 v
+Carga: 27,16 v.
+Las baterías se encontraban cargándose en buen estado en ese momento, accedimos a levantar térmica y dejar la estación en funcionamiento.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 29-11-2023,"# CONSTANZA (id=734) - mié 29/11/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz 
+### Reporta: Gustavo Rios
+### Hora: 11:10
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Pasamos a la estación a ver el estado de la antena que el viento había dañado unos días atrás. Logramos ver qué el viento había cortado el cable de antena y antena de su soporte, dejándola tirada a unas 50 m aproximadamente de la posición. Logramos traerla, y dejar previsto la lista de reparación y repuestos para su próxima visita.
+",CONSTANZA (id=734),Mantenimiento general,29/11/2023 18:04:50,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda, Gabriel Diaz ",29/11/2023,,11:10:00,,,,,,,,,,,,,,,,,,,"Pasamos a la estación a ver el estado de la antena que el viento había dañado unos días atrás. Logramos ver qué el viento había cortado el cable de antena y antena de su soporte, dejándola tirada a unas 50 m aproximadamente de la posición. Logramos traerla, y dejar previsto la lista de reparación y repuestos para su próxima visita.",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,,,,,,,
+Salida a Campo AMIGA - 01-12-2023,"# MUONES JR (id=54) - vie 01/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 08:15
+### Comentarios generales: Clima: Soleado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Todo okey. Sin cámaras, sin potencia. 
+",MUONES JR (id=54),Deployment Cañerías,1/12/2023 12:13:41,"Gustavo Rios, Gabriel Morales, Luciana Torres",1/12/2023,Clima: Soleado ,8:15:00,,,,,,,,,,,"Todo okey. Sin cámaras, sin potencia. ",,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 01-12-2023,"# ALBERTO JR (id=28) - vie 01/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 09:30
+### Comentarios generales: Soleado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Sin cámaras, sin potencia. Todo okey 
+",ALBERTO JR (id=28),Deployment Cañerías,1/12/2023 12:14:42,"Gustavo Rios, Gabriel Morales, Luciana Torres",1/12/2023,Soleado ,9:30:00,,,,,,,,,,,"Sin cámaras, sin potencia. Todo okey ",,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 01-12-2023,"# VANESA JR (id=27) - vie 01/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 10:15
+### Comentarios generales: Soleado
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Cañerías
+   - Comentarios: Sin potencia ni cámaras 
+",VANESA JR (id=27),Deployment Cañerías,1/12/2023 12:15:34,"Gustavo Rios, Gabriel Morales, Luciana Torres",1/12/2023,Soleado,10:15:00,,,,,,,,,,,Sin potencia ni cámaras ,,,,,,,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 05-12-2023,"# PEA (id=698) - mar 05/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 12:30
+### Comentarios generales: Clima: nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Chequeamos M101, crimpeamos Poe y T1 porque los dos largaban falla. 
+",PEA (id=698),Mantenimiento general,5/12/2023 13:40:52,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",5/12/2023,Clima: nublado ,12:30:00,,,,,,,,,,,,,,,,,,,"Chequeamos M101, crimpeamos Poe y T1 porque los dos largaban falla. ",,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 05-12-2023,"# LOCOS (id=1627) - mar 05/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 10:00
+### Comentarios generales: Clima nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN-211
+   - M101 instalado por: Luciana Torres
+   - M102 - SN del ekit: SN-197
+   - M102 instalado por: Agustin Morales
+   - M103 - SN del ekit: SN-226
+   - M103 instalado por: Nicolas Sepúlveda
+   - Comentarios: Todo perfecto. Con cableado mallado, sin cámaras. 
+",LOCOS (id=1627),Deployment E-Kits,5/12/2023 13:44:25,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",5/12/2023,Clima nublado ,10:00:00,,,,,,,,,,,,,,SN-211,SN-197,SN-226,,,,,,,,,,,,,,,,No,,,,,Luciana Torres,Agustin Morales,Nicolas Sepúlveda,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,"Todo perfecto. Con cableado mallado, sin cámaras. ",,,,,
+Salida a Campo AMIGA - 07-12-2023,"# VANESA JR (id=27) - jue 07/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:15
+### Comentarios generales: Clima: soleado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: SN204
+   - M101 instalado por: Agustin Morales
+   - M102 - SN del ekit: SN210
+   - M102 instalado por: Luciana Torres
+   - M103 - SN del ekit: SN207
+   - M103 instalado por: Nicolas Sepúlveda
+   - Comentarios: No tiene superficie, no tiene cámaras. 
+",VANESA JR (id=27),Deployment E-Kits,7/12/2023 12:37:46,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",7/12/2023,Clima: soleado ,9:15:00,,,,,,,,,,,,,,SN204,SN210,SN207,,,,,,,,,,,,,,,,No,,,,,Agustin Morales,Luciana Torres,Nicolas Sepúlveda,,Leve,Sin erosión,Fácil,Luciana Torres,,,,,"No tiene superficie, no tiene cámaras. ",,,,,
+Salida a Campo AMIGA - 12-12-2023,"# VANESA JR (id=27) - mar 12/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Gustavo Rios
+### Hora: 09:30
+### Comentarios generales: 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: 1021303031514
+   - SN Battery Box: 50
+   - SN Regulador: 18170207
+   - SN Distribuidora: 0042
+   - SN Batería 1: 127
+   - SN Batería 2: 124
+   - Instalación de térmica: Si
+   - Comentarios: Sin comentarios. Posición lista para realizar cableado de superficie, ya con ekits instalados.
+
+- Batería 1= 12,53 V
+- Batería 2= 13,92 V
+- Panel= 27,01 V
+- Baterías = 26,77 V
+- Carga= 26,85 V
+",VANESA JR (id=27),Deployment Potencia,12/12/2023 14:35:44,"Gustavo Rios, Gabriel Morales, Agustin Morales",12/12/2023,,9:30:00,,,,,,,1021303031514,18170207,127,124,,50,Si,,,,0042,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,,,,"Sin comentarios. Posición lista para realizar cableado de superficie, ya con ekits instalados.
+
+- Batería 1= 12,53 V
+- Batería 2= 13,92 V
+- Panel= 27,01 V
+- Baterías = 26,77 V
+- Carga= 26,85 V",,,,,,
+Salida a Campo AMIGA - 19-12-2023,"# VANESA JR (id=27) - mar 19/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda
+### Reporta: Gustavo Rios
+### Hora: 09:20
+### Comentarios generales: Clima muy nublado, con probabilidad de lluvia. Cercana a las 11 ha empezó a lloviznar, tuvimos que terminar el trabajo y cerrar por precaución.
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Se realizó cableado sin inconvenientes. Por cuestiones climáticas tuvimos que realizar el trabajo un poco más rápido de lo normal, en caso que haya que corregir algo, primeramente chequear los crimpeados. Ya quedó en funcionamiento la posición con térmica levantada.
+",VANESA JR (id=27),Cableado de Superficie,19/12/2023 13:29:59,"Gustavo Rios, Gabriel Morales, Nicolas Sepúlveda",19/12/2023,"Clima muy nublado, con probabilidad de lluvia. Cercana a las 11 ha empezó a lloviznar, tuvimos que terminar el trabajo y cerrar por precaución.",9:20:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Gustavo Rios,Si,,,,,"Se realizó cableado sin inconvenientes. Por cuestiones climáticas tuvimos que realizar el trabajo un poco más rápido de lo normal, en caso que haya que corregir algo, primeramente chequear los crimpeados. Ya quedó en funcionamiento la posición con térmica levantada.",,,,
+Salida a Campo AMIGA - 20-12-2023,"# GUILI JR (id=47) - mié 20/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:05
+### Comentarios generales: Clima: Nublado 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: M1031303022795
+   - SN Battery Box: N°26
+   - SN Regulador: 14320573
+   - SN Distribuidora: 0041
+   - SN Batería 1: 0076
+   - SN Batería 2: 0071
+   - Instalación de térmica: Si
+   - Comentarios: Todo okey. Falta realizar superficie. Si tiene cámaras 
+",GUILI JR (id=47),Deployment Potencia,20/12/2023 14:01:20,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",20/12/2023,Clima: Nublado ,9:05:00,,,,,,,M1031303022795,14320573,0076,0071,,N°26,Si,,,,0041,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,Todo okey. Falta realizar superficie. Si tiene cámaras ,,,,,,
+Salida a Campo AMIGA - 20-12-2023,"# FRANQUITO (id=1776) - mié 20/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 12:33
+### Comentarios generales: Clima: soleado 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Leve
+- Acceso: Intermedio
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Nos trasladamos a la posición porque estaba caído. Se encontraba con la conexión de batery a batery rota. Además,  no tiene la tapa del domo. Quedó al aire libre, con un recubrimiento de bolsas.
+Luego, reiniciamos la posición completa y volvió a funcionar. 
+",FRANQUITO (id=1776),Mantenimiento general,20/12/2023 14:05:37,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",20/12/2023,Clima: soleado ,12:33:00,,,,,,,,,,,,,,,,,,,"Nos trasladamos a la posición porque estaba caído. Se encontraba con la conexión de batery a batery rota. Además,  no tiene la tapa del domo. Quedó al aire libre, con un recubrimiento de bolsas.
+Luego, reiniciamos la posición completa y volvió a funcionar. ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Leve,Intermedio,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 21-12-2023,"# GUILI JR (id=47) - jue 21/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:09
+### Comentarios generales: Clima: soleado.   Camioneta: no le funciona el aire. 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Leve
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Cableado de Superficie
+   - Cableado: T1, Serie, Power, Eth (x4), Eth Radio - UUB (Cable corto)
+   - Se colocó cable de tierra entre BBox de AMIGA y SD?: Si
+   - Comentarios: Quedó funcionando. Tiene cámaras 
+",GUILI JR (id=47),Cableado de Superficie,21/12/2023 14:00:45,"Gabriel Morales, Luciana Torres, Nicolas Sepúlveda",21/12/2023,Clima: soleado.   Camioneta: no le funciona el aire. ,9:09:00,,,,,,,,,,,,,,,,,,"T1, Serie, Power, Eth (x4), Eth Radio - UUB (Cable corto)",,,,,,,,,,,,,,Si,,,,,,,,,Leve,Leve,Fácil,Luciana Torres,Si,,,,,Quedó funcionando. Tiene cámaras ,,,,
+Salida a Campo AMIGA - 21-12-2023,"# FRANQUITO (id=1776) - jue 21/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gabriel Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 12:05
+### Comentarios generales: Clima: soleado. Camioneta beige, no le funciona el aire. 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Intermedio
+- Acceso: Intermedio
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Realizamos reparación de cañerías, de batery a batery. Colocamos tapa del domo. 
+",FRANQUITO (id=1776),Mantenimiento general,21/12/2023 14:02:21,"Gabriel Morales, Luciana Torres, Nicolas Sepúlveda",21/12/2023,"Clima: soleado. Camioneta beige, no le funciona el aire. ",12:05:00,,,,,,,,,,,,,,,,,,,"Realizamos reparación de cañerías, de batery a batery. Colocamos tapa del domo. ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Intermedio,Intermedio,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 22-12-2023,"# MUONES JR (id=54) - vie 22/12/2023
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+### Reporta: Agustin Morales
+### Hora: 09:30
+### Comentarios generales: Camioneta sin aire 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment E-Kits
+   - M101 - SN del ekit: Sn 191
+   - M101 instalado por: Gustavo Rios
+   - M102 - SN del ekit: Sn 147
+   - M102 instalado por: Gabriel Morales
+   - M103 - SN del ekit: Sn 202
+   - M103 instalado por: Agustin Morales
+   - Comentarios: Hoy solamente se bajaron electrónicas, ya que cableado en batery box no se hace por motivos que van a remover el tanque por una ruptura, ya quedaron los 3 ekits instalados.
+",MUONES JR (id=54),Deployment E-Kits,22/12/2023 14:37:46,"Gustavo Rios, Gabriel Morales, Agustin Morales",22/12/2023,Camioneta sin aire ,9:30:00,,,,,,,,,,,,,,Sn 191,Sn 147,Sn 202,,,,,,,,,,,,,,,,No,,,,,Gustavo Rios,Gabriel Morales,Agustin Morales,,Leve,Sin erosión,Fácil,Agustin Morales,,,,,"Hoy solamente se bajaron electrónicas, ya que cableado en batery box no se hace por motivos que van a remover el tanque por una ruptura, ya quedaron los 3 ekits instalados.",,,,,
+Salida a Campo AMIGA - 23-01-2024,"# CATHERINA (id=12) - mar 23/01/2024
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 09:40
+### Comentarios generales: Clima: soleado.  camioneta: OK 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Intermedio
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Levantamos ekits en los 3 módulos, para poder así chequear cableado.  Quedaron funcionando
+M-101/M-103. Posible falla de ekit M-102. 
+",CATHERINA (id=12),Mantenimiento general,23/01/2024 14:33:35,"Agustin Morales, Luciana Torres",23/01/2024,Clima: soleado.  camioneta: OK ,9:40:00,,,,,,,,,,,,,,,,,,,"Levantamos ekits en los 3 módulos, para poder así chequear cableado.  Quedaron funcionando
+M-101/M-103. Posible falla de ekit M-102. ",,,,,,,,,,,,,No,,,,,,,,,Intermedio,Intermedio,Fácil,Luciana Torres,,,,,,,,,,
+Salida a Campo AMIGA - 25-01-2024,"# GUILI JR (id=47) - jue 25/01/2024
+## Salida a Campo - Team AMIGA
+### Team: Gustavo Rios, Gabriel Morales
+### Reporta: Gabriel Morales
+### Hora: 09:50
+### Comentarios generales: 
+### Se apagó UUB?: Si 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Se realizó chequeo de UUB apagada y chequeo de módulo M-101.
+Se procedió a bajar térmica y chequeo de cableado de módulos y superficie en general. Se encontró el problema en el cable del M-101 mal crimpeado.
+En cuanto UUB se realizó chequeo visual y no se encontró falla, se procedió a apagar y chequear fusible y no estaba quemado. 
+Se chequeo todo sistema de potencia. Hubo un inconveniente en el panel ,cuando se conectaba todo bajaba de 40 v a 25 v .
+Se revisaron terminales, fusible y se testeo todo.
+Se apagó y se volvió a prender, chequeamos y quedó funcionando mejor!
+",GUILI JR (id=47),Mantenimiento general,25/01/2024 14:10:13,"Gustavo Rios, Gabriel Morales",25/01/2024,,9:50:00,,,,,,,,,,,,,,,,,,,"Se realizó chequeo de UUB apagada y chequeo de módulo M-101.
+Se procedió a bajar térmica y chequeo de cableado de módulos y superficie en general. Se encontró el problema en el cable del M-101 mal crimpeado.
+En cuanto UUB se realizó chequeo visual y no se encontró falla, se procedió a apagar y chequear fusible y no estaba quemado. 
+Se chequeo todo sistema de potencia. Hubo un inconveniente en el panel ,cuando se conectaba todo bajaba de 40 v a 25 v .
+Se revisaron terminales, fusible y se testeo todo.
+Se apagó y se volvió a prender, chequeamos y quedó funcionando mejor!",,,,,,,,,,,,,Si,,,,,,,,,Leve,Sin erosión,Fácil,Gabriel Morales,,,,,,,,,,
+Salida a Campo AMIGA - 30-01-2024,"# PIPI JR (id=99) - mar 30/01/2024
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres, Nicolas Sepúlveda
+### Reporta: Luciana Torres
+### Hora: 09:15
+### Comentarios generales: Clima: soleado. Camioneta Beige: NO tiene aire. 
+### Se apagó UUB?: No 
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Deployment Potencia
+   - SN Panel Solar: 1021303031330
+   - SN Battery Box: 11
+   - SN Regulador: 18140274
+   - SN Distribuidora: 0063
+   - SN Batería 1: 107
+   - SN Batería 2: 105
+   - Instalación de térmica: Si
+   - Comentarios: Salió todo perfecto. Quedó con cámaras.  Falta realizar superficie
+",PIPI JR (id=99),Deployment Potencia,30/01/2024 13:50:48,"Agustin Morales, Luciana Torres, Nicolas Sepúlveda",30/01/2024,Clima: soleado. Camioneta Beige: NO tiene aire. ,9:15:00,,,,,,,1021303031330,18140274,107,105,,11,Si,,,,0063,,,,,,,,,,,,,,,No,,,,,,,,,Leve,Sin erosión,Fácil,Luciana Torres,,,,Salió todo perfecto. Quedó con cámaras.  Falta realizar superficie,,,,,,
