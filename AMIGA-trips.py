@@ -26,6 +26,8 @@ df['date'] = df['date'].dt.strftime('%Y-%m-%d')
 # Create Streamlit widgets for filtering
 # age_slider = st.slider('Select maximum age:', min_value=0, max_value=100, value=40)
 
+st.markdown("---")
+
 st.markdown("### Posición:")
 
 name_dropdown = st.selectbox("Posición:", np.sort(df['name'].unique()), index=None, placeholder="Seleccionar posición", label_visibility="collapsed")
@@ -38,6 +40,8 @@ else:
 st.markdown("### Tipo de salida:")
 
 type_dropdown = st.selectbox("Tipo de salida:", filtered_by_name['type'].unique(), index=None, placeholder="Seleccionar tipo de salida", label_visibility="collapsed")
+
+st.markdown("---")
 
 st.markdown("### Click en \"Ver informe\"  para ver el reporte de la salida:")
 
@@ -76,5 +80,6 @@ selection = dataframe_with_selections(final_table)
 # st.write("Your selection:")
 
 if len(selection["selected_rows_indices"]) > 0:
+    st.markdown("---")
     md_content = selection["selected_rows"]["content"].iloc[0]
     st.write(md_content)
