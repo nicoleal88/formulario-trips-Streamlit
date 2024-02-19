@@ -2,8 +2,6 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import numpy as np
 
-url = "https://docs.google.com/spreadsheets/d/1YhJjQ8S2XnuOCl-9dg6187vChm0nUYG4UjBj1_vtNVA/edit?usp=sharing"
-
 st.title("Salidas al campo - Team AMIGA")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
@@ -14,7 +12,7 @@ column_indices = [1, 2, 3, 5, 6]
 # Rename the columns
 new_column_names = ['content', 'position(id)', 'type', 'team', 'date']
 
-df = conn.read(spreadsheet=url, usecols=column_indices, names=new_column_names,
+df = conn.read(usecols=column_indices, names=new_column_names,
                  parse_dates=['date'],
                  dayfirst=True,
                  header=0)
