@@ -62,6 +62,7 @@ def dataframe_with_selections(df):
     edited_df = st.data_editor(
         df_with_selections,
         width=800,
+        height=200,
         column_config={"Select": st.column_config.CheckboxColumn(required=True),
                     "content": None,
                     "date": "Fecha",
