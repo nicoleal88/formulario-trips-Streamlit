@@ -115,7 +115,8 @@ def dataframe_with_selections(df):
                     "content": None,
                     "date": "Fecha",
                     "type": "Tipo de Salida",
-                    "Select": "Ver informe"
+                    "Select": "Ver informe",
+                    "name": "Posición"
                     },
         disabled=df.columns,
         hide_index=True,
