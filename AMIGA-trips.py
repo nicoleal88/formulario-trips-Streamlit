@@ -32,29 +32,21 @@ st.markdown("### Posición:")
 
 name_dropdown = st.selectbox("Posición:", np.sort(df['name'].unique()), index=None, placeholder="Seleccionar posición", label_visibility="collapsed")
 
-if name_dropdown is None:
-    filtered_by_name = df
-else:
-    filtered_by_name = df[(df['name'] == name_dropdown)]
-
 st.markdown("### Tipo de salida:")
 
-type_dropdown = st.selectbox("Tipo de salida:", filtered_by_name['type'].unique(), index=None, placeholder="Seleccionar tipo de salida", label_visibility="collapsed")
+type_dropdown = st.selectbox("Tipo de salida:", df['type'].unique(), index=None, placeholder="Seleccionar tipo de salida", label_visibility="collapsed")
 
 st.markdown("---")
 
 st.markdown("### Click en \"Ver informe\"  para ver el reporte de la salida:")
 
-if type_dropdown is None:
-    filtered_by_type = filtered_by_name
-else:
-    filtered_by_type = filtered_by_name[(filtered_by_name['type'] == type_dropdown)]
+if name_dropdown is not None:
+    df = df[df['name'] == name_dropdown]
 
+if type_dropdown is not None:
+    df = df[df['type'] == type_dropdown]
 
-# final_table = filtered_by_type[['date','name', 'id','type']].sort_values(by='date', ascending=False)
-final_table = filtered_by_type[['date','name', 'id','type', 'content']].sort_values(by='date', ascending=False)
-# st.table(final_table)
-
+final_table = df[['date','name', 'id','type', 'content']].sort_values(by='date', ascending=False)
 
 def dataframe_with_selections(df):
     df_with_selections = df.copy()
@@ -77,8 +69,6 @@ def dataframe_with_selections(df):
     return {"selected_rows_indices": selected_indices, "selected_rows": selected_rows}
 
 selection = dataframe_with_selections(final_table)
-
-# st.write("Your selection:")
 
 if len(selection["selected_rows_indices"]) > 0:
     st.markdown("---")
