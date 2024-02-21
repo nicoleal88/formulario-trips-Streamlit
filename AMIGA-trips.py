@@ -3,7 +3,6 @@ from streamlit_gsheets import GSheetsConnection
 import numpy as np
 from datetime import datetime
 
-st.title("REFACTORING BRANCH")
 st.title("Salidas al campo - Team AMIGA")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
