@@ -3,6 +3,10 @@ from streamlit_gsheets import GSheetsConnection
 import numpy as np
 from datetime import datetime
 
+st.set_page_config(
+    page_title="Salidas al campo - AMIGA",
+    page_icon=":wrench:",
+)
 st.title("Salidas al campo - Team AMIGA")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
