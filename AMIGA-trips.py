@@ -38,18 +38,23 @@ max_date = datetime.strptime(df['date'].max(), '%Y-%m-%d')
 # Create Streamlit widgets for filtering
 st.markdown("---")
 
-st.markdown("### Posición:")
+col1, col2 = st.columns(2)
+with col1:
 
-name_dropdown = st.selectbox("Posición:", np.sort(df['name'].unique()), index=None, placeholder="Seleccionar posición", key="name_dropdown", label_visibility="collapsed")
+    st.markdown("### Posición:")
+
+    name_dropdown = st.selectbox("Posición:", np.sort(df['name'].unique()), index=None, placeholder="Seleccionar posición", key="name_dropdown", label_visibility="collapsed")
 
 if name_dropdown is None:
     filtered_by_name = df
 else:
     filtered_by_name = df[(df['name'] == name_dropdown)]
 
-st.markdown("### Tipo de salida:")
+with col2:
 
-type_dropdown = st.selectbox("Tipo de salida:", filtered_by_name['type'].unique(), index=None, placeholder="Seleccionar tipo de salida", key="type_dropdown", label_visibility="collapsed")
+    st.markdown("### Tipo de salida:")
+
+    type_dropdown = st.selectbox("Tipo de salida:", filtered_by_name['type'].unique(), index=None, placeholder="Seleccionar tipo de salida", key="type_dropdown", label_visibility="collapsed")
 
 if type_dropdown is None:
     filtered_by_type = filtered_by_name
@@ -58,11 +63,11 @@ else:
 
 st.markdown("### Intervalo de fechas:")
 
-col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 
-with col1:
+with col3:
     start_date = st.date_input("Desde:", value=min_date, key="start_date")
-with col2:
+with col4:
     end_date = st.date_input("Hasta:", value=max_date, key="end_date")
 
 if start_date is None and end_date is None:
