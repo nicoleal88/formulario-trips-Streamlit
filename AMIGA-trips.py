@@ -43,7 +43,7 @@ empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 # colA.header("Filters")
 # colB.header("Report")
 with colA:
-    st.subheader("Filters", divider="grey")
+    st.header("Filtros", divider="grey")
     col1, col2 = st.columns(2)
     with col1:
 
@@ -104,10 +104,9 @@ with colA:
 
     st.button("Limpiar filtros", on_click=clear_all)
 
-    st.markdown("---")
-
-    st.markdown("### Click en \"Ver informe\"  para ver el reporte de la salida:")
-
+    st.header("Resultados", divider="grey")
+    # st.markdown("### :down_arrow: Click para ver el reporte de la salida:")
+    st.caption("⬇ Click para ver el reporte de la salida")
 
     # Determine the height of the data editor based on the length of the DataFrame
     # height = 200 if len(df) > 5 else None
@@ -122,7 +121,7 @@ with colA:
             hide_index=True,)
     # print(selection)
 with colB:
-    st.subheader("Report", divider="grey")
+    st.header("Reporte", divider="grey")
     # Display the selected report content
     if len(selection["selection"]["rows"]) > 0:
         # print(final_table)
