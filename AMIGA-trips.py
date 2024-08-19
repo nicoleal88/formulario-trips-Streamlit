@@ -45,7 +45,7 @@ lang_content = {
         'results_header': "Results",
         'click_report': "⬇ Click to view the trip report",
         'report_header': "Report",
-        'button_text': "Cambiar a Español :es:"
+        'button_text': "Cambiar a Español 🇦🇷"
     }
 }
 
