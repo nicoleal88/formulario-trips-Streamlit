@@ -79,13 +79,15 @@ with col_title:
 with col_button:
     st.button(lang_content[st.session_state['language']]['button_text'], on_click=switch_language)  # Button to switch language
 st.divider()
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type=GSheetsConnection, ttl=60)
 
 # Specify the column indices you want to select
 column_indices = [1, 2, 3, 5, 6, 54]
 
 # Rename the columns
 new_column_names = ['content', 'position(id)', 'type', 'team', 'date', 'photos']
+
+df = st.empty()
 
 df = conn.read(usecols=column_indices, names=new_column_names,
                parse_dates=['date'],
