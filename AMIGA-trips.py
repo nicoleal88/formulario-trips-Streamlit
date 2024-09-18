@@ -93,8 +93,8 @@ tab1, tab2, tab3 = st.tabs([lang_content[st.session_state['language']]['tab1_tit
                             lang_content[st.session_state['language']]['tab2_title'],
                             lang_content[st.session_state['language']]['tab3_title']])
 with tab1:
-#     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
-    components.iframe("http://127.0.0.1:5500/public/", height=900)
+    components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
+#     components.iframe("http://127.0.0.1:5500/public/", height=900)
 
 
 with tab3: 
