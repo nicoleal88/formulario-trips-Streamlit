@@ -43,7 +43,9 @@ lang_content = {
         'loading_image': "Cargando imagen...",
         'image_load_error': "No se pudo cargar la imagen:",
         'image_link': "Enlace a la imagen",
-        'contains_photos': "Contiene {} 📷"
+        'contains_photos': "Contiene {} 📷",
+        'team_label': "Equipo:",
+        'team_placeholder': "Seleccionar equipo",
     },
     'en': {
         'page_title': "Operations and monitoring - UMD",
@@ -69,7 +71,9 @@ lang_content = {
         'loading_image': "Loading image...",
         'image_load_error': "Failed to load image:",
         'image_link': "Link to image",
-        'contains_photos': "Contains {} 📷"
+        'contains_photos': "Contains {} 📷",
+        'team_label': "Team:",
+        'team_placeholder': "Select team",
     }
 }
 
@@ -270,11 +274,11 @@ with tab2:
     conn = st.connection("belu", type=GSheetsConnection)
 
     # Specify the column indices you want to select
-    column_indices = [1, 2, 3, 6, 10, 11]
+    column_indices = [1, 2, 3, 6, 9, 10, 11]
 
     # Rename the columns
     new_column_names = ['position', 'modules', 'date_report',
-                        'summary', 'status', 'report']
+                        'summary', 'team', 'status', 'report']
 
     df = conn.read(usecols=column_indices, names=new_column_names,
                    parse_dates=['date_report'],
@@ -298,7 +302,7 @@ with tab2:
 
     with colA:
         st.header(lang_content[st.session_state['language']]['filters_header'], divider="grey")
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
 
         with col1:
             st.markdown(f"### {lang_content[st.session_state['language']]['position_label']}")
@@ -312,39 +316,52 @@ with tab2:
         else:
             filtered_by_name = df[(df['position'] == name_dropdown)]
 
+            
         with col2:
             st.markdown(f"### {lang_content[st.session_state['language']]['type_label']}")
             type_dropdown = st.selectbox(lang_content[st.session_state['language']]['type_label'],
-                                         filtered_by_name['status'].unique(), index=None,
-                                         placeholder=lang_content[st.session_state['language']]['type_placeholder'],
-                                         key="type_dropdown_2", label_visibility="collapsed")
+                                            filtered_by_name['status'].unique(), index=None,
+                                            placeholder=lang_content[st.session_state['language']]['type_placeholder'],
+                                            key="type_dropdown_2", label_visibility="collapsed")
+
+        with col3:
+            st.markdown(f"### {lang_content[st.session_state['language']]['team_label']}")
+            team_dropdown = st.selectbox(lang_content[st.session_state['language']]['team_label'],
+                                            np.sort(filtered_by_name['team'].unique()), index=None,
+                                            placeholder=lang_content[st.session_state['language']]['team_placeholder'],
+                                            key="team_dropdown_2", label_visibility="collapsed")
 
         if type_dropdown is None:
             filtered_by_type = filtered_by_name
         else:
             filtered_by_type = filtered_by_name[(filtered_by_name['status'] == type_dropdown)]
 
+        if team_dropdown is None:
+            filtered_by_team = filtered_by_type
+        else:
+            filtered_by_team = filtered_by_type[(filtered_by_type['team'] == team_dropdown)]
+
         st.markdown(f"### {lang_content[st.session_state['language']]['date_interval_label']}")
 
-        col3, col4 = st.columns(2)
+        col4, col5 = st.columns(2)
 
-        with col3:
+        with col4:
             start_date = st.date_input(lang_content[st.session_state['language']]['from_label'],
                                        value=min_date, key="start_date_2")
-        with col4:
+        with col5:
             end_date = st.date_input(lang_content[st.session_state['language']]['to_label'],
                                      value=max_date, key="end_date_2")
 
         if start_date is None and end_date is None:
-            filtered_by_date = filtered_by_type
+            filtered_by_date = filtered_by_team
 
         if start_date is not None and end_date is not None:
-            filtered_by_date = filtered_by_type[(filtered_by_type.index.values >= start_date.strftime('%Y-%m-%d')) & (filtered_by_type.index.values <= end_date.strftime('%Y-%m-%d'))]
+            filtered_by_date = filtered_by_team[(filtered_by_team.index.values >= start_date.strftime('%Y-%m-%d')) & (filtered_by_team.index.values <= end_date.strftime('%Y-%m-%d'))]
 
-        final_table = filtered_by_date[['date','position', 'modules', 'summary', 'status', 'report']].sort_values('status',ascending=True)
+        final_table = filtered_by_date[['date','position', 'modules', 'summary', 'status', 'team', 'report']].sort_values('status',ascending=True)
         final_table_colA = final_table.loc[final_table['status']!='Complete']
         
-        selections = ["name_dropdown", "type_dropdown"]
+        selections = ["name_dropdown", "type_dropdown", "team_dropdown"]
         def clear_all():
             for i in selections:
                 st.session_state[f'{i}'] = None
