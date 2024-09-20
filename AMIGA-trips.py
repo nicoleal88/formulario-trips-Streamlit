@@ -274,7 +274,7 @@ with tab2:
     conn = st.connection("belu", type=GSheetsConnection)
 
     # Specify the column indices you want to select
-    column_indices = [0, 2, 3, 6, 9, 10, 11]
+    column_indices = [0, 2, 3, 6, 9, 11, 12]
 
     # Rename the columns
     new_column_names = ['position', 'modules', 'date_report',
