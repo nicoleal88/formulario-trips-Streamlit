@@ -70,8 +70,12 @@ lang_content = {
         'filters_header': "Filtros",
         'position_label': "Posición:",
         'position_placeholder': "Seleccionar posición",
-        'type_label': "Estado:",
-        'type_placeholder': "Seleccionar estado del problema",
+        'status_label': "Estado:",
+        'status_placeholder': "Seleccionar estado del problema",
+        'team_label': "Equipo:",
+        'team_placeholder': "Seleccionar equipo",
+        'type_label': "Tipo de salida:",
+        'type_placeholder': "Seleccionar tipo de salida",
         'date_interval_label': "Intervalo de fechas:",
         'from_label': "Desde:",
         'to_label': "Hasta:",
@@ -86,8 +90,6 @@ lang_content = {
         'image_load_error': "No se pudo cargar la imagen:",
         'image_link': "Enlace a la imagen",
         'contains_photos': "Contiene {} 📷",
-        'team_label': "Equipo:",
-        'team_placeholder': "Seleccionar equipo",
     },
     'en': {
         'page_title': "Operations and monitoring - UMD",
@@ -98,8 +100,12 @@ lang_content = {
         'filters_header': "Filters",
         'position_label': "Position:",
         'position_placeholder': "Select position",
-        'type_label': "Status:",
-        'type_placeholder': "Select status of the issue",
+        'status_label': "Status:",
+        'status_placeholder': "Select status of the issue",
+        'team_label': "Team:",
+        'team_placeholder': "Select team",
+        'type_label': "Field Work Type:",
+        'type_placeholder': "Select Field Work Type",
         'date_interval_label': "Date Range:",
         'from_label': "From:",
         'to_label': "To:",
@@ -114,8 +120,6 @@ lang_content = {
         'image_load_error': "Failed to load image:",
         'image_link': "Link to image",
         'contains_photos': "Contains {} 📷",
-        'team_label': "Team:",
-        'team_placeholder': "Select team",
     }
 }
 
@@ -360,10 +364,10 @@ with tab2:
 
             
         with col2:
-            st.markdown(f"### {lang_content[st.session_state['language']]['type_label']}")
-            type_dropdown = st.selectbox(lang_content[st.session_state['language']]['type_label'],
+            st.markdown(f"### {lang_content[st.session_state['language']]['status_label']}")
+            type_dropdown = st.selectbox(lang_content[st.session_state['language']]['status_label'],
                                             filtered_by_name['status'].unique(), index=None,
-                                            placeholder=lang_content[st.session_state['language']]['type_placeholder'],
+                                            placeholder=lang_content[st.session_state['language']]['status_placeholder'],
                                             key="type_dropdown_2", label_visibility="collapsed")
 
         with col3:
