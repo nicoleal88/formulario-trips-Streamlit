@@ -10,7 +10,7 @@ import io
 import time
 
 import hmac
-
+from translations import lang_content
 
 def check_password():
     """Returns `True` if the user had a correct password."""
@@ -59,69 +59,7 @@ if 'language' not in st.session_state:
 def switch_language():
     st.session_state['language'] = 'en' if st.session_state['language'] == 'es' else 'es'    
 
-# Language dependent content
-lang_content = {
-    'es': {
-        'page_title': "Operaciones y monitoreo - AMIGA",
-        'header_title': "Operaciones y monitoreo - AMIGA",
-        'tab1_title': "Mapa",
-        'tab2_title': "Adquisición de datos",
-        'tab3_title': "Salidas al campo",
-        'filters_header': "Filtros",
-        'position_label': "Posición:",
-        'position_placeholder': "Seleccionar posición",
-        'status_label': "Estado:",
-        'status_placeholder': "Seleccionar estado del problema",
-        'team_label': "Equipo:",
-        'team_placeholder': "Seleccionar equipo",
-        'type_label': "Tipo de salida:",
-        'type_placeholder': "Seleccionar tipo de salida",
-        'date_interval_label': "Intervalo de fechas:",
-        'from_label': "Desde:",
-        'to_label': "Hasta:",
-        'clear_filters': "Limpiar filtros",
-        'results_header': "Resultados",
-        'click_report': "⬇ Click para ver el reporte de la salida",
-        'report_header': "Reporte",
-        'button_text': "Switch to English :uk:",
-        'photos_header': "Fotos",
-        'no_photos': "No hay fotos disponibles para esta entrada.",
-        'loading_image': "Cargando imagen...",
-        'image_load_error': "No se pudo cargar la imagen:",
-        'image_link': "Enlace a la imagen",
-        'contains_photos': "Contiene {} 📷",
-    },
-    'en': {
-        'page_title': "Operations and monitoring - UMD",
-        'header_title': "Operations and monitoring - UMD",
-        'tab1_title': "Map",
-        'tab2_title': "Data Acquisition",
-        'tab3_title': "Field trips",
-        'filters_header': "Filters",
-        'position_label': "Position:",
-        'position_placeholder': "Select position",
-        'status_label': "Status:",
-        'status_placeholder': "Select status of the issue",
-        'team_label': "Team:",
-        'team_placeholder': "Select team",
-        'type_label': "Field Work Type:",
-        'type_placeholder': "Select Field Work Type",
-        'date_interval_label': "Date Range:",
-        'from_label': "From:",
-        'to_label': "To:",
-        'clear_filters': "Clear filters",
-        'results_header': "Results",
-        'click_report': "⬇ Click to view the trip report",
-        'report_header': "Report",
-        'button_text': "Cambiar a Español 🇦🇷",
-        'photos_header': "Photos",
-        'no_photos': "No photos available for this entry.",
-        'loading_image': "Loading image...",
-        'image_load_error': "Failed to load image:",
-        'image_link': "Link to image",
-        'contains_photos': "Contains {} 📷",
-    }
-}
+
 
 # Set page configuration
 st.set_page_config(
@@ -236,6 +174,27 @@ with tab3:
 
         st.header(lang_content[st.session_state['language']]['results_header'], divider="grey")
         st.caption(lang_content[st.session_state['language']]['click_report'])
+
+        # Cambia a los filtros guardados en tab3
+        # if 'selected_position' in st.session_state:
+        #     print(st.session_state['selected_position'])
+        #     st.selectbox("Posición", options=np.sort(df['name'].unique()), index=None,
+        #                 key="name_dropdown_1", label_visibility="collapsed",
+        #                 value="CATHERINA")
+            
+        # if 'selected_status' in st.session_state:
+        #     st.selectbox("Estado", options=df['status'].unique(), index=None,
+        #                 key="type_dropdown_1", label_visibility="collapsed",
+        #                 value=st.session_state['selected_status'])
+            
+        # if 'selected_team' in st.session_state:
+        #     st.selectbox("Equipo", options=np.sort(df['team'].unique()), index=None,
+        #                 key="team_dropdown_1", label_visibility="collapsed",
+        #                 value=st.session_state['selected_team'])
+
+        # Borra los filtros después de aplicarlos
+        # for key in ['selected_position']: #, 'selected_status', 'selected_team']:
+        #     st.session_state.pop(key, None)
 
         def photo_formatter(photo_links):
             if isinstance(photo_links, str):
@@ -414,6 +373,15 @@ with tab2:
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
 
+        def go_to_tab3_with_filters():
+                    st.session_state['selected_position'] = st.session_state['name_dropdown_2']
+                    st.session_state['selected_status'] = st.session_state['type_dropdown_2']
+                    st.session_state['selected_team'] = st.session_state['team_dropdown_2']
+                    st.session_state['tab'] = 'tab3'
+                    # print(st.session_state['selected_position'], st.session_state['selected_status'], st.session_state['selected_team'])
+
+        st.button("Ir a Salidas al Campo", on_click=go_to_tab3_with_filters)
+
         st.button(lang_content[st.session_state['language']]['clear_filters'], on_click=clear_all,key='button_2')
 
         st.header(lang_content[st.session_state['language']]['results_header'], divider="grey")
@@ -433,12 +401,13 @@ with tab2:
 
         with colB:
             st.header(lang_content[st.session_state['language']]['report_header'], divider="grey")
-
             if len(selection["selection"]["rows"]) > 0:
                 selected_row = final_table_colA.iloc[selection["selection"]["rows"]]            
                 full_selection = final_table.loc[final_table['position']==selected_row['position'].values[0]]
                 full_selection = full_selection.loc[full_selection['summary']==selected_row['summary'].values[0]]
                 
+                
+
                 if len(full_selection) > 1:                    
                     """ There are several reports about this issue. Choose which one you want to see:"""
                     selection_colB = st.dataframe(full_selection, on_select="rerun", selection_mode="single-row",
