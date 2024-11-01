@@ -2,12 +2,14 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import streamlit.components.v1 as components
 import numpy as np
+import pandas as pd
 from datetime import datetime
 import requests
 import re
 from PIL import Image
 import io
 import time
+import plotly.express as px
 
 import hmac
 from translations import lang_content
@@ -77,9 +79,10 @@ with col_button:
 st.divider()
 
 
-tab1, tab2, tab3 = st.tabs([lang_content[st.session_state['language']]['tab1_title'],
-                            lang_content[st.session_state['language']]['tab2_title'],
-                            lang_content[st.session_state['language']]['tab3_title']])
+tab1, tab2, tab3, tab4 = st.tabs([lang_content[st.session_state['language']]['tab1_title'],
+                                lang_content[st.session_state['language']]['tab2_title'],
+                                lang_content[st.session_state['language']]['tab3_title'],
+                                lang_content[st.session_state['language']]['tab4_title']])
 with tab1:
     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
 #     components.iframe("http://127.0.0.1:5500/public/", height=900)
@@ -431,4 +434,43 @@ with tab2:
                     md_content = selected_row["report"].values[0]
                     with st.container():
                         st.write(md_content)
+
+with tab4:
+    conn = st.connection("stats", type=GSheetsConnection)
+
+    column_indices = [0, 1]
+
+    # Rename the columns
+    new_column_names = ['date', 'UMD_number']
+
+    df = conn.read(usecols=column_indices,
+                   names=new_column_names,
+                   header=None,
+                   dayfirst=True,
+                   skiprows=9).dropna()
+    # df
+    # Format the date column
+    # print(df['date'])
+    # df['date'] = df['date'].dt.strftime('%Y-%m-%d')
+    df['UMD_number'] = df['UMD_number'].astype(int)
+
+    # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+    df['date'] = pd.to_datetime(df['date'], format="%d/%m/%y") 
+
+    # df.sort_values(by='date', inplace=True)
+    # Plot line chart of births over time
+    st.markdown("## Quarterly Stats")
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric(label="UMDs Deployed", value="143", delta="8")
+    col2.metric(label="ekits Deployed", value="134", delta="5")
+    col3.metric(label="Entered ACQ", value="45", delta="3")
+    
+    fig = px.line(
+        df,
+        x="date",
+        y="UMD_number")
+    
+    st.plotly_chart(fig)
 
