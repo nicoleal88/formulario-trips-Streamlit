@@ -175,27 +175,6 @@ with tab3:
         st.header(lang_content[st.session_state['language']]['results_header'], divider="grey")
         st.caption(lang_content[st.session_state['language']]['click_report'])
 
-        # Cambia a los filtros guardados en tab3
-        # if 'selected_position' in st.session_state:
-        #     print(st.session_state['selected_position'])
-        #     st.selectbox("Posición", options=np.sort(df['name'].unique()), index=None,
-        #                 key="name_dropdown_1", label_visibility="collapsed",
-        #                 value="CATHERINA")
-            
-        # if 'selected_status' in st.session_state:
-        #     st.selectbox("Estado", options=df['status'].unique(), index=None,
-        #                 key="type_dropdown_1", label_visibility="collapsed",
-        #                 value=st.session_state['selected_status'])
-            
-        # if 'selected_team' in st.session_state:
-        #     st.selectbox("Equipo", options=np.sort(df['team'].unique()), index=None,
-        #                 key="team_dropdown_1", label_visibility="collapsed",
-        #                 value=st.session_state['selected_team'])
-
-        # Borra los filtros después de aplicarlos
-        # for key in ['selected_position']: #, 'selected_status', 'selected_team']:
-        #     st.session_state.pop(key, None)
-
         def photo_formatter(photo_links):
             if isinstance(photo_links, str):
                 links = re.findall(r'https://drive\.google\.com/open\?id=[^\s,]+', photo_links)
@@ -372,15 +351,6 @@ with tab2:
                 st.session_state[f'{i}'] = None
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
-
-        def go_to_tab3_with_filters():
-                    st.session_state['selected_position'] = st.session_state['name_dropdown_2']
-                    st.session_state['selected_status'] = st.session_state['type_dropdown_2']
-                    st.session_state['selected_team'] = st.session_state['team_dropdown_2']
-                    st.session_state['tab'] = 'tab3'
-                    # print(st.session_state['selected_position'], st.session_state['selected_status'], st.session_state['selected_team'])
-
-        st.button("Ir a Salidas al Campo", on_click=go_to_tab3_with_filters)
 
         st.button(lang_content[st.session_state['language']]['clear_filters'], on_click=clear_all,key='button_2')
 
