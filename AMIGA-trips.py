@@ -436,41 +436,68 @@ with tab2:
                         st.write(md_content)
 
 with tab4:
-    conn = st.connection("stats", type=GSheetsConnection)
+    # Conexión y configuración para obtener el dataframe de stock
+    conn_stock = st.connection("stats_stock", type=GSheetsConnection)
+    column_indices_stock = [0, 1]
+    new_column_names_stock = ['date', 'UMD_number']
 
-    column_indices = [0, 1]
+    # Leer y limpiar el dataframe de stock
+    df_stock = conn_stock.read(usecols=column_indices_stock,
+                               names=new_column_names_stock,
+                               header=None,
+                               dayfirst=True,
+                               skiprows=9).dropna()
+    # Convertir la columna 'UMD_number' a tipo entero
+    df_stock['UMD_number'] = df_stock['UMD_number'].astype(int)
+    # Formatear la columna de fechas
+    df_stock['date'] = pd.to_datetime(df_stock['date'], format="%d/%m/%y")
 
-    # Rename the columns
-    new_column_names = ['date', 'UMD_number']
+    # Conexión y configuración para obtener el dataframe de historial
+    conn_historial = st.connection("stats_historial", type=GSheetsConnection)
+    column_indices_historial = [2, 3, 6]
+    new_column_names_historial = ['name', 'id', 'date']
 
-    df = conn.read(usecols=column_indices,
-                   names=new_column_names,
-                   header=None,
-                   dayfirst=True,
-                   skiprows=9).dropna()
-    # df
-    # Format the date column
-    # print(df['date'])
-    # df['date'] = df['date'].dt.strftime('%Y-%m-%d')
-    df['UMD_number'] = df['UMD_number'].astype(int)
+    # Leer y limpiar el dataframe de historial
+    df_historial = conn_historial.read(usecols=column_indices_historial,
+                                       names=new_column_names_historial,
+                                       header=None,
+                                       dayfirst=True,
+                                       skiprows=7).dropna()
+    # Filtrar filas donde la fecha contenga "-"
+    df_historial = df_historial[~df_historial["date"].str.contains("-")]
+    # Convertir la columna 'id' a tipo entero
+    df_historial['id'] = df_historial['id'].astype(int)
+    # Formatear la columna de fechas y ordenar
+    df_historial['date'] = pd.to_datetime(df_historial['date'], format="%d/%m/%y")
+    df_historial = df_historial.sort_values(by='date')
 
-    # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
-    df['date'] = pd.to_datetime(df['date'], format="%d/%m/%y") 
+    # Agregar un número de fila como contador
+    df_historial = df_historial.assign(row_number=range(1, len(df_historial) + 1))
 
-    # df.sort_values(by='date', inplace=True)
-    # Plot line chart of births over time
+    # Métricas
     st.markdown("## Quarterly Stats")
-
     col1, col2, col3 = st.columns(3)
-
     col1.metric(label="UMDs Deployed", value="143", delta="8")
     col2.metric(label="ekits Deployed", value="134", delta="5")
     col3.metric(label="Entered ACQ", value="45", delta="3")
-    
-    fig = px.line(
-        df,
-        x="date",
-        y="UMD_number")
-    
+
+    # Graficar el dataframe de stock
+    fig = px.line(df_stock, x="date", y="UMD_number", title="UMD Number over Time")
     st.plotly_chart(fig)
 
+    # Graficar el dataframe de historial
+    fig2 = px.line(df_historial, x="date", y="row_number", title="Row Number over Time")
+    st.plotly_chart(fig2)
+
+    # Merge de ambos dataframes y gráfico combinado
+    df_merged = pd.merge(df_stock, df_historial, on='date', how='outer', suffixes=('_df1', '_df2'))
+    df_merged = df_merged.sort_values(by='date')
+    # Rellenar NaN con 0 en las columnas 'UMD_number_df1' y 'row_number_df2'
+    df_merged['UMD_number_df1'] = df_merged['UMD_number'].fillna(0)
+    df_merged['row_number_df2'] = df_merged['row_number'].fillna(0)
+    
+    # Graficar las series combinadas
+    fig3 = px.line(df_merged, x='date', y=['UMD_number', 'row_number'],
+                   labels={'date': 'Fecha', 'value': 'Valor Acumulado'},
+                   title="Valores Acumulativos en el Tiempo")
+    st.plotly_chart(fig3)
