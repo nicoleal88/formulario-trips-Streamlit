@@ -77,15 +77,14 @@ with col_button:
 st.divider()
 
 
-tab1, tab2, tab3 = st.tabs([lang_content[st.session_state['language']]['tab1_title'],
-                            lang_content[st.session_state['language']]['tab2_title'],
-                            lang_content[st.session_state['language']]['tab3_title']])
-with tab1:
+tab_map, tab_acq, tab_field = st.tabs([lang_content[st.session_state['language']]['tab_map_title'],
+                            lang_content[st.session_state['language']]['tab_acq_title'],
+                            lang_content[st.session_state['language']]['tab_field_title']])
+with tab_map:
     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
-#     components.iframe("http://127.0.0.1:5500/public/", height=900)
 
 
-with tab3: 
+with tab_field: 
     
     conn = st.connection("nico", type=GSheetsConnection)
 
@@ -252,8 +251,7 @@ with tab3:
                     else:
                         st.info(lang_content[st.session_state['language']]['no_photos'])
 
-
-with tab2:  
+with tab_acq:  
 
     conn = st.connection("belu", type=GSheetsConnection)
 
