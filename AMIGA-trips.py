@@ -83,13 +83,27 @@ tab1, tab2, tab3, tab4 = st.tabs([lang_content[st.session_state['language']]['ta
                                 lang_content[st.session_state['language']]['tab2_title'],
                                 lang_content[st.session_state['language']]['tab3_title'],
                                 lang_content[st.session_state['language']]['tab4_title']])
+
+def search_dataframe(df, query):
+    """
+    Search through all columns of a dataframe for a query string.
+    Returns a boolean mask of matching rows.
+    """
+    if not query:
+        return pd.Series([True] * len(df))
+    
+    mask = pd.Series([False] * len(df))
+    for column in df.columns:
+        # Convert column to string and search
+        mask |= df[column].astype(str).str.contains(query, case=False, na=False)
+    return mask
+
 with tab1:
     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
 #     components.iframe("http://127.0.0.1:5500/public/", height=900)
 
 
 with tab3: 
-    
     conn = st.connection("nico", type=GSheetsConnection)
 
     # Specify the column indices you want to select
@@ -106,21 +120,46 @@ with tab3:
     # Extract name and id from position(id) column
     df[['name', 'id']] = df['position(id)'].str.extract(r'([\w\s.]+)\s*\(id=(\d+)\)', expand=True)
 
+    # Format the date column (keep original date column for sorting)
+    df['formatted_date'] = df['date'].dt.strftime('%Y-%m-%d')
+
     # Drop the position(id) column
-    df.drop(columns=['position(id)'])
+    df = df.drop(columns=['position(id)'])
 
-    # Format the date column
-    df['date'] = df['date'].dt.strftime('%Y-%m-%d')
-
-    # Convert min and max dates to datetime objects
-    min_date = datetime.strptime(df['date'].min(), '%Y-%m-%d')
-    max_date = datetime.strptime(df['date'].max(), '%Y-%m-%d')
+    # Get min and max dates
+    if len(df) > 0:
+        min_date = df['date'].min()
+        max_date = df['date'].max()
+    else:
+        min_date = datetime.now()
+        max_date = datetime.now()
 
     # Create Streamlit widgets for filtering
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
         st.header(lang_content[st.session_state['language']]['filters_header'], divider="grey")
+        
+        # Add search box in the filters section
+        st.markdown(f"### {lang_content[st.session_state['language']]['search_label']}")
+        search_query = st.text_input(
+            label=lang_content[st.session_state['language']]['search_placeholder'],
+            key="search_tab3",
+            label_visibility="collapsed"
+        )
+
+        # Reset index before applying search to ensure proper alignment
+        df = df.reset_index(drop=True)
+        
+        if search_query:
+            search_mask = search_dataframe(df, search_query)
+            df = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
+            if len(df) == 0:
+                st.warning(lang_content[st.session_state['language']]['no_results'].format(search_query))
+                st.stop()
+            else:
+                st.info(lang_content[st.session_state['language']]['search_results'].format(len(df), search_query))
+
         col1, col2 = st.columns(2)
 
         with col1:
@@ -162,7 +201,10 @@ with tab3:
             filtered_by_date = filtered_by_type
 
         if start_date is not None and end_date is not None:
-            filtered_by_date = filtered_by_type[(filtered_by_type['date'] >= start_date.strftime('%Y-%m-%d')) & (filtered_by_type['date'] <= end_date.strftime('%Y-%m-%d'))]
+            filtered_by_date = filtered_by_type[
+                (filtered_by_type['date'] >= pd.Timestamp(start_date)) & 
+                (filtered_by_type['date'] <= pd.Timestamp(end_date))
+            ]
 
         final_table = filtered_by_date[['date', 'name', 'id', 'type', 'content', 'photos']].sort_values(by='date', ascending=False)
         selections = ["name_dropdown", "type_dropdown"]
@@ -278,7 +320,6 @@ with tab3:
 
 
 with tab2:  
-
     conn = st.connection("belu", type=GSheetsConnection)
 
     # Specify the column indices you want to select
@@ -297,19 +338,41 @@ with tab2:
     df['date_report'] = df['date_report'].dt.strftime('%Y-%m-%d')
     df['date'] = df['date_report']
 
-    # Set Date as index.
-    df = df.set_index('date_report') 
-
-    # Convert min and max dates to datetime objects
-    dates = df.index.values
-    min_date = datetime.strptime(dates.min(), '%Y-%m-%d')
-    max_date = datetime.strptime(dates.max(), '%Y-%m-%d')
+    # Get min and max dates before any filtering
+    if len(df) > 0:
+        dates = df['date_report'].values
+        min_date = datetime.strptime(dates.min(), '%Y-%m-%d')
+        max_date = datetime.strptime(dates.max(), '%Y-%m-%d')
+    else:
+        min_date = datetime.now()
+        max_date = datetime.now()
 
     # Create Streamlit widgets for filtering
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
         st.header(lang_content[st.session_state['language']]['filters_header'], divider="grey")
+        
+        # Add search box in the filters section
+        st.markdown(f"### {lang_content[st.session_state['language']]['search_label']}")
+        search_query = st.text_input(
+            label=lang_content[st.session_state['language']]['search_placeholder'],
+            key="search_tab2",
+            label_visibility="collapsed"
+        )
+
+        # Reset index before applying search to ensure proper alignment
+        df = df.reset_index(drop=True)
+        
+        if search_query:
+            search_mask = search_dataframe(df, search_query)
+            df = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
+            if len(df) == 0:
+                st.warning(lang_content[st.session_state['language']]['no_results'].format(search_query))
+                st.stop()
+            else:
+                st.info(lang_content[st.session_state['language']]['search_results'].format(len(df), search_query))
+
         col1, col2, col3 = st.columns(3)
 
         with col1:
@@ -364,7 +427,7 @@ with tab2:
             filtered_by_date = filtered_by_team
 
         if start_date is not None and end_date is not None:
-            filtered_by_date = filtered_by_team[(filtered_by_team.index.values >= start_date.strftime('%Y-%m-%d')) & (filtered_by_team.index.values <= end_date.strftime('%Y-%m-%d'))]
+            filtered_by_date = filtered_by_team[(filtered_by_team['date_report'] >= start_date.strftime('%Y-%m-%d')) & (filtered_by_team['date_report'] <= end_date.strftime('%Y-%m-%d'))]
 
         final_table = filtered_by_date[['date','position', 'modules', 'summary', 'status', 'team', 'report']].sort_values('status',ascending=True)
         final_table_colA = final_table.loc[final_table['status']!='Complete']

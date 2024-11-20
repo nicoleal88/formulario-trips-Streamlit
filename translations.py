@@ -29,6 +29,10 @@ lang_content = {
         'image_load_error': "No se pudo cargar la imagen:",
         'image_link': "Enlace a la imagen",
         'contains_photos': "Contiene {} 📷",
+        'search_label': "Buscar:",
+        'search_placeholder': "Buscar en todos los campos...",
+        'search_results': "Se encontraron {} resultados para '{}'",
+        'no_results': "No se encontraron resultados para '{}'",
     },
     'en': {
         'page_title': "Operations and monitoring - UMD",
@@ -60,5 +64,9 @@ lang_content = {
         'image_load_error': "Failed to load image:",
         'image_link': "Link to image",
         'contains_photos': "Contains {} 📷",
+        'search_label': "Search:",
+        'search_placeholder': "Search across all fields...",
+        'search_results': "Found {} results for '{}'",
+        'no_results': "No results found for '{}'",
     }
 }
