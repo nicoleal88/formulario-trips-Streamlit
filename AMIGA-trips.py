@@ -9,6 +9,7 @@ from PIL import Image
 import io
 import time
 import pandas as pd
+import plotly.express as px
 
 import hmac
 from translations import lang_content
@@ -90,9 +91,10 @@ with col_button:
 st.divider()
 
 
-tab_map, tab_acq, tab_field = st.tabs([lang_content[st.session_state['language']]['tab_map_title'],
-                            lang_content[st.session_state['language']]['tab_acq_title'],
-                            lang_content[st.session_state['language']]['tab_field_title']])
+tab_map, tab_acq, tab_field, tab_stats = st.tabs([lang_content[st.session_state['language']]['tab_map_title'],
+                                                    lang_content[st.session_state['language']]['tab_acq_title'],
+                                                    lang_content[st.session_state['language']]['tab_field_title'],
+                                                    lang_content[st.session_state['language']]['tab_stats_title']])
 with tab_map:
     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
 
@@ -457,3 +459,218 @@ with tab_acq:
                     md_content = selected_row["report"].values[0]
                     with st.container():
                         st.write(md_content)
+
+with tab_stats:
+    # Stock dataframe - Assembly progress
+    conn_stock = st.connection("stats_stock", type=GSheetsConnection)
+    df_stock = conn_stock.read(
+        usecols=[0, 1],
+        names=['date', 'UMD_number'],
+        header=None,
+        dayfirst=True,
+        skiprows=9
+    ).dropna()  # Remove rows without cumulative numbers
+    
+    # Convert and clean stock data
+    df_stock['UMD_number'] = df_stock['UMD_number'].astype(int)
+    df_stock['date'] = pd.to_datetime(df_stock['date'], format="%d/%m/%y")
+    
+    # Installation history dataframe
+    conn_historial = st.connection("stats_historial", type=GSheetsConnection)
+    df_historial = conn_historial.read(
+        usecols=[2, 3, 6, 11, 15, 19],  # name, id, install_date, id_m101, id_m102, id_m103
+        names=['position', 'id', 'install_date', 'id_m101', 'id_m102', 'id_m103'],
+        header=None,
+        skiprows=7
+    )
+    
+    # Clean installation data
+    df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
+    df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
+    df_historial['id'] = df_historial['id'].astype(int)
+    df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], format="%d/%m/%y")
+    
+    # Count only valid modules (starting with "M-")
+    def is_valid_module(x):
+        return isinstance(x, str) and x.startswith('M-')
+    
+    # Apply the validation to each module column
+    module_columns = ['id_m101', 'id_m102', 'id_m103']
+    for col in module_columns:
+        df_historial[f'{col}_valid'] = df_historial[col].apply(is_valid_module)
+    
+    # Count valid modules per installation
+    df_historial['modules_installed'] = df_historial[[f'{col}_valid' for col in module_columns]].sum(axis=1)
+    df_historial = df_historial.sort_values(by='install_date')
+    
+    # Display metrics
+    st.markdown(f"## {lang_content[st.session_state['language']]['stats_header']}")
+    
+    # Time period filter
+    time_filters = {
+        'stats_filter_all': None,
+        'stats_filter_month': pd.DateOffset(months=1),
+        'stats_filter_quarter': pd.DateOffset(months=3),
+        'stats_filter_year': pd.DateOffset(years=1),
+        'stats_filter_q1_2024': ('2024-01-01', '2024-03-31'),
+        'stats_filter_q2_2024': ('2024-04-01', '2024-06-30'),
+        'stats_filter_q3_2024': ('2024-07-01', '2024-09-30'),
+        'stats_filter_q4_2024': ('2024-10-01', '2024-12-31'),
+    }
+    
+    # Create two columns for filter and date range
+    filter_col, date_range_col = st.columns([1, 2])
+    
+    with filter_col:
+        selected_filter = st.selectbox(
+            lang_content[st.session_state['language']]['stats_time_filter'],
+            options=list(time_filters.keys()),
+            format_func=lambda x: lang_content[st.session_state['language']][x]
+        )
+    
+    with date_range_col:
+        if time_filters[selected_filter] is not None:
+            if isinstance(time_filters[selected_filter], pd.DateOffset):
+                cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
+                st.text(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
+            else:
+                start_date, end_date = time_filters[selected_filter]
+                st.text(f"{start_date} → {end_date}")
+    
+    # Apply time filter to data
+    if time_filters[selected_filter] is not None:
+        if isinstance(time_filters[selected_filter], pd.DateOffset):
+            # For relative time periods (last month, quarter, year)
+            cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
+            df_stock_filtered = df_stock[df_stock['date'] > cutoff_date]
+            df_historial_filtered = df_historial[df_historial['install_date'] > cutoff_date]
+        else:
+            # For specific quarters
+            start_date, end_date = time_filters[selected_filter]
+            df_stock_filtered = df_stock[
+                (df_stock['date'] >= start_date) & 
+                (df_stock['date'] <= end_date)
+            ]
+            df_historial_filtered = df_historial[
+                (df_historial['install_date'] >= start_date) & 
+                (df_historial['install_date'] <= end_date)
+            ]
+    else:
+        # All time
+        df_stock_filtered = df_stock
+        df_historial_filtered = df_historial
+    
+    # Calculate overall metrics (these never change with filters)
+    total_assembled = int(df_stock['UMD_number'].max() if not df_stock.empty else 0)
+    total_installed = int(df_historial['modules_installed'].sum())
+    installation_positions = df_historial['position'].nunique() + 4
+
+    # Calculate deltas based on filtered data
+    if time_filters[selected_filter] is not None:
+        if isinstance(time_filters[selected_filter], pd.DateOffset):
+            # For relative periods, calculate changes within the period
+            cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
+            assembled_delta = int(df_stock[df_stock['date'] > cutoff_date]['UMD_number'].max() or 0) - int(df_stock[df_stock['date'] <= cutoff_date]['UMD_number'].max() or 0)
+            installed_delta = int(df_historial[df_historial['install_date'] > cutoff_date]['modules_installed'].sum())
+            positions_delta = df_historial[df_historial['install_date'] > cutoff_date]['position'].nunique()
+        else:
+            # For specific quarters
+            start_date, end_date = time_filters[selected_filter]
+            assembled_delta = int(df_stock[(df_stock['date'] >= start_date) & (df_stock['date'] <= end_date)]['UMD_number'].max() or 0) - int(df_stock[df_stock['date'] < start_date]['UMD_number'].max() or 0)
+            installed_delta = int(df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]['modules_installed'].sum())
+            positions_delta = df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]['position'].nunique()
+    else:
+        # For all time, no deltas
+        assembled_delta = None
+        installed_delta = None
+        positions_delta = None
+
+    # Display metrics
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        label=lang_content[st.session_state['language']]['stats_assembled'],
+        value=total_assembled,
+        delta=f"+{assembled_delta}" if assembled_delta and assembled_delta > 0 else str(assembled_delta) if assembled_delta and assembled_delta != 0 else None
+    )
+
+    col2.metric(
+        label=lang_content[st.session_state['language']]['stats_installed'],
+        value=total_installed,
+        delta=f"+{installed_delta}" if installed_delta and installed_delta > 0 else str(installed_delta) if installed_delta and installed_delta != 0 else None
+    )
+
+    col3.metric(
+        label=lang_content[st.session_state['language']]['stats_positions'],
+        value=installation_positions,
+        delta=f"+{positions_delta}" if positions_delta and positions_delta > 0 else str(positions_delta) if positions_delta and positions_delta != 0 else None
+    )
+
+    col4.metric(
+        label=lang_content[st.session_state['language']]['stats_rate'],
+        value=f"{(installation_positions/73 *100):.1f}%"
+    )
+
+    # Combined view
+    st.markdown(f"### {lang_content[st.session_state['language']]['stats_combined_title']}")
+
+    # Create a date range from min to max date of complete dataset
+    if not df_stock.empty and not df_historial.empty:
+        date_range = pd.date_range(
+            start=min(df_stock['date'].min(), df_historial['install_date'].min()),
+            end=max(df_stock['date'].max(), df_historial['install_date'].max()),
+            freq='D'
+        )
+        
+        # Prepare data for combined view
+        df_combined = pd.DataFrame({'date': date_range})
+        
+        # Add assembly data
+        df_combined = pd.merge_asof(
+            df_combined,
+            df_stock[['date', 'UMD_number']],
+            on='date',
+            direction='backward'
+        )
+        
+        # Count cumulative installations per date
+        installation_counts = df_historial.groupby('install_date')['modules_installed'].sum().reset_index()
+        installation_counts.columns = ['date', 'daily_installations']
+        installation_counts['cumulative_installations'] = installation_counts['daily_installations'].cumsum()
+        
+        # Add installation data
+        df_combined = pd.merge_asof(
+            df_combined,
+            installation_counts[['date', 'cumulative_installations']],
+            on='date',
+            direction='backward'
+        )
+        
+        # Fill NaN values with previous values or 0
+        df_combined = df_combined.fillna(method='ffill').fillna(0)
+
+        # Create the combined plot
+        fig = px.line(df_combined,
+                    x='date',
+                    y=['UMD_number', 'cumulative_installations'],
+                    title=lang_content[st.session_state['language']]['stats_combined_title'],
+                    labels={
+                        'date': 'Date',
+                        'value': 'Number of UMDs',
+                        'variable': 'Type'
+                    })
+        
+        fig.update_traces(mode='lines+markers')
+        fig.update_layout(
+            yaxis_title="Number of UMDs",
+            legend_title="Type",
+            showlegend=True
+        )
+        
+        # Update legend labels
+        newnames = {'UMD_number': 'Assembled', 'cumulative_installations': 'Installed'}
+        fig.for_each_trace(lambda t: t.update(name=newnames[t.name]))
+        
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("No data available")
