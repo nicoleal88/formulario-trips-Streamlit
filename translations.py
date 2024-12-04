@@ -136,19 +136,19 @@ lang_content = {
         'en': "UMD Progress Overview"
     },
     'stats_assembled': {
-        'es': "Total Ensamblados",
-        'en': "Total Assembled"
+        'es': "Total de UMDs Ensamblados",
+        'en': "Total Assembled UMDs"
     },
     'stats_installed': {
-        'es': "Total Módulos Instalados",
-        'en': "Total Modules Installed"
+        'es': "Total de UMDs Instalados",
+        'en': "Total Installed UMDs"
     },
     'stats_positions': {
-        'es': "Posiciones Ocupadas",
-        'en': "Positions Filled"
+        'es': "Posiciones con UMDs",
+        'en': "Positions with UMDs"
     },
     'stats_rate': {
-        'es': "Progreso de Completado",
+        'es': "Porcentaje Completado",
         'en': "Completion Progress"
     },
     'stats_assembly_title': {
@@ -162,6 +162,10 @@ lang_content = {
     'stats_combined_title': {
         'es': "Progreso de Ensamblaje e Instalación",
         'en': "Assembly and Installation Progress"
+    },
+    'stats_plots_title': {
+        'es': "Graficos de Progreso",
+        'en': "Progress Plots"
     },
     'stats_time_filter': {
         'es': "Período de Tiempo",

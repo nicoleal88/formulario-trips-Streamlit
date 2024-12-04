@@ -661,8 +661,8 @@ with tab_stats:
         value=f"{(installation_positions/73 *100):.1f}%"
     )
 
-    # Combined view
-    st.markdown(f"### {lang_content['stats_combined_title'][st.session_state['language']]}")
+    # Plots
+    st.markdown(f"### {lang_content['stats_plots_title'][st.session_state['language']]}")
 
     # Create a date range from min to max date of complete dataset
     if not df_stock.empty and not df_historial.empty:
