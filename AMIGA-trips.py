@@ -592,7 +592,7 @@ with tab_stats:
     }
     
     # Create two columns for filter and date range
-    filter_col, date_range_col = st.columns([1, 2])
+    filter_col, _ = st.columns([1, 2])
     
     with filter_col:
         selected_filter = st.selectbox(
@@ -600,16 +600,15 @@ with tab_stats:
             options=list(time_filters.keys()),
             format_func=lambda x: lang_content[f'stats_filter_{x.lower().replace(" ", "_") if x != "All Time" else "all_time"}'][st.session_state['language']]
         )
-    
-    with date_range_col:
         if time_filters[selected_filter] is not None:
             if isinstance(time_filters[selected_filter], pd.DateOffset):
                 cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
-                st.text(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
+                st.info(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
             else:
                 start_date, end_date = time_filters[selected_filter]
-                st.text(f"{start_date.strftime('%Y-%m-%d')} → {end_date.strftime('%Y-%m-%d')}")
+                st.info(f"{start_date.strftime('%Y-%m-%d')} → {end_date.strftime('%Y-%m-%d')}")
     
+ 
     # Apply time filter to data
     if time_filters[selected_filter] is not None:
         if isinstance(time_filters[selected_filter], pd.DateOffset):
