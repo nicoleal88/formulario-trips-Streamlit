@@ -83,17 +83,6 @@ SHADED_PERIODS = [
     # }
 ]
 
-# Add translations for period names
-lang_content['en'].update({
-    'period_covid': 'COVID Lockdown',
-    'period_summer': 'Summer Break 2024'
-})
-
-lang_content['es'].update({
-    'period_covid': 'Cuarentena COVID',
-    'period_summer': 'Receso de Verano 2024'
-})
-
 def check_password():
     """Returns `True` if the user had a correct password."""
 
@@ -157,27 +146,27 @@ def search_dataframe(df, query):
 
 # Set page configuration
 st.set_page_config(
-    page_title=lang_content[st.session_state['language']]['page_title'],
+    page_title=lang_content['page_title'][st.session_state['language']],
     page_icon=":wrench:",
     layout="wide",
 )
 
-
 col_title, col_button = st.columns((0.8, 0.2))
 with col_title:
-    st.title(lang_content[st.session_state['language']]['header_title'])
+    st.title(lang_content['header_title'][st.session_state['language']])
 with col_button:
-    st.button(lang_content[st.session_state['language']]['button_text'], on_click=switch_language)  # Button to switch language
+    st.button(lang_content['button_text'][st.session_state['language']], on_click=switch_language)  # Button to switch language
 st.divider()
 
+tab_map, tab_field, tab_acq, tab_stats = st.tabs([
+    lang_content['tab_map_title'][st.session_state['language']],
+    lang_content['tab_field_title'][st.session_state['language']],
+    lang_content['tab_acq_title'][st.session_state['language']],
+    lang_content['tab_stats_title'][st.session_state['language']]
+])
 
-tab_map, tab_acq, tab_field, tab_stats = st.tabs([lang_content[st.session_state['language']]['tab_map_title'],
-                                                    lang_content[st.session_state['language']]['tab_acq_title'],
-                                                    lang_content[st.session_state['language']]['tab_field_title'],
-                                                    lang_content[st.session_state['language']]['tab_stats_title']])
 with tab_map:
     components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
-
 
 with tab_field: 
     
@@ -215,12 +204,12 @@ with tab_field:
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
-        st.header(lang_content[st.session_state['language']]['filters_header'], divider="grey")
+        st.header(lang_content['filters_header'][st.session_state['language']], divider="grey")
         
         # Add search box in the filters section
-        st.markdown(f"### {lang_content[st.session_state['language']]['search_label']}")
+        st.markdown(f"### {lang_content['search_label'][st.session_state['language']]}")
         search_query = st.text_input(
-            label=lang_content[st.session_state['language']]['search_placeholder'],
+            label=lang_content['search_placeholder'][st.session_state['language']],
             key="search_tab_field",
             label_visibility="collapsed"
         )
@@ -232,18 +221,18 @@ with tab_field:
             search_mask = search_dataframe(df, search_query)
             df_filtered = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
             if len(df_filtered) == 0:
-                st.warning(lang_content[st.session_state['language']]['no_results'].format(search_query))
+                st.warning(lang_content['no_results'][st.session_state['language']].format(search_query))
             else:
-                st.info(lang_content[st.session_state['language']]['search_results'].format(len(df_filtered), search_query))
+                st.info(lang_content['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
                 df = df_filtered  # Only update df if there are matches
 
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown(f"### {lang_content[st.session_state['language']]['position_label']}")
-            name_dropdown = st.selectbox(lang_content[st.session_state['language']]['position_label'],
+            st.markdown(f"### {lang_content['position_label'][st.session_state['language']]}")
+            name_dropdown = st.selectbox(lang_content['position_label'][st.session_state['language']],
                                          np.sort(df['name'].unique()), index=None,
-                                         placeholder=lang_content[st.session_state['language']]['position_placeholder'],
+                                         placeholder=lang_content['position_placeholder'][st.session_state['language']],
                                          key="name_dropdown_1", label_visibility="collapsed")
 
         if name_dropdown is None:
@@ -252,10 +241,10 @@ with tab_field:
             filtered_by_name = df[(df['name'] == name_dropdown)]
 
         with col2:
-            st.markdown(f"### {lang_content[st.session_state['language']]['type_label']}")
-            type_dropdown = st.selectbox(lang_content[st.session_state['language']]['type_label'],
+            st.markdown(f"### {lang_content['type_label'][st.session_state['language']]}")
+            type_dropdown = st.selectbox(lang_content['type_label'][st.session_state['language']],
                                          filtered_by_name['type'].unique(), index=None,
-                                         placeholder=lang_content[st.session_state['language']]['type_placeholder'],
+                                         placeholder=lang_content['type_placeholder'][st.session_state['language']],
                                          key="type_dropdown_1", label_visibility="collapsed")
 
         if type_dropdown is None:
@@ -263,15 +252,15 @@ with tab_field:
         else:
             filtered_by_type = filtered_by_name[(filtered_by_name['type'] == type_dropdown)]
 
-        st.markdown(f"### {lang_content[st.session_state['language']]['date_interval_label']}")
+        st.markdown(f"### {lang_content['date_interval_label'][st.session_state['language']]}")
 
         col3, col4 = st.columns(2)
 
         with col3:
-            start_date = st.date_input(lang_content[st.session_state['language']]['from_label'],
+            start_date = st.date_input(lang_content['from_label'][st.session_state['language']],
                                        value=min_date, key="start_date_1")
         with col4:
-            end_date = st.date_input(lang_content[st.session_state['language']]['to_label'],
+            end_date = st.date_input(lang_content['to_label'][st.session_state['language']],
                                      value=max_date, key="end_date_1")
 
         if start_date is None and end_date is None:
@@ -289,15 +278,15 @@ with tab_field:
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
 
-        st.button(lang_content[st.session_state['language']]['clear_filters'], on_click=clear_all)
+        st.button(lang_content['clear_filters'][st.session_state['language']], on_click=clear_all)
 
-        st.header(lang_content[st.session_state['language']]['results_header'], divider="grey")
-        st.caption(lang_content[st.session_state['language']]['click_report'])
+        st.header(lang_content['results_header'][st.session_state['language']], divider="grey")
+        st.caption(lang_content['click_report'][st.session_state['language']])
 
         def photo_formatter(photo_links):
             if isinstance(photo_links, str):
                 links = re.findall(r'https://drive\.google\.com/open\?id=[^\s,]+', photo_links)
-                return lang_content[st.session_state['language']]['contains_photos'].format(len(links)) if links else ""
+                return lang_content['contains_photos'][st.session_state['language']].format(len(links)) if links else ""
             return ""
 
         # Create a new column for the photo indicator
@@ -333,7 +322,7 @@ with tab_field:
             return Image.open(io.BytesIO(response.content))
 
         with colB:
-            st.header(lang_content[st.session_state['language']]['report_header'], divider="grey")
+            st.header(lang_content['report_header'][st.session_state['language']], divider="grey")
             if len(selection["selection"]["rows"]) > 0:
                 selected_row = final_table.iloc[selection["selection"]["rows"]]
                 md_content = selected_row["content"].values[0]
@@ -347,10 +336,10 @@ with tab_field:
                     photo_links = [clean_url(link) for link in photo_links]
 
                     if photo_links:
-                        st.subheader(lang_content[st.session_state['language']]['photos_header'])
+                        st.subheader(lang_content['photos_header'][st.session_state['language']])
 
                         for link in photo_links:
-                            with st.spinner(lang_content[st.session_state['language']]['loading_image']):
+                            with st.spinner(lang_content['loading_image'][st.session_state['language']]):
                                 try:
                                     img = get_image_content(link)
 
@@ -364,12 +353,12 @@ with tab_field:
                                     st.image(img_byte_arr, use_column_width=True)
 
                                 except Exception as e:
-                                    st.error(f"{lang_content[st.session_state['language']]['image_load_error']} {str(e)}")
-                                    st.markdown(f"[{lang_content[st.session_state['language']]['image_link']}]({link})")
+                                    st.error(f"{lang_content['image_load_error'][st.session_state['language']]} {str(e)}")
+                                    st.markdown(f"[{lang_content['image_link'][st.session_state['language']]}]({link})")
 
                                 time.sleep(0.1)
                     else:
-                        st.info(lang_content[st.session_state['language']]['no_photos'])
+                        st.info(lang_content['no_photos'][st.session_state['language']])
 
 with tab_acq:  
     conn = st.connection("belu", type=GSheetsConnection)
@@ -402,12 +391,12 @@ with tab_acq:
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
-        st.header(lang_content[st.session_state['language']]['filters_header'], divider="grey")
+        st.header(lang_content['filters_header'][st.session_state['language']], divider="grey")
         
         # Add search box in the filters section
-        st.markdown(f"### {lang_content[st.session_state['language']]['search_label']}")
+        st.markdown(f"### {lang_content['search_label'][st.session_state['language']]}")
         search_query = st.text_input(
-            label=lang_content[st.session_state['language']]['search_placeholder'],
+            label=lang_content['search_placeholder'][st.session_state['language']],
             key="search_tab_acq",
             label_visibility="collapsed"
         )
@@ -419,18 +408,18 @@ with tab_acq:
             search_mask = search_dataframe(df, search_query)
             df_filtered = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
             if len(df_filtered) == 0:
-                st.warning(lang_content[st.session_state['language']]['no_results'].format(search_query))
+                st.warning(lang_content['no_results'][st.session_state['language']].format(search_query))
             else:
-                st.info(lang_content[st.session_state['language']]['search_results'].format(len(df_filtered), search_query))
+                st.info(lang_content['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
                 df = df_filtered  # Only update df if there are matches
 
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            st.markdown(f"### {lang_content[st.session_state['language']]['position_label']}")
-            name_dropdown = st.selectbox(lang_content[st.session_state['language']]['position_label'],
+            st.markdown(f"### {lang_content['position_label'][st.session_state['language']]}")
+            name_dropdown = st.selectbox(lang_content['position_label'][st.session_state['language']],
                                          np.sort(df['position'].unique()), index=None,
-                                         placeholder=lang_content[st.session_state['language']]['position_placeholder'],
+                                         placeholder=lang_content['position_placeholder'][st.session_state['language']],
                                          key="name_dropdown_2", label_visibility="collapsed")
 
         if name_dropdown is None:
@@ -440,17 +429,17 @@ with tab_acq:
 
             
         with col2:
-            st.markdown(f"### {lang_content[st.session_state['language']]['status_label']}")
-            type_dropdown = st.selectbox(lang_content[st.session_state['language']]['status_label'],
+            st.markdown(f"### {lang_content['status_label'][st.session_state['language']]}")
+            type_dropdown = st.selectbox(lang_content['status_label'][st.session_state['language']],
                                             filtered_by_name['status'].unique(), index=None,
-                                            placeholder=lang_content[st.session_state['language']]['status_placeholder'],
+                                            placeholder=lang_content['status_placeholder'][st.session_state['language']],
                                             key="type_dropdown_2", label_visibility="collapsed")
 
         with col3:
-            st.markdown(f"### {lang_content[st.session_state['language']]['team_label']}")
-            team_dropdown = st.selectbox(lang_content[st.session_state['language']]['team_label'],
+            st.markdown(f"### {lang_content['team_label'][st.session_state['language']]}")
+            team_dropdown = st.selectbox(lang_content['team_label'][st.session_state['language']],
                                             np.sort(filtered_by_name['team'].unique()), index=None,
-                                            placeholder=lang_content[st.session_state['language']]['team_placeholder'],
+                                            placeholder=lang_content['team_placeholder'][st.session_state['language']],
                                             key="team_dropdown_2", label_visibility="collapsed")
 
         if type_dropdown is None:
@@ -463,15 +452,15 @@ with tab_acq:
         else:
             filtered_by_team = filtered_by_type[(filtered_by_type['team'] == team_dropdown)]
 
-        st.markdown(f"### {lang_content[st.session_state['language']]['date_interval_label']}")
+        st.markdown(f"### {lang_content['date_interval_label'][st.session_state['language']]}")
 
         col4, col5 = st.columns(2)
 
         with col4:
-            start_date = st.date_input(lang_content[st.session_state['language']]['from_label'],
+            start_date = st.date_input(lang_content['from_label'][st.session_state['language']],
                                        value=min_date, key="start_date_2")
         with col5:
-            end_date = st.date_input(lang_content[st.session_state['language']]['to_label'],
+            end_date = st.date_input(lang_content['to_label'][st.session_state['language']],
                                      value=max_date, key="end_date_2")
 
         if start_date is None and end_date is None:
@@ -490,11 +479,11 @@ with tab_acq:
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
 
-        st.button(lang_content[st.session_state['language']]['clear_filters'], on_click=clear_all,key='button_2')
+        st.button(lang_content['clear_filters'][st.session_state['language']], on_click=clear_all,key='button_2')
 
-        st.header(lang_content[st.session_state['language']]['results_header'], divider="grey")
+        st.header(lang_content['results_header'][st.session_state['language']], divider="grey")
 
-        st.caption(lang_content[st.session_state['language']]['click_report'])
+        st.caption(lang_content['click_report'][st.session_state['language']])
     
         selection = st.dataframe(final_table_colA, on_select="rerun", selection_mode="single-row",
                                  height=200 if len(final_table_colA) > 5 else None, width=800, 
@@ -508,7 +497,7 @@ with tab_acq:
                                  hide_index=True)
 
         with colB:
-            st.header(lang_content[st.session_state['language']]['report_header'], divider="grey")
+            st.header(lang_content['report_header'][st.session_state['language']], divider="grey")
             if len(selection["selection"]["rows"]) > 0:
                 selected_row = final_table_colA.iloc[selection["selection"]["rows"]]            
                 full_selection = final_table.loc[final_table['position']==selected_row['position'].values[0]]
@@ -584,18 +573,22 @@ with tab_stats:
     df_historial = df_historial.sort_values(by='install_date')
     
     # Display metrics
-    st.markdown(f"## {lang_content[st.session_state['language']]['stats_header']}")
+    st.markdown(f"## {lang_content['stats_header'][st.session_state['language']]}")
     
     # Time period filter
     time_filters = {
-        'stats_filter_all': None,
-        'stats_filter_month': pd.DateOffset(months=1),
-        'stats_filter_quarter': pd.DateOffset(months=3),
-        'stats_filter_year': pd.DateOffset(years=1),
-        'stats_filter_q1_2024': ('2024-01-01', '2024-03-31'),
-        'stats_filter_q2_2024': ('2024-04-01', '2024-06-30'),
-        'stats_filter_q3_2024': ('2024-07-01', '2024-09-30'),
-        'stats_filter_q4_2024': ('2024-10-01', '2024-12-31'),
+        'All Time': None,
+        'Last Month': pd.DateOffset(months=1),
+        'Last Quarter': pd.DateOffset(months=3),
+        'Last Year': pd.DateOffset(years=1),
+        'Q4 2024': (pd.Timestamp('2024-10-01'), pd.Timestamp('2024-12-31')),
+        'Q3 2024': (pd.Timestamp('2024-07-01'), pd.Timestamp('2024-09-30')),
+        'Q2 2024': (pd.Timestamp('2024-04-01'), pd.Timestamp('2024-06-30')),
+        'Q1 2024': (pd.Timestamp('2024-01-01'), pd.Timestamp('2024-03-31')),
+        'Q4 2023': (pd.Timestamp('2023-10-01'), pd.Timestamp('2023-12-31')),
+        'Q3 2023': (pd.Timestamp('2023-07-01'), pd.Timestamp('2023-09-30')),
+        'Q2 2023': (pd.Timestamp('2023-04-01'), pd.Timestamp('2023-06-30')),
+        'Q1 2023': (pd.Timestamp('2023-01-01'), pd.Timestamp('2023-03-31')),
     }
     
     # Create two columns for filter and date range
@@ -603,9 +596,9 @@ with tab_stats:
     
     with filter_col:
         selected_filter = st.selectbox(
-            lang_content[st.session_state['language']]['stats_time_filter'],
+            lang_content['stats_time_filter'][st.session_state['language']],
             options=list(time_filters.keys()),
-            format_func=lambda x: lang_content[st.session_state['language']][x]
+            format_func=lambda x: lang_content[f'stats_filter_{x.lower().replace(" ", "_") if x != "All Time" else "all_time"}'][st.session_state['language']]
         )
     
     with date_range_col:
@@ -615,40 +608,12 @@ with tab_stats:
                 st.text(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
             else:
                 start_date, end_date = time_filters[selected_filter]
-                st.text(f"{start_date} → {end_date}")
+                st.text(f"{start_date.strftime('%Y-%m-%d')} → {end_date.strftime('%Y-%m-%d')}")
     
     # Apply time filter to data
     if time_filters[selected_filter] is not None:
         if isinstance(time_filters[selected_filter], pd.DateOffset):
-            # For relative time periods (last month, quarter, year)
-            cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
-            df_stock_filtered = df_stock[df_stock['date'] > cutoff_date]
-            df_historial_filtered = df_historial[df_historial['install_date'] > cutoff_date]
-        else:
-            # For specific quarters
-            start_date, end_date = time_filters[selected_filter]
-            df_stock_filtered = df_stock[
-                (df_stock['date'] >= start_date) & 
-                (df_stock['date'] <= end_date)
-            ]
-            df_historial_filtered = df_historial[
-                (df_historial['install_date'] >= start_date) & 
-                (df_historial['install_date'] <= end_date)
-            ]
-    else:
-        # All time
-        df_stock_filtered = df_stock
-        df_historial_filtered = df_historial
-    
-    # Calculate overall metrics (these never change with filters)
-    total_assembled = int(df_stock['UMD_number'].max() if not df_stock.empty else 0)
-    total_installed = int(df_historial['modules_installed'].sum())
-    installation_positions = df_historial['position'].nunique() + 4
-
-    # Calculate deltas based on filtered data
-    if time_filters[selected_filter] is not None:
-        if isinstance(time_filters[selected_filter], pd.DateOffset):
-            # For relative periods, calculate changes within the period
+            # For relative periods (Last Month, Last Quarter, Last Year)
             cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
             assembled_delta = int(df_stock[df_stock['date'] > cutoff_date]['UMD_number'].max() or 0) - int(df_stock[df_stock['date'] <= cutoff_date]['UMD_number'].max() or 0)
             installed_delta = int(df_historial[df_historial['install_date'] > cutoff_date]['modules_installed'].sum())
@@ -665,34 +630,39 @@ with tab_stats:
         installed_delta = None
         positions_delta = None
 
+    # Calculate overall metrics (these never change with filters)
+    total_assembled = int(df_stock['UMD_number'].max() if not df_stock.empty else 0)
+    total_installed = int(df_historial['modules_installed'].sum())
+    installation_positions = df_historial['position'].nunique() + 4
+
     # Display metrics
     col1, col2, col3, col4 = st.columns(4)
 
     col1.metric(
-        label=lang_content[st.session_state['language']]['stats_assembled'],
+        label=lang_content['stats_assembled'][st.session_state['language']],
         value=total_assembled,
         delta=f"+{assembled_delta}" if assembled_delta and assembled_delta > 0 else str(assembled_delta) if assembled_delta and assembled_delta != 0 else None
     )
 
     col2.metric(
-        label=lang_content[st.session_state['language']]['stats_installed'],
+        label=lang_content['stats_installed'][st.session_state['language']],
         value=total_installed,
         delta=f"+{installed_delta}" if installed_delta and installed_delta > 0 else str(installed_delta) if installed_delta and installed_delta != 0 else None
     )
 
     col3.metric(
-        label=lang_content[st.session_state['language']]['stats_positions'],
+        label=lang_content['stats_positions'][st.session_state['language']],
         value=installation_positions,
         delta=f"+{positions_delta}" if positions_delta and positions_delta > 0 else str(positions_delta) if positions_delta and positions_delta != 0 else None
     )
 
     col4.metric(
-        label=lang_content[st.session_state['language']]['stats_rate'],
+        label=lang_content['stats_rate'][st.session_state['language']],
         value=f"{(installation_positions/73 *100):.1f}%"
     )
 
     # Combined view
-    st.markdown(f"### {lang_content[st.session_state['language']]['stats_combined_title']}")
+    st.markdown(f"### {lang_content['stats_combined_title'][st.session_state['language']]}")
 
     # Create a date range from min to max date of complete dataset
     if not df_stock.empty and not df_historial.empty:
@@ -733,7 +703,7 @@ with tab_stats:
         fig = px.line(df_combined,
                     x='date',
                     y=['UMD_number', 'cumulative_installations'],
-                    title=lang_content[st.session_state['language']]['stats_combined_title'],
+                    title=lang_content['stats_combined_title'][st.session_state['language']],
                     labels={
                         'date': 'Date',
                         'value': 'Number of UMDs',
@@ -756,6 +726,7 @@ with tab_stats:
         
         fig.update_traces(mode='lines+markers')
         fig.update_layout(
+            title=lang_content['stats_combined_title'][st.session_state['language']],
             yaxis_title="Number of UMDs",
             legend_title="Type",
             showlegend=True,
