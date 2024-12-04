@@ -14,6 +14,86 @@ import plotly.express as px
 import hmac
 from translations import lang_content
 
+# Configuration for shaded periods
+SHADED_PERIODS = [
+    {
+        'name': 'COVID Lockdown',
+        'start_date': '2020-03-20',
+        'end_date': '2020-06-08',
+        'color': 'gray',
+        'opacity': 0.2
+    },
+    {
+        'name': 'Summer Break 2025',
+        'start_date': '2025-01-01',
+        'end_date': '2025-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2024',
+        'start_date': '2024-01-01',
+        'end_date': '2024-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2023',
+        'start_date': '2023-01-01',
+        'end_date': '2023-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2022',
+        'start_date': '2022-01-01',
+        'end_date': '2022-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2021',
+        'start_date': '2021-01-01',
+        'end_date': '2021-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2020',
+        'start_date': '2020-01-01',
+        'end_date': '2020-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
+        'name': 'Summer Break 2019',
+        'start_date': '2019-01-01',
+        'end_date': '2019-02-15',
+        'color': 'orange',
+        'opacity': 0.1
+    }
+
+    # Add more periods as needed:
+    # {
+    #     'name': 'Another Period',
+    #     'start_date': 'YYYY-MM-DD',
+    #     'end_date': 'YYYY-MM-DD',
+    #     'color': 'color_name_or_hex',
+    #     'opacity': 0.0 to 1.0
+    # }
+]
+
+# Add translations for period names
+lang_content['en'].update({
+    'period_covid': 'COVID Lockdown',
+    'period_summer': 'Summer Break 2024'
+})
+
+lang_content['es'].update({
+    'period_covid': 'Cuarentena COVID',
+    'period_summer': 'Receso de Verano 2024'
+})
+
 def check_password():
     """Returns `True` if the user had a correct password."""
 
@@ -660,16 +740,36 @@ with tab_stats:
                         'variable': 'Type'
                     })
         
+        # Add shaded periods
+        for period in SHADED_PERIODS:
+            fig.add_vrect(
+                x0=period['start_date'],
+                x1=period['end_date'],
+                fillcolor=period['color'],
+                opacity=period['opacity'],
+                layer="below",
+                line_width=0,
+                name=period["name"],
+                visible=True,
+                showlegend=True
+            )
+        
         fig.update_traces(mode='lines+markers')
         fig.update_layout(
             yaxis_title="Number of UMDs",
             legend_title="Type",
-            showlegend=True
+            showlegend=True,
+            legend=dict(
+                yanchor="top",
+                y=0.99,
+                xanchor="left",
+                x=0.01
+            )
         )
         
         # Update legend labels
         newnames = {'UMD_number': 'Assembled', 'cumulative_installations': 'Installed'}
-        fig.for_each_trace(lambda t: t.update(name=newnames[t.name]))
+        fig.for_each_trace(lambda t: t.update(name=newnames[t.name] if t.name in newnames else t.name))
         
         st.plotly_chart(fig, use_container_width=True)
     else:
