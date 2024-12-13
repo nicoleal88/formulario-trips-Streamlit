@@ -1,19 +1,20 @@
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
-import streamlit.components.v1 as components
+import pandas as pd
 import numpy as np
+import plotly.graph_objects as go
+from streamlit_gsheets import GSheetsConnection
 from datetime import datetime
+from typing import List, Dict, Any, Optional, Union
+import streamlit.components.v1 as components
 import requests
 import re
 from PIL import Image
 import io
 import time
-import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-
 import hmac
-from translations import lang_content
+
+from translations import lang_content as translations  # Import the content dictionary directly
 
 # Scintillator mapping data
 num_scintillator = list(range(1, 65))
@@ -171,23 +172,23 @@ def search_dataframe(df, query):
 
 # Set page configuration
 st.set_page_config(
-    page_title=lang_content['page_title'][st.session_state['language']],
+    page_title=translations['page_title'][st.session_state['language']],
     page_icon=":wrench:",
     layout="wide",
 )
 
 col_title, col_button = st.columns((0.8, 0.2))
 with col_title:
-    st.title(lang_content['header_title'][st.session_state['language']])
+    st.title(translations['header_title'][st.session_state['language']])
 with col_button:
-    st.button(lang_content['button_text'][st.session_state['language']], on_click=switch_language)  # Button to switch language
+    st.button(translations['button_text'][st.session_state['language']], on_click=switch_language)  # Button to switch language
 st.divider()
 
 tab_map, tab_field, tab_acq, tab_stats, tab_umd_details = st.tabs([
-    lang_content['tab_map_title'][st.session_state['language']],
-    lang_content['tab_field_title'][st.session_state['language']],
-    lang_content['tab_acq_title'][st.session_state['language']],
-    lang_content['tab_stats_title'][st.session_state['language']],
+    translations['tab_map_title'][st.session_state['language']],
+    translations['tab_field_title'][st.session_state['language']],
+    translations['tab_acq_title'][st.session_state['language']],
+    translations['tab_stats_title'][st.session_state['language']],
     'UMD Details'  # We'll add this to translations later
 ])
 
@@ -230,12 +231,12 @@ with tab_field:
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
-        st.header(lang_content['filters_header'][st.session_state['language']], divider="grey")
+        st.header(translations['filters_header'][st.session_state['language']], divider="grey")
         
         # Add search box in the filters section
-        st.markdown(f"### {lang_content['search_label'][st.session_state['language']]}")
+        st.markdown(f"### {translations['search_label'][st.session_state['language']]}")
         search_query = st.text_input(
-            label=lang_content['search_placeholder'][st.session_state['language']],
+            label=translations['search_placeholder'][st.session_state['language']],
             key="search_tab_field",
             label_visibility="collapsed"
         )
@@ -247,18 +248,18 @@ with tab_field:
             search_mask = search_dataframe(df, search_query)
             df_filtered = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
             if len(df_filtered) == 0:
-                st.warning(lang_content['no_results'][st.session_state['language']].format(search_query))
+                st.warning(translations['no_results'][st.session_state['language']].format(search_query))
             else:
-                st.info(lang_content['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
+                st.info(translations['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
                 df = df_filtered  # Only update df if there are matches
 
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown(f"### {lang_content['position_label'][st.session_state['language']]}")
-            name_dropdown = st.selectbox(lang_content['position_label'][st.session_state['language']],
+            st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
+            name_dropdown = st.selectbox(translations['position_label'][st.session_state['language']],
                                          np.sort(df['name'].unique()), index=None,
-                                         placeholder=lang_content['position_placeholder'][st.session_state['language']],
+                                         placeholder=translations['position_placeholder'][st.session_state['language']],
                                          key="name_dropdown_1", label_visibility="collapsed")
 
         if name_dropdown is None:
@@ -267,10 +268,10 @@ with tab_field:
             filtered_by_name = df[(df['name'] == name_dropdown)]
 
         with col2:
-            st.markdown(f"### {lang_content['type_label'][st.session_state['language']]}")
-            type_dropdown = st.selectbox(lang_content['type_label'][st.session_state['language']],
+            st.markdown(f"### {translations['type_label'][st.session_state['language']]}")
+            type_dropdown = st.selectbox(translations['type_label'][st.session_state['language']],
                                          filtered_by_name['type'].unique(), index=None,
-                                         placeholder=lang_content['type_placeholder'][st.session_state['language']],
+                                         placeholder=translations['type_placeholder'][st.session_state['language']],
                                          key="type_dropdown_1", label_visibility="collapsed")
 
         if type_dropdown is None:
@@ -278,15 +279,15 @@ with tab_field:
         else:
             filtered_by_type = filtered_by_name[(filtered_by_name['type'] == type_dropdown)]
 
-        st.markdown(f"### {lang_content['date_interval_label'][st.session_state['language']]}")
+        st.markdown(f"### {translations['date_interval_label'][st.session_state['language']]}")
 
         col3, col4 = st.columns(2)
 
         with col3:
-            start_date = st.date_input(lang_content['from_label'][st.session_state['language']],
+            start_date = st.date_input(translations['from_label'][st.session_state['language']],
                                        value=min_date, key="start_date_1")
         with col4:
-            end_date = st.date_input(lang_content['to_label'][st.session_state['language']],
+            end_date = st.date_input(translations['to_label'][st.session_state['language']],
                                      value=max_date, key="end_date_1")
 
         if start_date is None and end_date is None:
@@ -304,15 +305,15 @@ with tab_field:
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
 
-        st.button(lang_content['clear_filters'][st.session_state['language']], on_click=clear_all)
+        st.button(translations['clear_filters'][st.session_state['language']], on_click=clear_all)
 
-        st.header(lang_content['results_header'][st.session_state['language']], divider="grey")
-        st.caption(lang_content['click_report'][st.session_state['language']])
+        st.header(translations['results_header'][st.session_state['language']], divider="grey")
+        st.caption(translations['click_report'][st.session_state['language']])
 
         def photo_formatter(photo_links):
             if isinstance(photo_links, str):
                 links = re.findall(r'https://drive\.google\.com/open\?id=[^\s,]+', photo_links)
-                return lang_content['contains_photos'][st.session_state['language']].format(len(links)) if links else ""
+                return translations['contains_photos'][st.session_state['language']].format(len(links)) if links else ""
             return ""
 
         # Create a new column for the photo indicator
@@ -348,7 +349,7 @@ with tab_field:
             return Image.open(io.BytesIO(response.content))
 
         with colB:
-            st.header(lang_content['report_header'][st.session_state['language']], divider="grey")
+            st.header(translations['report_header'][st.session_state['language']], divider="grey")
             if len(selection["selection"]["rows"]) > 0:
                 selected_row = final_table.iloc[selection["selection"]["rows"]]
                 md_content = selected_row["content"].values[0]
@@ -362,10 +363,10 @@ with tab_field:
                     photo_links = [clean_url(link) for link in photo_links]
 
                     if photo_links:
-                        st.subheader(lang_content['photos_header'][st.session_state['language']])
+                        st.subheader(translations['photos_header'][st.session_state['language']])
 
                         for link in photo_links:
-                            with st.spinner(lang_content['loading_image'][st.session_state['language']]):
+                            with st.spinner(translations['loading_image'][st.session_state['language']]):
                                 try:
                                     img = get_image_content(link)
 
@@ -379,12 +380,12 @@ with tab_field:
                                     st.image(img_byte_arr, use_column_width=True)
 
                                 except Exception as e:
-                                    st.error(f"{lang_content['image_load_error'][st.session_state['language']]} {str(e)}")
-                                    st.markdown(f"[{lang_content['image_link'][st.session_state['language']]}]({link})")
+                                    st.error(f"{translations['image_load_error'][st.session_state['language']]} {str(e)}")
+                                    st.markdown(f"[{translations['image_link'][st.session_state['language']]}]({link})")
 
                                 time.sleep(0.1)
                     else:
-                        st.info(lang_content['no_photos'][st.session_state['language']])
+                        st.info(translations['no_photos'][st.session_state['language']])
 
 with tab_acq:  
     conn = st.connection("belu", type=GSheetsConnection)
@@ -417,12 +418,12 @@ with tab_acq:
     empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
 
     with colA:
-        st.header(lang_content['filters_header'][st.session_state['language']], divider="grey")
+        st.header(translations['filters_header'][st.session_state['language']], divider="grey")
         
         # Add search box in the filters section
-        st.markdown(f"### {lang_content['search_label'][st.session_state['language']]}")
+        st.markdown(f"### {translations['search_label'][st.session_state['language']]}")
         search_query = st.text_input(
-            label=lang_content['search_placeholder'][st.session_state['language']],
+            label=translations['search_placeholder'][st.session_state['language']],
             key="search_tab_acq",
             label_visibility="collapsed"
         )
@@ -434,18 +435,18 @@ with tab_acq:
             search_mask = search_dataframe(df, search_query)
             df_filtered = df[search_mask].copy()  # Create a copy to avoid SettingWithCopyWarning
             if len(df_filtered) == 0:
-                st.warning(lang_content['no_results'][st.session_state['language']].format(search_query))
+                st.warning(translations['no_results'][st.session_state['language']].format(search_query))
             else:
-                st.info(lang_content['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
+                st.info(translations['search_results'][st.session_state['language']].format(len(df_filtered), search_query))
                 df = df_filtered  # Only update df if there are matches
 
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            st.markdown(f"### {lang_content['position_label'][st.session_state['language']]}")
-            name_dropdown = st.selectbox(lang_content['position_label'][st.session_state['language']],
+            st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
+            name_dropdown = st.selectbox(translations['position_label'][st.session_state['language']],
                                          np.sort(df['position'].unique()), index=None,
-                                         placeholder=lang_content['position_placeholder'][st.session_state['language']],
+                                         placeholder=translations['position_placeholder'][st.session_state['language']],
                                          key="name_dropdown_2", label_visibility="collapsed")
 
         if name_dropdown is None:
@@ -455,17 +456,17 @@ with tab_acq:
 
             
         with col2:
-            st.markdown(f"### {lang_content['status_label'][st.session_state['language']]}")
-            type_dropdown = st.selectbox(lang_content['status_label'][st.session_state['language']],
+            st.markdown(f"### {translations['status_label'][st.session_state['language']]}")
+            type_dropdown = st.selectbox(translations['status_label'][st.session_state['language']],
                                             filtered_by_name['status'].unique(), index=None,
-                                            placeholder=lang_content['status_placeholder'][st.session_state['language']],
+                                            placeholder=translations['status_placeholder'][st.session_state['language']],
                                             key="type_dropdown_2", label_visibility="collapsed")
 
         with col3:
-            st.markdown(f"### {lang_content['team_label'][st.session_state['language']]}")
-            team_dropdown = st.selectbox(lang_content['team_label'][st.session_state['language']],
+            st.markdown(f"### {translations['team_label'][st.session_state['language']]}")
+            team_dropdown = st.selectbox(translations['team_label'][st.session_state['language']],
                                             np.sort(filtered_by_name['team'].unique()), index=None,
-                                            placeholder=lang_content['team_placeholder'][st.session_state['language']],
+                                            placeholder=translations['team_placeholder'][st.session_state['language']],
                                             key="team_dropdown_2", label_visibility="collapsed")
 
         if type_dropdown is None:
@@ -478,15 +479,15 @@ with tab_acq:
         else:
             filtered_by_team = filtered_by_type[(filtered_by_type['team'] == team_dropdown)]
 
-        st.markdown(f"### {lang_content['date_interval_label'][st.session_state['language']]}")
+        st.markdown(f"### {translations['date_interval_label'][st.session_state['language']]}")
 
         col4, col5 = st.columns(2)
 
         with col4:
-            start_date = st.date_input(lang_content['from_label'][st.session_state['language']],
+            start_date = st.date_input(translations['from_label'][st.session_state['language']],
                                        value=min_date, key="start_date_2")
         with col5:
-            end_date = st.date_input(lang_content['to_label'][st.session_state['language']],
+            end_date = st.date_input(translations['to_label'][st.session_state['language']],
                                      value=max_date, key="end_date_2")
 
         if start_date is None and end_date is None:
@@ -505,11 +506,11 @@ with tab_acq:
             st.session_state['start_date'] = min_date
             st.session_state['end_date'] = max_date
 
-        st.button(lang_content['clear_filters'][st.session_state['language']], on_click=clear_all,key='button_2')
+        st.button(translations['clear_filters'][st.session_state['language']], on_click=clear_all,key='button_2')
 
-        st.header(lang_content['results_header'][st.session_state['language']], divider="grey")
+        st.header(translations['results_header'][st.session_state['language']], divider="grey")
 
-        st.caption(lang_content['click_report'][st.session_state['language']])
+        st.caption(translations['click_report'][st.session_state['language']])
     
         selection = st.dataframe(final_table_colA, on_select="rerun", selection_mode="single-row",
                                  height=200 if len(final_table_colA) > 5 else None, width=800, 
@@ -523,7 +524,7 @@ with tab_acq:
                                  hide_index=True)
 
         with colB:
-            st.header(lang_content['report_header'][st.session_state['language']], divider="grey")
+            st.header(translations['report_header'][st.session_state['language']], divider="grey")
             if len(selection["selection"]["rows"]) > 0:
                 selected_row = final_table_colA.iloc[selection["selection"]["rows"]]            
                 full_selection = final_table.loc[final_table['position']==selected_row['position'].values[0]]
@@ -585,9 +586,9 @@ with tab_stats:
     
     # Clean installation data
     df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
+    df_historial['install_date'] = pd.to_datetime(df_historial['install_date'])  # Convert install_date to datetime
     df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
     df_historial['id'] = df_historial['id'].astype(int)
-    df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], format="%d/%m/%y")
     
     # Count only valid modules (starting with "M-")
     def is_valid_module(x):
@@ -603,7 +604,7 @@ with tab_stats:
     df_historial = df_historial.sort_values(by='install_date')
     
     # Display metrics
-    st.markdown(f"## {lang_content['stats_header'][st.session_state['language']]}")
+    st.markdown(f"## {translations['stats_header'][st.session_state['language']]}")
     
     # Time period filter
     time_filters = {
@@ -626,9 +627,9 @@ with tab_stats:
     
     with filter_col:
         selected_filter = st.selectbox(
-            lang_content['stats_time_filter'][st.session_state['language']],
+            translations['stats_time_filter'][st.session_state['language']],
             options=list(time_filters.keys()),
-            format_func=lambda x: lang_content[f'stats_filter_{x.lower().replace(" ", "_") if x != "All Time" else "all_time"}'][st.session_state['language']]
+            format_func=lambda x: translations[f'stats_filter_{x.lower().replace(" ", "_") if x != "All Time" else "all_time"}'][st.session_state['language']]
         )
         if time_filters[selected_filter] is not None:
             if isinstance(time_filters[selected_filter], pd.DateOffset):
@@ -678,30 +679,30 @@ with tab_stats:
     col1, col2, col3, col4 = st.columns(4)
 
     col1.metric(
-        label=lang_content['stats_assembled'][st.session_state['language']],
+        label=translations['stats_assembled'][st.session_state['language']],
         value=total_assembled,
         delta=f"+{assembled_delta}" if assembled_delta and assembled_delta > 0 else str(assembled_delta) if assembled_delta and assembled_delta != 0 else None
     )
 
     col2.metric(
-        label=lang_content['stats_installed'][st.session_state['language']],
+        label=translations['stats_installed'][st.session_state['language']],
         value=total_installed,
         delta=f"+{installed_delta}" if installed_delta and installed_delta > 0 else str(installed_delta) if installed_delta and installed_delta != 0 else None
     )
 
     col3.metric(
-        label=lang_content['stats_positions'][st.session_state['language']],
+        label=translations['stats_positions'][st.session_state['language']],
         value=installation_positions,
         delta=f"+{positions_delta}" if positions_delta and positions_delta > 0 else str(positions_delta) if positions_delta and positions_delta != 0 else None
     )
 
     col4.metric(
-        label=lang_content['stats_rate'][st.session_state['language']],
+        label=translations['stats_rate'][st.session_state['language']],
         value=f"{(installation_positions/73 *100):.1f}%"
     )
 
     # Plots
-    st.markdown(f"### {lang_content['stats_plots_title'][st.session_state['language']]}")
+    st.markdown(f"### {translations['stats_plots_title'][st.session_state['language']]}")
 
     # Create a date range from min to max date of complete dataset
     if not df_stock.empty and not df_historial.empty:
@@ -742,7 +743,7 @@ with tab_stats:
         fig = px.line(df_combined,
                     x='date',
                     y=['UMD_number', 'cumulative_installations'],
-                    title=lang_content['stats_combined_title'][st.session_state['language']],
+                    title=translations['stats_combined_title'][st.session_state['language']],
                     labels={
                         'date': 'Date',
                         'value': 'Number of UMDs',
@@ -765,7 +766,7 @@ with tab_stats:
         
         fig.update_traces(mode='lines+markers')
         fig.update_layout(
-            title=lang_content['stats_combined_title'][st.session_state['language']],
+            title=translations['stats_combined_title'][st.session_state['language']],
             yaxis_title="Number of UMDs",
             legend_title="Type",
             showlegend=True,
@@ -807,20 +808,20 @@ with tab_umd_details:
     
     # Clean installation data
     df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
+    df_historial['install_date'] = pd.to_datetime(df_historial['install_date'])  # Convert install_date to datetime
     df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
     df_historial['id'] = df_historial['id'].astype(int)
-    df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], format="%d/%m/%y")
     
     # Process details to extract problematic scintillators for each row
-    def extract_scints(details):
-        if pd.notna(details) and details.strip():
-            numbers = re.findall(r'\d+', details)
-            return ', '.join(numbers)
-        return ''
+    def extract_scints(details: Optional[str]) -> List[int]:
+        if pd.isna(details):
+            return []
+        matches = re.findall(r'\d+(?=\s*\()', str(details))
+        return [int(m) for m in matches]
     
     df_umd['Problematic Scints'] = df_umd['Details'].apply(extract_scints)
     
-    def create_umd_position_plot(umd_info, selected_umd):
+    def create_umd_position_plot(umd_info: pd.Series, selected_umd: str) -> go.Figure:
         # Constants
         circle_diameter = 3.6  # meters
         margin_diameter = 13.6  # meters
