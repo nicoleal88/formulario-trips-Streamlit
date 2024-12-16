@@ -23,6 +23,10 @@ lang_content = {
         'es': "Estadísticas",
         'en': "Statistics"
     },
+    'tab_umd_details': {
+        'es': "Detalles UMD",
+        'en': "UMD Details"
+    },
     'filters_header': {
         'es': "Filtros",
         'en': "Filters"
@@ -218,5 +222,65 @@ lang_content = {
     'stats_filter_q4_2023': {
         'es': "Q4 2023",
         'en': "Q4 2023"
+    },
+    'select_umd_label': {
+        'es': "Seleccionar UMD",
+        'en': "Select UMD"
+    },
+    'installation_info_header': {
+        'es': "Información de Instalación",
+        'en': "Installation Information"
+    },
+    'module_position_label': {
+        'es': "Posición del Módulo",
+        'en': "Module Position"
+    },
+    'electronic_kit_label': {
+        'es': "Kit Electrónico",
+        'en': "Electronic Kit"
+    },
+    'module_details_label': {
+        'es': "Detalles del Módulo",
+        'en': "Module Details"
+    },
+    'rotation_angle_label': {
+        'es': "Ángulo de Rotación",
+        'en': "Rotation Angle"
+    },
+    'radio_distance_label': {
+        'es': "Distancia Radial",
+        'en': "Radio Distance"
+    },
+    'position_angle_label': {
+        'es': "Ángulo de Posición",
+        'en': "Position Angle"
+    },
+    'other_modules_label': {
+        'es': "Otros Módulos en la Posición",
+        'en': "Other Modules in Position"
+    },
+    'assembly_issues_header': {
+        'es': "Problemas durante el Ensamblaje",
+        'en': "Issues during Assembly"
+    },
+    'no_issues_reported': {
+        'es': "No se reportaron problemas",
+        'en': "No issues reported"
+    },
+    'no_installation_info': {
+        'es': "No se encontró información de instalación para este UMD",
+        'en': "No installation information found for this UMD"
+    },
+    'umd_layout_header': {
+        'es': "Plano del UMD",
+        'en': "UMD Layout"
+    },
+    'umd_position_header': {
+        'es': "Posición del UMD",
+        'en': "UMD Position"
+    },
+    'no_plot_data': {
+        'es': "No hay suficientes datos para generar el gráfico",
+        'en': "Not enough data to generate the plot"
     },
 }
