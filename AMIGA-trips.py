@@ -13,8 +13,140 @@ import io
 import time
 import plotly.express as px
 import hmac
+import numpy as np
 
-from translations import lang_content as translations  # Import the content dictionary directly
+from translations import lang_content as translations
+
+def create_umd_position_plot(umd_info: pd.Series, selected_umd: str) -> Union[go.Figure, None]:
+    try:
+        # Constants
+        circle_diameter = 3.6  # meters
+        margin_diameter = 13.6  # meters
+        umd_width = 1.4  # meters
+        umd_height = 9.0  # meters
+
+        # Create figure
+        fig = go.Figure()
+
+        # Add central circle (tank)
+        theta = np.linspace(0, 2*np.pi, 100)
+        x_circle = (circle_diameter/2) * np.cos(theta)
+        y_circle = (circle_diameter/2) * np.sin(theta)
+        fig.add_trace(go.Scatter(
+            x=x_circle, y=y_circle,
+            fill="toself",
+            fillcolor="rgba(255,200,200,0.5)",
+            line=dict(color="rgba(255,200,200,0.8)"),
+            name="Tank"
+        ))
+
+        # Add margin circle
+        x_margin = (margin_diameter/2) * np.cos(theta)
+        y_margin = (margin_diameter/2) * np.sin(theta)
+        fig.add_trace(go.Scatter(
+            x=x_margin, y=y_margin,
+            line=dict(color="rgba(200,200,200,0.5)"),
+            name="Margin"
+        ))
+
+        # Add UMDs
+        for module in ['101', '102', '103']:
+            # Skip if module ID is "-"
+            if umd_info[f'id_m{module}'] == "-":
+                continue
+
+            rd = float(str(umd_info[f'RadioDistance_m{module}']).replace(',', '.'))
+            pa = np.radians(float(str(umd_info[f'PositionAngle_m{module}']).replace(',', '.')))
+            ra = np.radians(float(str(umd_info[f'RotationAngle_m{module}']).replace(',', '.')))
+
+            # Calculate center position
+            x = -rd * np.sin(pa)
+            y = -rd * np.cos(pa)
+
+            # Create rectangle corners (rotated)
+            corners_x = []
+            corners_y = []
+
+            # Calculate corners of rectangle
+            for dx, dy in [(-umd_width/2, -umd_height/2), 
+                        (umd_width/2, -umd_height/2),
+                        (umd_width/2, umd_height/2),
+                        (-umd_width/2, umd_height/2),
+                        (-umd_width/2, -umd_height/2)]:  # Close the shape
+                # Rotate point by RA
+                rx = -dx * np.cos(ra) - dy * np.sin(ra)
+                ry = dx * np.sin(ra) - dy * np.cos(ra)
+                # Translate to position
+                corners_x.append(x + rx)
+                corners_y.append(y + ry)
+
+            # Set color based on whether this is the selected UMD
+            is_selected = umd_info[f'id_m{module}'] == selected_umd
+            fillcolor = "rgba(255,255,255,0.8)" if is_selected else "rgba(200,200,255,0.5)"
+            line_width = 2 if is_selected else 1
+
+            # Add UMD rectangle
+            fig.add_trace(go.Scatter(
+                x=corners_x, y=corners_y,
+                fill="toself",
+                fillcolor=fillcolor,
+                line=dict(color="black", width=line_width),
+                name=f"UMD {umd_info[f'id_m{module}']}",
+                hovertext=f"UMD {umd_info[f'id_m{module}']}<br>RD: {rd}m<br>PA: {umd_info[f'PositionAngle_m{module}']}°<br>RA: {umd_info[f'RotationAngle_m{module}']}°",
+                showlegend=False
+            ))
+
+            fig.add_shape(
+                type="circle",
+                xref="x",
+                yref="y",
+                x0=x-0.3,
+                y0=y-0.3,
+                x1=x+0.3,
+                y1=y+0.3,
+                fillcolor="lightblue",
+                opacity=0.7
+            )
+
+        # Add North indicator
+        fig.add_trace(go.Scatter(
+            x=[0, 0],
+            y=[circle_diameter/2 + 0.5, circle_diameter/2 + 1.5],
+            mode='lines',
+            line=dict(color="gray"),
+            name="North"
+        ))
+        fig.add_annotation(
+            x=0, y=circle_diameter/2 + 2,
+            text="N",
+            showarrow=False,
+            font=dict(size=14)
+        )
+
+        # Update layout
+        fig.update_layout(
+            showlegend=True,
+            width=600,
+            height=800,
+            xaxis=dict(
+                scaleanchor="y",
+                scaleratio=1,
+                showgrid=False,
+                zeroline=False,
+                showticklabels=False
+            ),
+            yaxis=dict(
+                showgrid=False,
+                zeroline=False,
+                showticklabels=False
+            ),
+            hovermode='closest'
+        )
+
+        return fig
+    except Exception as e:
+        print(f"Error creating plot: {str(e)}")
+        return None
 
 # Scintillator mapping data
 num_scintillator = list(range(1, 65))
@@ -189,7 +321,7 @@ tab_map, tab_field, tab_acq, tab_stats, tab_umd_details = st.tabs([
     translations['tab_field_title'][st.session_state['language']],
     translations['tab_acq_title'][st.session_state['language']],
     translations['tab_stats_title'][st.session_state['language']],
-    'UMD Details'  # We'll add this to translations later
+    translations['tab_umd_details'][st.session_state['language']]
 ])
 
 with tab_map:
@@ -787,6 +919,9 @@ with tab_stats:
         st.info("No data available")
 
 with tab_umd_details:
+    # Create two main columns
+    col1, col2 = st.columns([0.25, 0.75])
+    
     conn = st.connection("umd_details", type=GSheetsConnection)
     
     # Get data from the spreadsheet
@@ -812,326 +947,215 @@ with tab_umd_details:
     df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
     df_historial['id'] = df_historial['id'].astype(int)
     
-    # Process details to extract problematic scintillators for each row
-    def extract_scints(details: Optional[str]) -> List[int]:
-        if pd.isna(details):
-            return []
-        matches = re.findall(r'\d+(?=\s*\()', str(details))
-        return [int(m) for m in matches]
-    
-    df_umd['Problematic Scints'] = df_umd['Details'].apply(extract_scints)
-    
-    def create_umd_position_plot(umd_info: pd.Series, selected_umd: str) -> go.Figure:
-        # Constants
-        circle_diameter = 3.6  # meters
-        margin_diameter = 13.6  # meters
-        umd_width = 1.4  # meters
-        umd_height = 9.0  # meters
-        
-        # Create figure
-        fig = go.Figure()
-        
-        # Add central circle (tank)
-        theta = np.linspace(0, 2*np.pi, 100)
-        x_circle = (circle_diameter/2) * np.cos(theta)
-        y_circle = (circle_diameter/2) * np.sin(theta)
-        fig.add_trace(go.Scatter(
-            x=x_circle, y=y_circle,
-            fill="toself",
-            fillcolor="rgba(255,200,200,0.5)",
-            line=dict(color="rgba(255,200,200,0.8)"),
-            name="Tank"
-        ))
-        
-        # Add margin circle
-        x_margin = (margin_diameter/2) * np.cos(theta)
-        y_margin = (margin_diameter/2) * np.sin(theta)
-        fig.add_trace(go.Scatter(
-            x=x_margin, y=y_margin,
-            line=dict(color="rgba(200,200,200,0.5)"),
-            name="Margin"
-        ))
-        
-        # Add UMDs
-        for module in ['101', '102', '103']:
-            # Skip if module ID is "-"
-            if umd_info[f'id_m{module}'] == "-":
-                continue
-                
-            rd = float(umd_info[f'RadioDistance_m{module}'].replace(',', '.'))
-            pa = np.radians(float(umd_info[f'PositionAngle_m{module}']))
-            ra = np.radians(float(umd_info[f'RotationAngle_m{module}']))
-            
-            # Calculate center position
-            x = -rd * np.sin(pa)
-            y = -rd * np.cos(pa)
-            
-            # Create rectangle corners (rotated)
-            corners_x = []
-            corners_y = []
-            
-            # Calculate corners of rectangle
-            for dx, dy in [(-umd_width/2, -umd_height/2), 
-                        (umd_width/2, -umd_height/2),
-                        (umd_width/2, umd_height/2),
-                        (-umd_width/2, umd_height/2),
-                        (-umd_width/2, -umd_height/2)]:  # Close the shape
-                # Rotate point by RA
-                rx = -dx * np.cos(ra) - dy * np.sin(ra)
-                ry = dx * np.sin(ra) - dy * np.cos(ra)
-                # Translate to position
-                corners_x.append(x + rx)
-                corners_y.append(y + ry)
-            
-            # Set color based on whether this is the selected UMD
-            is_selected = umd_info[f'id_m{module}'] == selected_umd
-            fillcolor = "rgba(255,255,255,0.8)" if is_selected else "rgba(200,200,255,0.5)"
-            line_width = 2 if is_selected else 1
-            
-            # Add UMD rectangle
-            fig.add_trace(go.Scatter(
-                x=corners_x, y=corners_y,
-                fill="toself",
-                fillcolor=fillcolor,
-                line=dict(color="black", width=line_width),
-                name=f"UMD {umd_info[f'id_m{module}']}",
-                hovertext=f"UMD {umd_info[f'id_m{module}']}<br>RD: {rd}m<br>PA: {umd_info[f'PositionAngle_m{module}']}°<br>RA: {umd_info[f'RotationAngle_m{module}']}°",
-                showlegend=False
-            ))
-
-            fig.add_shape(
-                type="circle",
-                xref="x",
-                yref="y",
-                x0=x-0.3,
-                y0=y-0.3,
-                x1=x+0.3,
-                y1=y+0.3,
-                # line_color="blue",
-                fillcolor="lightblue",
-                opacity=0.7
-            )
-        
-        # Add North indicator
-        fig.add_trace(go.Scatter(
-            x=[0, 0],
-            y=[circle_diameter/2 + 0.5, circle_diameter/2 + 1.5],
-            mode='lines',
-            line=dict(color="gray"),
-            name="North"
-        ))
-        fig.add_annotation(
-            x=0, y=circle_diameter/2 + 2,
-            text="N",
-            showarrow=False,
-            font=dict(size=14)
-        )
-        
-        # Update layout
-        fig.update_layout(
-            showlegend=True,
-            width=600,
-            height=600,
-            xaxis=dict(
-                scaleanchor="y",
-                scaleratio=1,
-                showgrid=False,
-                zeroline=False,
-                showticklabels=False
-            ),
-            yaxis=dict(
-                showgrid=False,
-                zeroline=False,
-                showticklabels=False
-            ),
-            hovermode='closest'
-        )
-        
-        return fig
-
-    # Create two columns
-    col1, col2 = st.columns([0.25, 0.75])
-    
     with col1:
-        st.header("UMD Selection", divider="grey")
-        selected_umd = st.selectbox(
-            "Select UMD",
-            options=df_umd['UMD_ID'].tolist(),
-            index=None,
-            placeholder="Choose a UMD..."
+        # Add position filter first
+        st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
+        position_filter = st.selectbox(
+            translations['position_label'][st.session_state['language']],
+            options=[''] + sorted(df_historial['position'].unique().tolist()),
+            format_func=lambda x: translations['position_placeholder'][st.session_state['language']] if x == '' else x,
+            key="position_filter_umd_details",
+            label_visibility="collapsed"
         )
-        
+
+        # Filter UMDs based on selected position
+        if position_filter:
+            filtered_umds = pd.concat([
+                df_historial[df_historial['position'] == position_filter]['id_m101'],
+                df_historial[df_historial['position'] == position_filter]['id_m102'],
+                df_historial[df_historial['position'] == position_filter]['id_m103']
+            ]).unique()
+            # Remove "-" from the list if present
+            filtered_umds = filtered_umds[filtered_umds != "-"]
+        else:
+            # Get all UMDs from all three columns
+            filtered_umds = pd.concat([
+                df_historial['id_m101'],
+                df_historial['id_m102'],
+                df_historial['id_m103']
+            ]).unique()
+            # Remove "-" from the list if present
+            filtered_umds = filtered_umds[filtered_umds != "-"]
+
+        # UMD selection with filtered options
+        st.markdown(f"### {translations['select_umd_label'][st.session_state['language']]}")
+        selected_umd = st.selectbox(
+            translations['select_umd_label'][st.session_state['language']],
+            options=[None] + sorted(filtered_umds),
+            format_func=lambda x: translations['select_umd_label'][st.session_state['language']] if x is None else str(x),
+            key="umd_selector",
+            label_visibility="collapsed"
+        )
+
         if selected_umd:
-            selected_row = df_umd[df_umd['UMD_ID'] == selected_umd].iloc[0]
-            
-            # Get installation info by searching in all module columns
-            umd_info = df_historial[
-                (df_historial['id_m101'] == selected_umd) |
-                (df_historial['id_m102'] == selected_umd) |
-                (df_historial['id_m103'] == selected_umd)
-            ].iloc[0] if len(df_historial[
-                (df_historial['id_m101'] == selected_umd) |
-                (df_historial['id_m102'] == selected_umd) |
-                (df_historial['id_m103'] == selected_umd)
-            ]) > 0 else None
-            
-            if umd_info is not None:
-                # Find which module number this UMD is
-                module_num = None
-                if umd_info['id_m101'] == selected_umd:
-                    module_num = 101
-                elif umd_info['id_m102'] == selected_umd:
-                    module_num = 102
-                elif umd_info['id_m103'] == selected_umd:
-                    module_num = 103
+            matching_rows = df_umd[df_umd['UMD_ID'] == selected_umd]
+            if not matching_rows.empty:
+                selected_row = matching_rows.iloc[0]
                 
-                # Format details text for markdown
-                details_display = selected_row['Details']
-                if pd.isna(details_display):
-                    details_display = 'No issues reported'
-                else:
-                    # Split by numbers followed by parentheses to separate issues
-                    issues = re.findall(r'\d+\s*\([^)]+\)', details_display)
-                    if issues:
-                        # Format each issue as a list item
-                        details_display = '\n'.join(f"- {issue.strip()}" for issue in issues)
-                    else:
-                        details_display = f"- {details_display}"
+                # Get installation info by searching in all module columns
+                umd_info = df_historial[
+                    (df_historial['id_m101'] == selected_umd) |
+                    (df_historial['id_m102'] == selected_umd) |
+                    (df_historial['id_m103'] == selected_umd)
+                ].iloc[0] if len(df_historial[
+                    (df_historial['id_m101'] == selected_umd) |
+                    (df_historial['id_m102'] == selected_umd) |
+                    (df_historial['id_m103'] == selected_umd)
+                ]) > 0 else None
+                
+                if umd_info is not None:
+                    # Find which module number this UMD is
+                    module_num = None
+                    if umd_info['id_m101'] == selected_umd:
+                        module_num = 101
+                    elif umd_info['id_m102'] == selected_umd:
+                        module_num = 102
+                    elif umd_info['id_m103'] == selected_umd:
+                        module_num = 103
                     
-                    # Escape any markdown special characters
-                    details_display = details_display.replace('*', '\\*').replace('_', '\\_')
-                
-                st.markdown("""### Installation Information""")
-                st.markdown(f"""
-                            - **Position:** {umd_info['position']}
-                            - **Installation Date:** {umd_info['install_date'].strftime('%Y-%m-%d')}
-                            - **Module Position:** m-{module_num}
-                            - **Electronic Kit:** {umd_info[f'ekit_m{module_num}']}
-                            - **Module Details:**
-                                - Rotation Angle: {umd_info[f'RotationAngle_m{module_num}']}°
-                                - Radio Distance: {umd_info[f'RadioDistance_m{module_num}']} m
-                                - Position Angle: {umd_info[f'PositionAngle_m{module_num}']}°
-                            - **Other Modules in Position:**
-                                - Module 1: {umd_info['id_m101']}
-                                - Module 2: {umd_info['id_m102']}
-                                - Module 3: {umd_info['id_m103']}
-                            """)
-                
-                st.markdown("""### Issues during Assembly:""")
-                st.markdown(details_display)
-                
-            else:
-                st.warning("No installation information found for this UMD")
+                    # Format details text for markdown
+                    details_display = selected_row['Details']
+                    if pd.isna(details_display):
+                        details_display = translations['no_issues_reported'][st.session_state['language']]
+                    else:
+                        # Split by numbers followed by parentheses to separate issues
+                        issues = re.findall(r'\d+\s*\([^)]+\)', details_display)
+                        if issues:
+                            # Format each issue as a list item
+                            details_display = '\n'.join(f"- {issue.strip()}" for issue in issues)
+                        else:
+                            details_display = f"- {details_display}"
+                        
+                        # Escape any markdown special characters
+                        details_display = details_display.replace('*', '\\*').replace('_', '\\_')
+                    
+                    st.markdown(f"""### {translations['installation_info_header'][st.session_state['language']]}""")
+                    st.markdown(f"""
+                                - **{translations['position_label'][st.session_state['language']]}** {umd_info['position']}
+                                - **{translations['from_label'][st.session_state['language']]}** {umd_info['install_date'].strftime('%Y-%m-%d')}
+                                - **{translations['module_position_label'][st.session_state['language']]}** m-{module_num}
+                                - **{translations['electronic_kit_label'][st.session_state['language']]}** {umd_info[f'ekit_m{module_num}']}
+                                - **{translations['module_details_label'][st.session_state['language']]}**
+                                    - {translations['rotation_angle_label'][st.session_state['language']]}: {umd_info[f'RotationAngle_m{module_num}']}°
+                                    - {translations['radio_distance_label'][st.session_state['language']]}: {umd_info[f'RadioDistance_m{module_num}']} m
+                                    - {translations['position_angle_label'][st.session_state['language']]}: {umd_info[f'PositionAngle_m{module_num}']}°
+                                - **{translations['other_modules_label'][st.session_state['language']]}**
+                                    - Module 1: {umd_info['id_m101']}
+                                    - Module 2: {umd_info['id_m102']}
+                                    - Module 3: {umd_info['id_m103']}
+                                """)
+                    
+                    st.markdown(f"""### {translations['assembly_issues_header'][st.session_state['language']]}""")
+                    st.markdown(details_display)
+                    
+                else:
+                    st.warning(translations['no_installation_info'][st.session_state['language']])
     
     with col2:
-        if selected_umd:
-            st.header("UMD Layout", divider="grey")
-            # Parse details to get problematic scintillator numbers
-            details_text = selected_row['Details']
-            problematic_scints = []
-            
-            # Extract numbers from the details text if it's not empty
-            if pd.notna(details_text) and details_text.strip():
-                numbers = re.findall(r'\d+', details_text)
-                problematic_scints = [int(num) for num in numbers]
-            
-            # UMD visualization parameters
-            umd_width = 1.28
-            scint_num = 32
-            scint_width = umd_width / scint_num
-            scint_length = 0.5
-            scint_offset = 0.25
-
-            # Create sample data for scintillators
-            df_top = pd.DataFrame({
-                'x': np.linspace(-umd_width/2, umd_width/2 - scint_width, scint_num)
-            })
-
-            df_bottom = pd.DataFrame({
-                'x': np.linspace(-umd_width/2, umd_width/2 - scint_width, scint_num)
-            })
-
-            # Create the figure
-            fig = go.Figure()
-            
-            # Add top scintillators (numbered 1-32 from left to right)
-            for i in range(len(df_top)):
-                scint_num = i + 1  # Numbers 1-32
-                fillcolor = "red" if scint_num in problematic_scints else "white"
-                
-                fig.add_trace(go.Scatter(
-                    x=[df_top['x'][i], df_top['x'][i], df_top['x'][i] + scint_width, df_top['x'][i] + scint_width, df_top['x'][i]],
-                    y=[scint_offset, scint_offset + scint_length, scint_offset + scint_length, scint_offset, scint_offset],
-                    fill="toself",
-                    fillcolor=fillcolor,
-                    line=dict(color="Black", width=1),
-                    hoverinfo="text",
-                    text=f"Scintillator: {scint_num}<br>FPGA Channel: {scintillator_mapping[scint_num]['fpga']}<br>Data Channel: {scintillator_mapping[scint_num]['datos']}",
-                    showlegend=False
-                ))
-
-            # Add bottom scintillators (numbered 33-64 from right to left)
-            for i in range(len(df_bottom)):
-                scint_num = 64 - i  # Numbers 64-33 from right to left
-                fillcolor = "red" if scint_num in problematic_scints else "white"
-                
-                fig.add_trace(go.Scatter(
-                    x=[df_bottom['x'][i], df_bottom['x'][i], df_bottom['x'][i] + scint_width, df_bottom['x'][i] + scint_width, df_bottom['x'][i]],
-                    y=[-scint_offset, -scint_offset - scint_length, -scint_offset - scint_length, -scint_offset, -scint_offset],
-                    fill="toself",
-                    fillcolor=fillcolor,
-                    line=dict(color="Black", width=1),
-                    hoverinfo="text",
-                    text=f"Scintillator: {scint_num}<br>FPGA Channel: {scintillator_mapping[scint_num]['fpga']}<br>Data Channel: {scintillator_mapping[scint_num]['datos']}",
-                    showlegend=False
-                ))
-
-            # Add central circle
-            fig.add_shape(
-                type="circle",
-                xref="x",
-                yref="y",
-                x0=-0.15,
-                y0=-0.15,
-                x1=0.15,
-                y1=0.15,
-                # line_color="blue",
-                fillcolor="lightblue",
-                opacity=0.7
-            )
-
-            # Update layout
-            fig.update_layout(
-                xaxis=dict(
-                    scaleanchor="y",
-                    scaleratio=1,
-                    showgrid=False,
-                    zeroline=False,
-                    showticklabels=False
-                ),
-                yaxis=dict(
-                    showgrid=False,
-                    zeroline=False,
-                    showticklabels=False
-                ),
-                width=600,
-                height=800,
-                showlegend=False,
-                hovermode='closest',
-                # plot_bgcolor='white'
-            )
-            
+        if selected_umd and umd_info is not None:
+            # Create two columns for the plots
             plot_col1, plot_col2 = st.columns(2)
             
             with plot_col1:
-                st.markdown("### UMD Layout")
-                # fig.update_layout(
-                #     width=400,
-                #     height=400,
-                # )
+                st.markdown(f"### {translations['umd_layout_header'][st.session_state['language']]}")
+                # Parse details to get problematic scintillator numbers
+                details_text = selected_row['Details']
+                problematic_scints = []
+                
+                # Extract numbers from the details text if it's not empty
+                if pd.notna(details_text) and details_text.strip():
+                    numbers = re.findall(r'\d+', details_text)
+                    problematic_scints = [int(num) for num in numbers]
+                
+                # UMD visualization parameters
+                umd_width = 1.28
+                scint_num = 32
+                scint_width = umd_width / scint_num
+                scint_length = 0.5
+                scint_offset = 0.25
+                
+                # Create sample data for scintillators
+                df_top = pd.DataFrame({
+                    'x': np.linspace(-umd_width/2, umd_width/2 - scint_width, scint_num)
+                })
+
+                df_bottom = pd.DataFrame({
+                    'x': np.linspace(-umd_width/2, umd_width/2 - scint_width, scint_num)
+                })
+
+                # Create the figure
+                fig = go.Figure()
+                
+                # Add top scintillators (numbered 1-32 from left to right)
+                for i in range(len(df_top)):
+                    scint_num = i + 1  # Numbers 1-32
+                    fillcolor = "red" if scint_num in problematic_scints else "white"
+                    
+                    fig.add_trace(go.Scatter(
+                        x=[df_top['x'][i], df_top['x'][i], df_top['x'][i] + scint_width, df_top['x'][i] + scint_width, df_top['x'][i]],
+                        y=[scint_offset, scint_offset + scint_length, scint_offset + scint_length, scint_offset, scint_offset],
+                        fill="toself",
+                        fillcolor=fillcolor,
+                        line=dict(color="Black", width=1),
+                        hoverinfo="text",
+                        text=f"Scintillator: {scint_num}<br>FPGA Channel: {scintillator_mapping[scint_num]['fpga']}<br>Data Channel: {scintillator_mapping[scint_num]['datos']}",
+                        showlegend=False
+                    ))
+
+                # Add bottom scintillators (numbered 33-64 from right to left)
+                for i in range(len(df_bottom)):
+                    scint_num = 64 - i  # Numbers 64-33 from right to left
+                    fillcolor = "red" if scint_num in problematic_scints else "white"
+                    
+                    fig.add_trace(go.Scatter(
+                        x=[df_bottom['x'][i], df_bottom['x'][i], df_bottom['x'][i] + scint_width, df_bottom['x'][i] + scint_width, df_bottom['x'][i]],
+                        y=[-scint_offset, -scint_offset - scint_length, -scint_offset - scint_length, -scint_offset, -scint_offset],
+                        fill="toself",
+                        fillcolor=fillcolor,
+                        line=dict(color="Black", width=1),
+                        hoverinfo="text",
+                        text=f"Scintillator: {scint_num}<br>FPGA Channel: {scintillator_mapping[scint_num]['fpga']}<br>Data Channel: {scintillator_mapping[scint_num]['datos']}",
+                        showlegend=False
+                    ))
+
+                # Add central circle
+                fig.add_shape(
+                    type="circle",
+                    xref="x",
+                    yref="y",
+                    x0=-0.15,
+                    y0=-0.15,
+                    x1=0.15,
+                    y1=0.15,
+                    fillcolor="lightblue",
+                    opacity=0.7
+                )
+
+                # Update layout
+                fig.update_layout(
+                    xaxis=dict(
+                        scaleanchor="y",
+                        scaleratio=1,
+                        showgrid=False,
+                        zeroline=False,
+                        showticklabels=False
+                    ),
+                    yaxis=dict(
+                        showgrid=False,
+                        zeroline=False,
+                        showticklabels=False
+                    ),
+                    width=600,
+                    height=800,
+                    showlegend=False,
+                    hovermode='closest'
+                )
                 st.plotly_chart(fig, use_container_width=True)
             
             with plot_col2:
-                st.markdown("### UMD Position Plot")
+                st.markdown(f"### {translations['umd_position_header'][st.session_state['language']]}")
                 position_fig = create_umd_position_plot(umd_info, selected_umd)
-                st.plotly_chart(position_fig, use_container_width=True)
+                if position_fig is not None:
+                    st.plotly_chart(position_fig, use_container_width=True)
+                else:
+                    st.warning(translations['no_plot_data'][st.session_state['language']])
