@@ -1,6 +1,47 @@
 import streamlit as st
+
+# Set page configuration
+st.set_page_config(
+    page_title="Operations and monitoring - UMD",
+    page_icon=":wrench:",
+    layout="wide",
+)
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+from streamlit_gsheets import GSheetsConnection
+from datetime import datetime
+from typing import List, Dict, Any, Optional, Union
+import streamlit.components.v1 as components
+import requests
+import re
+from PIL import Image
+import io
+import time
+import plotly.express as px
 import hmac
+from translations import lang_content as translations
 from navigation import make_sidebar
+
+# Initialize session state variables
+if "language" not in st.session_state:
+    st.session_state["language"] = "en"  # Default language
+
+
+def search_dataframe(df, query):
+    """
+    Search through all columns of a dataframe for a query string.
+    Returns a boolean mask of matching rows.
+    """
+    if not query:
+        return pd.Series([True] * len(df))
+    
+    mask = pd.Series([False] * len(df))
+    for column in df.columns:
+        # Convert column to string and search
+        mask |= df[column].astype(str).str.contains(query, case=False, na=False)
+    return mask
 
 def check_password():
     """Returns `True` if the user had a correct password."""
@@ -42,4 +83,6 @@ make_sidebar()
 if not check_password():
     st.stop()
 
-st.title("Welcome to Diamond Corp")
+st.title(translations['page_title'][st.session_state['language']])
+
+st.text("Select a page from the sidebar")

@@ -283,4 +283,8 @@ lang_content = {
         'es': "No hay suficientes datos para generar el gráfico",
         'en': "Not enough data to generate the plot"
     },
+    'switch_language': {
+        'es': "Switch to English",
+        'en': "Cambiar a Español"
+    },
 }
