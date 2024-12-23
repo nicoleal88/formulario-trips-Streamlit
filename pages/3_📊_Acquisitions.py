@@ -39,7 +39,7 @@ else:
     max_date = datetime.now()
 
 # Create Streamlit widgets for filtering
-empty1, colA, empty2, colB, empty3 = st.columns((0.1, 1, 0.1, 1, 0.1))
+colA, empty1, colB = st.columns((0.48, 0.04, 0.48))
 
 with colA:
     st.header(translations['filters_header'][st.session_state['language']], divider="grey")

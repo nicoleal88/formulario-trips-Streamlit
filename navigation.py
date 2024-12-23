@@ -16,15 +16,14 @@ def get_current_page_name() -> str:
 
 def make_sidebar():
     with st.sidebar:
-        st.title("Navigation")
-        st.write("")
-
         if st.session_state.get("logged_in", False):
-            st.page_link("pages/1_map.py", label="Map", icon="🗺️")
-            st.page_link("pages/2_field.py", label="Field", icon="📋")
-            st.page_link("pages/3_acquisition.py", label="Acquisition", icon="📊")
-            st.page_link("pages/4_stats.py", label="Statistics", icon="📈")
-            st.page_link("pages/5_umd_details.py", label="UMD Details", icon="🔍")
+            st.title("Navigation")
+            st.write("")
+            st.page_link("pages/1_🗺️_Map.py", label="Map", icon="🗺️")
+            st.page_link("pages/2_🔧_Field_Work.py", label="Field", icon="🔧")
+            st.page_link("pages/3_📊_Acquisitions.py", label="Acquisition", icon="📊")
+            st.page_link("pages/4_📈_Statistics.py", label="Statistics", icon="📈")
+            st.page_link("pages/5_🔍_UMD_Details.py", label="UMD Details", icon="🔍")   
 
             st.write("")
             st.write("")
@@ -40,8 +39,26 @@ def make_sidebar():
             # If anyone tries to access a secret page without being logged in,
             # redirect them to the login page
             st.switch_page("app.py")
+        
+        
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
 
 
+        st.sidebar.title("Support")
+        st.sidebar.markdown(
+        """
+        For any issues with app usage, please contact: nicolas.leal@iteda.gob.ar
+        """
+        )
+        
+        
 def logout():
     st.session_state.logged_in = False
     st.info("Logged out successfully!")

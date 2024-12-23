@@ -13,7 +13,7 @@ make_sidebar()
 st.header(translations['tab_umd_details'][st.session_state['language']], divider="grey")
 
 # Create two main columns
-col1, col2 = st.columns([0.25, 0.75])
+colA, empty1, colB = st.columns((0.24, 0.04, 0.72))
 
 conn = st.connection("umd_details", type=GSheetsConnection)
 
@@ -40,7 +40,9 @@ df_historial['install_date'] = pd.to_datetime(df_historial['install_date'])  # C
 df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
 df_historial['id'] = df_historial['id'].astype(int)
 
-with col1:
+with colA:
+    st.header(translations['filters_header'][st.session_state['language']], divider="grey")
+
     # Add position filter first
     st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
     position_filter = st.selectbox(
@@ -144,7 +146,9 @@ with col1:
             else:
                 st.warning(translations['no_installation_info'][st.session_state['language']])
 
-with col2:
+with colB:
+    st.header(translations['report_header'][st.session_state['language']], divider="grey")
+
     if selected_umd and umd_info is not None:
         # Create two columns for the plots
         plot_col1, plot_col2 = st.columns(2)
