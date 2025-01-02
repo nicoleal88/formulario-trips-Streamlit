@@ -5,9 +5,12 @@ import plotly.graph_objects as go
 from streamlit_gsheets import GSheetsConnection
 from translations import lang_content as translations
 from navigation import make_sidebar
-from utils import scintillator_mapping, create_umd_position_plot
+from utils import scintillator_mapping, create_umd_position_plot, check_login
 import re
 
+# Check if user is logged in, redirect to home page if not
+if not check_login():
+    st.stop()
 make_sidebar()
 
 st.header(translations['tab_umd_details'][st.session_state['language']], divider="grey")

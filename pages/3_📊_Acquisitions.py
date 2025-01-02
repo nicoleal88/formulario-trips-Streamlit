@@ -6,7 +6,11 @@ from navigation import make_sidebar
 from datetime import datetime
 import numpy as np
 from utils import search_dataframe
+from utils import check_login
 
+# Check if user is logged in, redirect to home page if not
+if not check_login():
+    st.stop()
 make_sidebar()
 
 st.header(translations['tab_acq_title'][st.session_state['language']], divider="grey")

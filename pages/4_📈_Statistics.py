@@ -4,8 +4,11 @@ import plotly.express as px
 from translations import lang_content as translations
 from streamlit_gsheets import GSheetsConnection
 from navigation import make_sidebar
-from utils import SHADED_PERIODS
+from utils import check_login, SHADED_PERIODS
 
+# Check if user is logged in, redirect to home page if not
+if not check_login():
+    st.stop()
 make_sidebar()
 
 st.header(translations['tab_stats_title'][st.session_state['language']], divider="grey")

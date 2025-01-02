@@ -9,7 +9,11 @@ from utils import search_dataframe, get_image_content, clean_url, photo_formatte
 import re
 import time
 import io
+from utils import check_login
 
+# Check if user is logged in, redirect to home page if not
+if not check_login():
+    st.stop()
 make_sidebar()
 
 st.header(translations['tab_field_title'][st.session_state['language']], divider="grey")

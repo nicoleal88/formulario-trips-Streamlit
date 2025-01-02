@@ -144,6 +144,16 @@ scintillator_mapping = {
     for scint, fpga, datos in zip(num_scintillator, num_canalFPGA, num_canaldatos)
 }
 
+def check_login():
+    """
+    Check if user is logged in and redirect to home page if not.
+    Returns True if logged in, False otherwise.
+    """
+    if not st.session_state.get("logged_in", False):
+        st.switch_page("app.py")
+        return False
+    return True
+
 def create_umd_position_plot(umd_info, selected_umd):
     try:
         # Constants
