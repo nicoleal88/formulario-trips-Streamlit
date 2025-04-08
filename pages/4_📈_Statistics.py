@@ -63,19 +63,28 @@ df_historial = df_historial.sort_values(by='install_date')
 st.markdown(f"## {translations['stats_header'][st.session_state['language']]}")
 
 # Time period filter
+def generate_quarters(start_date, end_date):
+    quarters = {}
+    current = pd.Timestamp(start_date)
+    while current <= end_date:
+        quarter = (current.month - 1) // 3 + 1
+        quarter_start = pd.Timestamp(f"{current.year}-{(quarter-1)*3 + 1:02d}-01")
+        quarter_end = quarter_start + pd.offsets.QuarterEnd()
+        quarters[f"Q{quarter} {current.year}"] = (quarter_start, quarter_end)
+        current = quarter_start + pd.DateOffset(months=3)
+    return quarters
+
+# Generate quarters from Jan 2023 to current date
+start_date = pd.Timestamp('2023-01-01')
+end_date = pd.Timestamp.now()
+quarter_filters = generate_quarters(start_date, end_date)
+
 time_filters = {
     'All Time': None,
     'Last Month': pd.DateOffset(months=1),
     'Last Quarter': pd.DateOffset(months=3),
     'Last Year': pd.DateOffset(years=1),
-    'Q4 2024': (pd.Timestamp('2024-10-01'), pd.Timestamp('2024-12-31')),
-    'Q3 2024': (pd.Timestamp('2024-07-01'), pd.Timestamp('2024-09-30')),
-    'Q2 2024': (pd.Timestamp('2024-04-01'), pd.Timestamp('2024-06-30')),
-    'Q1 2024': (pd.Timestamp('2024-01-01'), pd.Timestamp('2024-03-31')),
-    'Q4 2023': (pd.Timestamp('2023-10-01'), pd.Timestamp('2023-12-31')),
-    'Q3 2023': (pd.Timestamp('2023-07-01'), pd.Timestamp('2023-09-30')),
-    'Q2 2023': (pd.Timestamp('2023-04-01'), pd.Timestamp('2023-06-30')),
-    'Q1 2023': (pd.Timestamp('2023-01-01'), pd.Timestamp('2023-03-31')),
+    **{k: v for k, v in sorted(quarter_filters.items(), reverse=True)}  # Add quarters in reverse chronological order
 }
 
 # Create two columns for filter and date range
