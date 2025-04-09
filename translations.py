@@ -191,38 +191,6 @@ lang_content = {
         'es': "Último Año",
         'en': "Last Year"
     },
-    'stats_filter_q1_2024': {
-        'es': "Q1 2024",
-        'en': "Q1 2024"
-    },
-    'stats_filter_q2_2024': {
-        'es': "Q2 2024",
-        'en': "Q2 2024"
-    },
-    'stats_filter_q3_2024': {
-        'es': "Q3 2024",
-        'en': "Q3 2024"
-    },
-    'stats_filter_q4_2024': {
-        'es': "Q4 2024",
-        'en': "Q4 2024"
-    },
-    'stats_filter_q1_2023': {
-        'es': "Q1 2023",
-        'en': "Q1 2023"
-    },
-    'stats_filter_q2_2023': {
-        'es': "Q2 2023",
-        'en': "Q2 2023"
-    },
-    'stats_filter_q3_2023': {
-        'es': "Q3 2023",
-        'en': "Q3 2023"
-    },
-    'stats_filter_q4_2023': {
-        'es': "Q4 2023",
-        'en': "Q4 2023"
-    },
     'select_umd_label': {
         'es': "Seleccionar UMD",
         'en': "Select UMD"

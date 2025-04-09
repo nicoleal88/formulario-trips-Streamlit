@@ -79,13 +79,32 @@ start_date = pd.Timestamp('2023-01-01')
 end_date = pd.Timestamp.now()
 quarter_filters = generate_quarters(start_date, end_date)
 
-time_filters = {
+# Combine all filters into one dictionary
+all_time_filters = {
     'All Time': None,
     'Last Month': pd.DateOffset(months=1),
     'Last Quarter': pd.DateOffset(months=3),
     'Last Year': pd.DateOffset(years=1),
-    **{k: v for k, v in sorted(quarter_filters.items(), reverse=True)}  # Add quarters in reverse chronological order
+    **quarter_filters
 }
+
+# Sort quarter keys chronologically descending based on their start date
+sorted_quarter_keys = sorted(
+    quarter_filters.keys(), 
+    key=lambda k: quarter_filters[k][0], 
+    reverse=True
+)
+
+# Define the final order for the selectbox
+ordered_filter_keys = sorted_quarter_keys + ['Last Year', 'Last Quarter', 'Last Month', 'All Time']
+
+def format_time_filter(x):
+    key = f'stats_filter_{x.lower().replace(" ", "_")}'
+    try:
+        return translations[key][st.session_state['language']]
+    except KeyError:
+        # For quarters without translations, return the quarter name directly
+        return x
 
 # Create two columns for filter and date range
 filter_col, _ = st.columns([1, 2])
@@ -93,44 +112,55 @@ filter_col, _ = st.columns([1, 2])
 with filter_col:
     selected_filter = st.selectbox(
         translations['stats_time_filter'][st.session_state['language']],
-        options=list(time_filters.keys()),
-        format_func=lambda x: translations[f'stats_filter_{x.lower().replace(" ", "_") if x != "All Time" else "all_time"}'][st.session_state['language']]
+        options=ordered_filter_keys, # Use the chronologically sorted list
+        format_func=format_time_filter
     )
-    if time_filters[selected_filter] is not None:
-        if isinstance(time_filters[selected_filter], pd.DateOffset):
-            cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
+    # Use all_time_filters dictionary to get the value for the selected key
+    filter_value = all_time_filters[selected_filter]
+    
+    if filter_value is not None:
+        if isinstance(filter_value, pd.DateOffset):
+            cutoff_date = pd.Timestamp.now() - filter_value
             st.info(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
         else:
-            start_date, end_date = time_filters[selected_filter]
+            start_date, end_date = filter_value
             st.info(f"{start_date.strftime('%Y-%m-%d')} → {end_date.strftime('%Y-%m-%d')}")
 
-
 # Apply time filter to data
-if time_filters[selected_filter] is not None:
-    if isinstance(time_filters[selected_filter], pd.DateOffset):
+# Use all_time_filters dictionary here as well
+filter_value = all_time_filters[selected_filter]
+
+if filter_value is not None:
+    if isinstance(filter_value, pd.DateOffset):
         # For relative periods (Last Month, Last Quarter, Last Year)
-        cutoff_date = pd.Timestamp.now() - time_filters[selected_filter]
-        current_max = df_stock[df_stock['date'] > cutoff_date]['UMD_number'].max()
-        previous_max = df_stock[df_stock['date'] <= cutoff_date]['UMD_number'].max()
+        cutoff_date = pd.Timestamp.now() - filter_value
+        # Filter dataframes based on cutoff_date
+        df_stock_filtered = df_stock[df_stock['date'] > cutoff_date]
+        df_historial_filtered = df_historial[df_historial['install_date'] > cutoff_date]
         
-        # Handle NaN values and calculate delta
-        if pd.isna(current_max):
-            assembled_delta = 0  # No UMDs assembled in current period
-        else:
-            current_max = int(current_max)
-            previous_max = 0 if pd.isna(previous_max) else int(previous_max)
-            assembled_delta = current_max - previous_max if current_max > previous_max else 0
+        # Calculate deltas based on the full dataset up to the cutoff
+        previous_max_stock = df_stock[df_stock['date'] <= cutoff_date]['UMD_number'].max()
+        current_max_stock = df_stock['UMD_number'].max() # Use overall max for current assembly
+        assembled_delta = int(current_max_stock - previous_max_stock) if pd.notna(previous_max_stock) and pd.notna(current_max_stock) else None
         
-        installed_delta = int(df_historial[df_historial['install_date'] > cutoff_date]['modules_installed'].sum())
-        positions_delta = df_historial[df_historial['install_date'] > cutoff_date]['position'].nunique()
+        installed_delta = int(df_historial_filtered['modules_installed'].sum())
+        positions_delta = df_historial_filtered['position'].nunique()
+
     else:
         # For specific quarters
-        start_date, end_date = time_filters[selected_filter]
-        assembled_delta = int(df_stock[(df_stock['date'] >= start_date) & (df_stock['date'] <= end_date)]['UMD_number'].max() or 0) - int(df_stock[df_stock['date'] < start_date]['UMD_number'].max() or 0)
-        installed_delta = int(df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]['modules_installed'].sum())
-        positions_delta = df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]['position'].nunique()
+        start_date, end_date = filter_value
+        # Filter dataframes based on start_date and end_date
+        df_stock_filtered = df_stock[(df_stock['date'] >= start_date) & (df_stock['date'] <= end_date)]
+        df_historial_filtered = df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]
+
+        # Calculate deltas within the quarter
+        assembled_delta = int(df_stock_filtered['UMD_number'].max() - df_stock[df_stock['date'] < start_date]['UMD_number'].max()) if not df_stock_filtered.empty and not df_stock[df_stock['date'] < start_date].empty else int(df_stock_filtered['UMD_number'].max()) if not df_stock_filtered.empty else 0
+        installed_delta = int(df_historial_filtered['modules_installed'].sum())
+        positions_delta = df_historial_filtered['position'].nunique()
 else:
-    # For all time, no deltas
+    # For all time, no deltas, use original dataframes
+    df_stock_filtered = df_stock
+    df_historial_filtered = df_historial
     assembled_delta = None
     installed_delta = None
     positions_delta = None
