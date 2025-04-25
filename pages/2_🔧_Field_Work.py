@@ -35,6 +35,8 @@ df = conn.read(usecols=column_indices, names=new_column_names,
 df[['name', 'id']] = df['position(id)'].str.extract(r'([\w\s.]+)\s*\(id=(\d+)\)', expand=True)
 
 # Format the date column (keep original date column for sorting)
+# Ensure date column is in datetime format
+df['date'] = pd.to_datetime(df['date'], errors='coerce', dayfirst=True)
 df['formatted_date'] = df['date'].dt.strftime('%Y-%m-%d')
 
 # Drop the position(id) column
