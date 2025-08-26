@@ -12,4 +12,5 @@ make_sidebar()
 
 st.header(translations['tab_map_title'][st.session_state['language']], divider="grey")
 
-components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
+# components.iframe("https://amiga-map.ahuekna.org.ar", height=900)
+components.iframe("https://plot-amiga.nicoleal88.cc", height=900)
