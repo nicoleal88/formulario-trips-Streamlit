@@ -42,7 +42,7 @@ df_historial = conn_historial.read(
 
 # Clean installation data
 df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
-df_historial['install_date'] = pd.to_datetime(df_historial['install_date'])  # Convert install_date to datetime
+df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], dayfirst=True, errors='coerce')  # Convert install_date to datetime
 df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
 df_historial['id'] = df_historial['id'].astype(int)
 
@@ -280,3 +280,8 @@ if not df_stock.empty and not df_historial.empty:
     st.plotly_chart(fig, use_container_width=True)
 else:
     st.info("No data available")
+
+# Mostrar el dataframe filtrado si se seleccionó un periodo específico
+if filter_value is not None:
+    st.markdown("#### Datos filtrados de instalaciones")
+    st.dataframe(df_historial_filtered.reset_index(drop=True))
