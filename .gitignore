@@ -2,3 +2,10 @@
 .streamlit/secrets.toml
 __pycache__/
 TODO.md
+.old
+.ipynb_checkpoints
+.DS_Store
+.vscode
+*.pyc
+*.pyo
+*.pyd
