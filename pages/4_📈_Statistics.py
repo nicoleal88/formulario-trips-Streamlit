@@ -80,11 +80,13 @@ end_date = pd.Timestamp.now()
 quarter_filters = generate_quarters(start_date, end_date)
 
 # Combine all filters into one dictionary
+# Añade la opción "Custom" al diccionario de filtros
 all_time_filters = {
     'All Time': None,
     'Last Month': pd.DateOffset(months=1),
     'Last Quarter': pd.DateOffset(months=3),
     'Last Year': pd.DateOffset(years=1),
+    'Custom': 'custom',  # <-- Añadido
     **quarter_filters
 }
 
@@ -96,7 +98,7 @@ sorted_quarter_keys = sorted(
 )
 
 # Define the final order for the selectbox
-ordered_filter_keys = sorted_quarter_keys + ['Last Year', 'Last Quarter', 'Last Month', 'All Time']
+ordered_filter_keys = sorted_quarter_keys + ['Last Year', 'Last Quarter', 'Last Month', 'Custom', 'All Time']
 
 def format_time_filter(x):
     key = f'stats_filter_{x.lower().replace(" ", "_")}'
@@ -112,26 +114,36 @@ filter_col, _ = st.columns([1, 2])
 with filter_col:
     selected_filter = st.selectbox(
         translations['stats_time_filter'][st.session_state['language']],
-        options=ordered_filter_keys, # Use the chronologically sorted list
+        options=ordered_filter_keys,
         format_func=format_time_filter
     )
-    # Use all_time_filters dictionary to get the value for the selected key
     filter_value = all_time_filters[selected_filter]
-    
-    if filter_value is not None:
-        if isinstance(filter_value, pd.DateOffset):
-            cutoff_date = pd.Timestamp.now() - filter_value
-            st.info(f"{cutoff_date.strftime('%Y-%m-%d')} → {pd.Timestamp.now().strftime('%Y-%m-%d')}")
-        else:
-            start_date, end_date = filter_value
-            st.info(f"{start_date.strftime('%Y-%m-%d')} → {end_date.strftime('%Y-%m-%d')}")
+
+    # Si es custom, muestra los selectores de fecha
+    custom_start, custom_end = None, None
+    if filter_value == 'custom':
+        min_date = min(df_stock['date'].min(), df_historial['install_date'].min())
+        max_date = max(df_stock['date'].max(), df_historial['install_date'].max())
+        custom_start = st.date_input("Start date", value=min_date, min_value=min_date, max_value=max_date)
+        custom_end = st.date_input("End date", value=max_date, min_value=min_date, max_value=max_date)
+        st.info(f"{custom_start.strftime('%Y-%m-%d')} → {custom_end.strftime('%Y-%m-%d')}")
 
 # Apply time filter to data
 # Use all_time_filters dictionary here as well
 filter_value = all_time_filters[selected_filter]
 
 if filter_value is not None:
-    if isinstance(filter_value, pd.DateOffset):
+    if filter_value == 'custom' and custom_start and custom_end:
+        # Para custom, usa las fechas seleccionadas
+        start_date = pd.Timestamp(custom_start)
+        end_date = pd.Timestamp(custom_end)
+        df_stock_filtered = df_stock[(df_stock['date'] >= start_date) & (df_stock['date'] <= end_date)]
+        df_historial_filtered = df_historial[(df_historial['install_date'] >= start_date) & (df_historial['install_date'] <= end_date)]
+
+        assembled_delta = int(df_stock_filtered['UMD_number'].max() - df_stock[df_stock['date'] < start_date]['UMD_number'].max()) if not df_stock_filtered.empty and not df_stock[df_stock['date'] < start_date].empty else int(df_stock_filtered['UMD_number'].max()) if not df_stock_filtered.empty else 0
+        installed_delta = int(df_historial_filtered['modules_installed'].sum())
+        positions_delta = df_historial_filtered['position'].nunique()
+    elif isinstance(filter_value, pd.DateOffset):
         # For relative periods (Last Month, Last Quarter, Last Year)
         cutoff_date = pd.Timestamp.now() - filter_value
         # Filter dataframes based on cutoff_date
