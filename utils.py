@@ -61,6 +61,13 @@ SHADED_PERIODS = [
         'opacity': 0.2
     },
     {
+        'name': 'Summer Break 2026',
+        'start_date': '2026-01-01',
+        'end_date': '2026-01-23',
+        'color': 'orange',
+        'opacity': 0.1
+    },
+    {
         'name': 'Summer Break 2025',
         'start_date': '2025-01-01',
         'end_date': '2025-02-15',
