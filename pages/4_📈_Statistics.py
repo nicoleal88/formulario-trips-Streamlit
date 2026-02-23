@@ -205,7 +205,7 @@ col3.metric(
 
 col4.metric(
     label=translations['stats_rate'][st.session_state['language']],
-    value=f"{(installation_positions/73 *100):.1f}%"
+    value=f"{(installation_positions/72 *100):.1f}%"
 )
 
 # Plots
