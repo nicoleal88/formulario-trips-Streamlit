@@ -178,8 +178,8 @@ else:
     positions_delta = None
 
 # Calculate overall metrics (these never change with filters)
-total_assembled = int(df_stock['UMD_number'].max() if not df_stock.empty else 0)
-total_installed = int(df_historial['modules_installed'].sum())
+total_assembled = 32 + int(df_stock['UMD_number'].max() if not df_stock.empty else 0)
+total_installed = 32 + int(df_historial['modules_installed'].sum())
 installation_positions = df_historial['position'].nunique() + 4
 
 # Display metrics
