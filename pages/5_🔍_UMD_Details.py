@@ -85,32 +85,50 @@ with colA:
         label_visibility="collapsed"
     )
 
+    umd_info = None
+    selected_row = None
+
     if selected_umd:
+        # Lookup 1: assembly issues details (df_umd) — independent
         matching_rows = df_umd[df_umd['UMD_ID'] == selected_umd]
-        if not matching_rows.empty:
-            selected_row = matching_rows.iloc[0]
-            
-            # Get installation info by searching in all module columns
-            umd_info = df_historial[
-                (df_historial['id_m101'] == selected_umd) |
-                (df_historial['id_m102'] == selected_umd) |
-                (df_historial['id_m103'] == selected_umd)
-            ].iloc[0] if len(df_historial[
-                (df_historial['id_m101'] == selected_umd) |
-                (df_historial['id_m102'] == selected_umd) |
-                (df_historial['id_m103'] == selected_umd)
-            ]) > 0 else None
-            
-            if umd_info is not None:
-                # Find which module number this UMD is
-                module_num = None
-                if umd_info['id_m101'] == selected_umd:
-                    module_num = 101
-                elif umd_info['id_m102'] == selected_umd:
-                    module_num = 102
-                elif umd_info['id_m103'] == selected_umd:
-                    module_num = 103
-                
+        selected_row = matching_rows.iloc[0] if not matching_rows.empty else None
+
+        # Lookup 2: installation info (df_historial) — independent
+        matches_hist = df_historial[
+            (df_historial['id_m101'] == selected_umd) |
+            (df_historial['id_m102'] == selected_umd) |
+            (df_historial['id_m103'] == selected_umd)
+        ]
+        umd_info = matches_hist.iloc[0] if not matches_hist.empty else None
+
+        if umd_info is not None:
+            # Find which module number this UMD is
+            module_num = None
+            if umd_info['id_m101'] == selected_umd:
+                module_num = 101
+            elif umd_info['id_m102'] == selected_umd:
+                module_num = 102
+            elif umd_info['id_m103'] == selected_umd:
+                module_num = 103
+
+            st.markdown(f"""### {translations['installation_info_header'][st.session_state['language']]}""")
+            st.markdown(f"""
+                        - **{translations['position_label'][st.session_state['language']]}** {umd_info['position']}
+                        - **{translations['from_label'][st.session_state['language']]}** {umd_info['install_date'].strftime('%Y-%m-%d')}
+                        - **{translations['module_position_label'][st.session_state['language']]}** m-{module_num}
+                        - **{translations['electronic_kit_label'][st.session_state['language']]}** {umd_info[f'ekit_m{module_num}']}
+                        - **{translations['module_details_label'][st.session_state['language']]}**
+                            - {translations['rotation_angle_label'][st.session_state['language']]}: {umd_info[f'RotationAngle_m{module_num}']}°
+                            - {translations['radio_distance_label'][st.session_state['language']]}: {umd_info[f'RadioDistance_m{module_num}']} m
+                            - {translations['position_angle_label'][st.session_state['language']]}: {umd_info[f'PositionAngle_m{module_num}']}°
+                        - **{translations['other_modules_label'][st.session_state['language']]}**
+                            - Module 1: {umd_info['id_m101']}
+                            - Module 2: {umd_info['id_m102']}
+                            - Module 3: {umd_info['id_m103']}
+                        """)
+
+            st.markdown(f"""### {translations['assembly_issues_header'][st.session_state['language']]}""")
+            if selected_row is not None:
                 # Format details text for markdown
                 details_display = selected_row['Details']
                 if pd.isna(details_display):
@@ -123,31 +141,16 @@ with colA:
                         details_display = '\n'.join(f"- {issue.strip()}" for issue in issues)
                     else:
                         details_display = f"- {details_display}"
-                    
+
                     # Escape any markdown special characters
                     details_display = details_display.replace('*', '\\*').replace('_', '\\_')
-                
-                st.markdown(f"""### {translations['installation_info_header'][st.session_state['language']]}""")
-                st.markdown(f"""
-                            - **{translations['position_label'][st.session_state['language']]}** {umd_info['position']}
-                            - **{translations['from_label'][st.session_state['language']]}** {umd_info['install_date'].strftime('%Y-%m-%d')}
-                            - **{translations['module_position_label'][st.session_state['language']]}** m-{module_num}
-                            - **{translations['electronic_kit_label'][st.session_state['language']]}** {umd_info[f'ekit_m{module_num}']}
-                            - **{translations['module_details_label'][st.session_state['language']]}**
-                                - {translations['rotation_angle_label'][st.session_state['language']]}: {umd_info[f'RotationAngle_m{module_num}']}°
-                                - {translations['radio_distance_label'][st.session_state['language']]}: {umd_info[f'RadioDistance_m{module_num}']} m
-                                - {translations['position_angle_label'][st.session_state['language']]}: {umd_info[f'PositionAngle_m{module_num}']}°
-                            - **{translations['other_modules_label'][st.session_state['language']]}**
-                                - Module 1: {umd_info['id_m101']}
-                                - Module 2: {umd_info['id_m102']}
-                                - Module 3: {umd_info['id_m103']}
-                            """)
-                
-                st.markdown(f"""### {translations['assembly_issues_header'][st.session_state['language']]}""")
+
                 st.markdown(details_display)
-                
             else:
-                st.warning(translations['no_installation_info'][st.session_state['language']])
+                st.markdown(f"_{translations['no_issues_reported'][st.session_state['language']]}_")
+
+        else:
+            st.warning(translations['no_installation_info'][st.session_state['language']])
 
 with colB:
     st.header(translations['report_header'][st.session_state['language']], divider="grey")
@@ -159,7 +162,7 @@ with colB:
         with plot_col1:
             st.markdown(f"### {translations['umd_layout_header'][st.session_state['language']]}")
             # Parse details to get problematic scintillator numbers
-            details_text = selected_row['Details']
+            details_text = selected_row['Details'] if selected_row is not None else pd.NA
             problematic_scints = []
             
             # Extract numbers from the details text if it's not empty
