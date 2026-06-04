@@ -27,21 +27,77 @@ df_umd.columns = ['UMD_ID', 'Details']
 # Get installation history data
 conn_historial = st.connection("stats_historial", type=GSheetsConnection)
 df_historial = conn_historial.read(
-    usecols=[2, 3, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 31, 32, 33],  # name, id, install_date, id_m101, id_m102, id_m103, RotationAngle_m101, RadioDistance_m101, PositionAngle_m101, RotationAngle_m102, RadioDistance_m102, PositionAngle_m102, RotationAngle_m103, RadioDistance_m103, PositionAngle_m103
-    names=['position', 'id', 'install_date', 
-    'id_m101', 'RotationAngle_m101', 'RadioDistance_m101', 'PositionAngle_m101',
-    'id_m102', 'RotationAngle_m102', 'RadioDistance_m102', 'PositionAngle_m102',
-    'id_m103', 'RotationAngle_m103', 'RadioDistance_m103', 'PositionAngle_m103',
-    'ekit_m101', 'ekit_m102', 'ekit_m103'],
-    header=None,
-    skiprows=7
-)
+    usecols=['SD', 'LSID', 'Fecha_de_Deployment',
+             'ID_M101', 'RA_M101', 'RD_M101', 'PA_M101',
+             'ID_M102', 'RA_M102', 'RD_M102', 'PA_M102',
+             'ID_M103', 'RA_M103', 'RD_M103', 'PA_M103',
+             'eKit_M101', 'eKit_M102', 'eKit_M103',
+             'ID_M101_CU', 'RA_M101_CU', 'RD_M101_CU', 'PA_M101_CU',
+             'ID_M102_CU', 'RA_M102_CU', 'RD_M102_CU', 'PA_M102_CU',
+             'ID_M103_CU', 'RA_M103_CU', 'RD_M103_CU', 'PA_M103_CU',
+             'ID_M104_CU', 'RA_M104_CU', 'RD_M104_CU', 'PA_M104_CU',
+             'ID_M105_CU', 'RA_M105_CU', 'RD_M105_CU', 'PA_M105_CU',
+             'ID_M106_CU', 'RA_M106_CU', 'RD_M106_CU', 'PA_M106_CU',
+             'ID_M107_CU', 'RA_M107_CU', 'RD_M107_CU', 'PA_M107_CU',
+             'ID_M108_CU', 'RA_M108_CU', 'RD_M108_CU', 'PA_M108_CU',
+             'ID_M109_CU', 'RA_M109_CU', 'RD_M109_CU', 'PA_M109_CU',
+             'eKit_M101_CU', 'eKit_M102_CU', 'eKit_M103_CU', 'eKit_M104_CU',
+             'eKit_M105_CU', 'eKit_M106_CU', 'eKit_M107_CU', 'eKit_M108_CU',
+             'eKit_M109_CU',
+             'a_M101_CU', 'a_M102_CU', 'a_M103_CU', 'a_M104_CU',
+             'a_M105_CU', 'a_M106_CU', 'a_M107_CU', 'a_M108_CU', 'a_M109_CU'],
+).rename(columns={
+    'SD': 'position', 'LSID': 'id', 'Fecha_de_Deployment': 'install_date',
+    'ID_M101': 'id_m101', 'RA_M101': 'RotationAngle_m101',
+    'RD_M101': 'RadioDistance_m101', 'PA_M101': 'PositionAngle_m101',
+    'ID_M102': 'id_m102', 'RA_M102': 'RotationAngle_m102',
+    'RD_M102': 'RadioDistance_m102', 'PA_M102': 'PositionAngle_m102',
+    'ID_M103': 'id_m103', 'RA_M103': 'RotationAngle_m103',
+    'RD_M103': 'RadioDistance_m103', 'PA_M103': 'PositionAngle_m103',
+    'eKit_M101': 'ekit_m101', 'eKit_M102': 'ekit_m102', 'eKit_M103': 'ekit_m103',
+    'ID_M101_CU': 'id_m101_cu', 'RA_M101_CU': 'RotationAngle_m101_cu',
+    'RD_M101_CU': 'RadioDistance_m101_cu', 'PA_M101_CU': 'PositionAngle_m101_cu',
+    'ID_M102_CU': 'id_m102_cu', 'RA_M102_CU': 'RotationAngle_m102_cu',
+    'RD_M102_CU': 'RadioDistance_m102_cu', 'PA_M102_CU': 'PositionAngle_m102_cu',
+    'ID_M103_CU': 'id_m103_cu', 'RA_M103_CU': 'RotationAngle_m103_cu',
+    'RD_M103_CU': 'RadioDistance_m103_cu', 'PA_M103_CU': 'PositionAngle_m103_cu',
+    'ID_M104_CU': 'id_m104_cu', 'RA_M104_CU': 'RotationAngle_m104_cu',
+    'RD_M104_CU': 'RadioDistance_m104_cu', 'PA_M104_CU': 'PositionAngle_m104_cu',
+    'ID_M105_CU': 'id_m105_cu', 'RA_M105_CU': 'RotationAngle_m105_cu',
+    'RD_M105_CU': 'RadioDistance_m105_cu', 'PA_M105_CU': 'PositionAngle_m105_cu',
+    'ID_M106_CU': 'id_m106_cu', 'RA_M106_CU': 'RotationAngle_m106_cu',
+    'RD_M106_CU': 'RadioDistance_m106_cu', 'PA_M106_CU': 'PositionAngle_m106_cu',
+    'ID_M107_CU': 'id_m107_cu', 'RA_M107_CU': 'RotationAngle_m107_cu',
+    'RD_M107_CU': 'RadioDistance_m107_cu', 'PA_M107_CU': 'PositionAngle_m107_cu',
+    'ID_M108_CU': 'id_m108_cu', 'RA_M108_CU': 'RotationAngle_m108_cu',
+    'RD_M108_CU': 'RadioDistance_m108_cu', 'PA_M108_CU': 'PositionAngle_m108_cu',
+    'ID_M109_CU': 'id_m109_cu', 'RA_M109_CU': 'RotationAngle_m109_cu',
+    'RD_M109_CU': 'RadioDistance_m109_cu', 'PA_M109_CU': 'PositionAngle_m109_cu',
+    'eKit_M101_CU': 'ekit_m101_cu', 'eKit_M102_CU': 'ekit_m102_cu',
+    'eKit_M103_CU': 'ekit_m103_cu', 'eKit_M104_CU': 'ekit_m104_cu',
+    'eKit_M105_CU': 'ekit_m105_cu', 'eKit_M106_CU': 'ekit_m106_cu',
+    'eKit_M107_CU': 'ekit_m107_cu', 'eKit_M108_CU': 'ekit_m108_cu',
+    'eKit_M109_CU': 'ekit_m109_cu',
+    'a_M101_CU': 'area_m101_cu', 'a_M102_CU': 'area_m102_cu', 'a_M103_CU': 'area_m103_cu',
+    'a_M104_CU': 'area_m104_cu', 'a_M105_CU': 'area_m105_cu', 'a_M106_CU': 'area_m106_cu',
+    'a_M107_CU': 'area_m107_cu', 'a_M108_CU': 'area_m108_cu', 'a_M109_CU': 'area_m109_cu',
+})
 
-# Clean installation data
-df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
-df_historial['install_date'] = pd.to_datetime(df_historial['install_date'])  # Convert install_date to datetime
-df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
+# Clean installation data: keep all rows (CU SDs may have install_date = '-');
+# coerce install_date to datetime; NaT is acceptable — the UI hides the "From" row.
+df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], dayfirst=True, errors='coerce')
 df_historial['id'] = df_historial['id'].astype(int)
+
+# Module column lists (main slots 101-103 + CU slots 101-109)
+MAIN_MODULE_COLS = ['id_m101', 'id_m102', 'id_m103']
+CU_MODULE_COLS = [f'id_m{n}_cu' for n in range(101, 110)]
+ALL_MODULE_COLS = MAIN_MODULE_COLS + CU_MODULE_COLS
+
+# Subset to SDs that have at least one UMD in any of the 12 module slots
+has_umd = df_historial[ALL_MODULE_COLS].apply(
+    lambda r: any(isinstance(v, str) and v and v != '-' for v in r), axis=1
+)
+df_with_umd = df_historial[has_umd].copy()
 
 with colA:
     st.header(translations['filters_header'][st.session_state['language']], divider="grey")
@@ -50,30 +106,19 @@ with colA:
     st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
     position_filter = st.selectbox(
         translations['position_label'][st.session_state['language']],
-        options=[''] + sorted(df_historial['position'].unique().tolist()),
+        options=[''] + sorted(df_with_umd['position'].unique().tolist()),
         format_func=lambda x: translations['position_placeholder'][st.session_state['language']] if x == '' else x,
         key="position_filter_umd_details",
         label_visibility="collapsed"
     )
 
-    # Filter UMDs based on selected position
+    # Filter UMDs based on selected position (from all 12 module columns)
     if position_filter:
-        filtered_umds = pd.concat([
-            df_historial[df_historial['position'] == position_filter]['id_m101'],
-            df_historial[df_historial['position'] == position_filter]['id_m102'],
-            df_historial[df_historial['position'] == position_filter]['id_m103']
-        ]).unique()
-        # Remove "-" from the list if present
-        filtered_umds = filtered_umds[filtered_umds != "-"]
+        source_df = df_with_umd[df_with_umd['position'] == position_filter]
     else:
-        # Get all UMDs from all three columns
-        filtered_umds = pd.concat([
-            df_historial['id_m101'],
-            df_historial['id_m102'],
-            df_historial['id_m103']
-        ]).unique()
-        # Remove "-" from the list if present
-        filtered_umds = filtered_umds[filtered_umds != "-"]
+        source_df = df_with_umd
+    filtered_umds = pd.concat([source_df[c] for c in ALL_MODULE_COLS]).unique()
+    filtered_umds = sorted([u for u in filtered_umds if isinstance(u, str) and u and u != '-'])
 
     # UMD selection with filtered options
     st.markdown(f"### {translations['select_umd_label'][st.session_state['language']]}")
@@ -93,39 +138,69 @@ with colA:
         matching_rows = df_umd[df_umd['UMD_ID'] == selected_umd]
         selected_row = matching_rows.iloc[0] if not matching_rows.empty else None
 
-        # Lookup 2: installation info (df_historial) — independent
-        matches_hist = df_historial[
-            (df_historial['id_m101'] == selected_umd) |
-            (df_historial['id_m102'] == selected_umd) |
-            (df_historial['id_m103'] == selected_umd)
+        # Lookup 2: installation info (df_with_umd) — independent
+        matches_hist = df_with_umd[
+            (df_with_umd['id_m101'] == selected_umd) |
+            (df_with_umd['id_m102'] == selected_umd) |
+            (df_with_umd['id_m103'] == selected_umd) |
+            (df_with_umd['id_m101_cu'] == selected_umd) |
+            (df_with_umd['id_m102_cu'] == selected_umd) |
+            (df_with_umd['id_m103_cu'] == selected_umd) |
+            (df_with_umd['id_m104_cu'] == selected_umd) |
+            (df_with_umd['id_m105_cu'] == selected_umd) |
+            (df_with_umd['id_m106_cu'] == selected_umd) |
+            (df_with_umd['id_m107_cu'] == selected_umd) |
+            (df_with_umd['id_m108_cu'] == selected_umd) |
+            (df_with_umd['id_m109_cu'] == selected_umd)
         ]
         umd_info = matches_hist.iloc[0] if not matches_hist.empty else None
 
         if umd_info is not None:
-            # Find which module number this UMD is
+            # Find which module number this UMD is (main or CU)
             module_num = None
-            if umd_info['id_m101'] == selected_umd:
-                module_num = 101
-            elif umd_info['id_m102'] == selected_umd:
-                module_num = 102
-            elif umd_info['id_m103'] == selected_umd:
-                module_num = 103
+            is_cu = False
+            for col in ALL_MODULE_COLS:
+                if umd_info[col] == selected_umd:
+                    if col in MAIN_MODULE_COLS:
+                        module_num = int(col[4:])
+                    else:
+                        module_num = int(col[4:].replace('_cu', ''))
+                        is_cu = True
+                    break
+            suffix = '_cu' if is_cu else ''
 
             st.markdown(f"""### {translations['installation_info_header'][st.session_state['language']]}""")
-            st.markdown(f"""
-                        - **{translations['position_label'][st.session_state['language']]}** {umd_info['position']}
-                        - **{translations['from_label'][st.session_state['language']]}** {umd_info['install_date'].strftime('%Y-%m-%d')}
-                        - **{translations['module_position_label'][st.session_state['language']]}** m-{module_num}
-                        - **{translations['electronic_kit_label'][st.session_state['language']]}** {umd_info[f'ekit_m{module_num}']}
-                        - **{translations['module_details_label'][st.session_state['language']]}**
-                            - {translations['rotation_angle_label'][st.session_state['language']]}: {umd_info[f'RotationAngle_m{module_num}']}°
-                            - {translations['radio_distance_label'][st.session_state['language']]}: {umd_info[f'RadioDistance_m{module_num}']} m
-                            - {translations['position_angle_label'][st.session_state['language']]}: {umd_info[f'PositionAngle_m{module_num}']}°
-                        - **{translations['other_modules_label'][st.session_state['language']]}**
-                            - Module 1: {umd_info['id_m101']}
-                            - Module 2: {umd_info['id_m102']}
-                            - Module 3: {umd_info['id_m103']}
-                        """)
+
+            info_lines = [
+                f"- **{translations['position_label'][st.session_state['language']]}** {umd_info['position']}",
+            ]
+            if pd.notna(umd_info['install_date']):
+                info_lines.append(
+                    f"- **{translations['from_label'][st.session_state['language']]}** "
+                    f"{umd_info['install_date'].strftime('%Y-%m-%d')}"
+                )
+            info_lines.extend([
+                f"- **{translations['module_position_label'][st.session_state['language']]}** m-{module_num}",
+                f"- **{translations['electronic_kit_label'][st.session_state['language']]}** {umd_info[f'ekit_m{module_num}{suffix}']}",
+                f"- **{translations['module_details_label'][st.session_state['language']]}**",
+                f"    - {translations['rotation_angle_label'][st.session_state['language']]}: {umd_info[f'RotationAngle_m{module_num}{suffix}']}°",
+                f"    - {translations['radio_distance_label'][st.session_state['language']]}: {umd_info[f'RadioDistance_m{module_num}{suffix}']} m",
+                f"    - {translations['position_angle_label'][st.session_state['language']]}: {umd_info[f'PositionAngle_m{module_num}{suffix}']}°",
+                f"- **{translations['other_modules_label'][st.session_state['language']]}**",
+            ])
+            def _is_empty(v):
+                return v is None or (isinstance(v, str) and (not v or v == '-'))
+
+            for col in MAIN_MODULE_COLS:
+                val = umd_info[col]
+                if not _is_empty(val):
+                    info_lines.append(f"    - Main {col[4:]}: {val}")
+            for col in CU_MODULE_COLS:
+                val = umd_info[col]
+                if not _is_empty(val):
+                    info_lines.append(f"    - CU {col[4:].replace('_cu', '')}: {val}")
+
+            st.markdown("\n".join(info_lines))
 
             st.markdown(f"""### {translations['assembly_issues_header'][st.session_state['language']]}""")
             if selected_row is not None:

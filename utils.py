@@ -167,7 +167,6 @@ def create_umd_position_plot(umd_info, selected_umd):
         circle_diameter = 3.6  # meters
         margin_diameter = 13.6  # meters
         umd_width = 1.4  # meters
-        umd_height = 9.0  # meters
 
         # Create figure
         fig = go.Figure()
@@ -193,15 +192,26 @@ def create_umd_position_plot(umd_info, selected_umd):
             name="Margin"
         ))
 
-        # Add UMDs
-        for module in ['101', '102', '103']:
-            # Skip if module ID is "-"
-            if umd_info[f'id_m{module}'] == "-":
-                continue
+        # Add UMDs — main slots (101-103) and CU slots (101-109)
+        installed_modules = []
+        for n in (101, 102, 103):
+            if umd_info.get(f'id_m{n}') not in (None, '-', ''):
+                installed_modules.append((n, ''))
+        for n in range(101, 110):
+            if umd_info.get(f'id_m{n}_cu') not in (None, '-', ''):
+                installed_modules.append((n, '_cu'))
 
-            rd = float(str(umd_info[f'RadioDistance_m{module}']).replace(',', '.'))
-            pa = np.radians(float(str(umd_info[f'PositionAngle_m{module}']).replace(',', '.')))
-            ra = np.radians(float(str(umd_info[f'RotationAngle_m{module}']).replace(',', '.')))
+        for module, sfx in installed_modules:
+            # Short CU UMDs (area=5) are 4.5 m long; standard are 9.0 m. Main slots are always 9.0 m.
+            if sfx == '_cu':
+                area = umd_info.get(f'area_m{module}_cu')
+                module_height = 4.5 if (area is not None and not pd.isna(area) and float(area) == 5.0) else 9.0
+            else:
+                module_height = 9.0
+
+            rd = float(str(umd_info[f'RadioDistance_m{module}{sfx}']).replace(',', '.'))
+            pa = np.radians(float(str(umd_info[f'PositionAngle_m{module}{sfx}']).replace(',', '.')))
+            ra = np.radians(float(str(umd_info[f'RotationAngle_m{module}{sfx}']).replace(',', '.')))
 
             # Calculate center position
             x = -rd * np.sin(pa)
@@ -212,11 +222,11 @@ def create_umd_position_plot(umd_info, selected_umd):
             corners_y = []
 
             # Calculate corners of rectangle
-            for dx, dy in [(-umd_width/2, -umd_height/2), 
-                        (umd_width/2, -umd_height/2),
-                        (umd_width/2, umd_height/2),
-                        (-umd_width/2, umd_height/2),
-                        (-umd_width/2, -umd_height/2)]:  # Close the shape
+            for dx, dy in [(-umd_width/2, -module_height/2),
+                        (umd_width/2, -module_height/2),
+                        (umd_width/2, module_height/2),
+                        (-umd_width/2, module_height/2),
+                        (-umd_width/2, -module_height/2)]:  # Close the shape
                 # Rotate point by RA
                 rx = -dx * np.cos(ra) - dy * np.sin(ra)
                 ry = dx * np.sin(ra) - dy * np.cos(ra)
@@ -225,7 +235,7 @@ def create_umd_position_plot(umd_info, selected_umd):
                 corners_y.append(y + ry)
 
             # Set color based on whether this is the selected UMD
-            is_selected = umd_info[f'id_m{module}'] == selected_umd
+            is_selected = umd_info[f'id_m{module}{sfx}'] == selected_umd
             fillcolor = "rgba(255,255,255,0.8)" if is_selected else "rgba(200,200,255,0.5)"
             line_width = 2 if is_selected else 1
 
@@ -235,8 +245,8 @@ def create_umd_position_plot(umd_info, selected_umd):
                 fill="toself",
                 fillcolor=fillcolor,
                 line=dict(color="black", width=line_width),
-                name=f"UMD {umd_info[f'id_m{module}']}",
-                hovertext=f"UMD {umd_info[f'id_m{module}']}<br>RD: {rd}m<br>PA: {umd_info[f'PositionAngle_m{module}']}°<br>RA: {umd_info[f'RotationAngle_m{module}']}°",
+                name=f"UMD {umd_info[f'id_m{module}{sfx}']}",
+                hovertext=f"UMD {umd_info[f'id_m{module}{sfx}']}<br>RD: {rd}m<br>PA: {umd_info[f'PositionAngle_m{module}{sfx}']}°<br>RA: {umd_info[f'RotationAngle_m{module}{sfx}']}°",
                 showlegend=False
             ))
 

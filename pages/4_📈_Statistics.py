@@ -30,18 +30,24 @@ df_stock['date'] = pd.to_datetime(df_stock['date'], format="%d/%m/%y")
 # Installation history dataframe
 conn_historial = st.connection("stats_historial", type=GSheetsConnection)
 df_historial = conn_historial.read(
-    usecols=[2, 3, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 31, 32, 33],  # name, id, install_date, id_m101, id_m102, id_m103, RotationAngle_m101, RadioDistance_m101, PositionAngle_m101, RotationAngle_m102, RadioDistance_m102, PositionAngle_m102, RotationAngle_m103, RadioDistance_m103, PositionAngle_m103
-    names=['position', 'id', 'install_date', 
-    'id_m101', 'RotationAngle_m101', 'RadioDistance_m101', 'PositionAngle_m101',
-    'id_m102', 'RotationAngle_m102', 'RadioDistance_m102', 'PositionAngle_m102',
-    'id_m103', 'RotationAngle_m103', 'RadioDistance_m103', 'PositionAngle_m103',
-    'ekit_m101', 'ekit_m102', 'ekit_m103'],
-    header=None,
-    skiprows=7
-)
+    usecols=['SD', 'LSID', 'Fecha_de_Deployment',
+             'ID_M101', 'RA_M101', 'RD_M101', 'PA_M101',
+             'ID_M102', 'RA_M102', 'RD_M102', 'PA_M102',
+             'ID_M103', 'RA_M103', 'RD_M103', 'PA_M103',
+             'eKit_M101', 'eKit_M102', 'eKit_M103'],
+).rename(columns={
+    'SD': 'position', 'LSID': 'id', 'Fecha_de_Deployment': 'install_date',
+    'ID_M101': 'id_m101', 'RA_M101': 'RotationAngle_m101',
+    'RD_M101': 'RadioDistance_m101', 'PA_M101': 'PositionAngle_m101',
+    'ID_M102': 'id_m102', 'RA_M102': 'RotationAngle_m102',
+    'RD_M102': 'RadioDistance_m102', 'PA_M102': 'PositionAngle_m102',
+    'ID_M103': 'id_m103', 'RA_M103': 'RotationAngle_m103',
+    'RD_M103': 'RadioDistance_m103', 'PA_M103': 'PositionAngle_m103',
+    'eKit_M101': 'ekit_m101', 'eKit_M102': 'ekit_m102', 'eKit_M103': 'ekit_m103',
+})
 
 # Clean installation data
-df_historial = df_historial[~df_historial["install_date"].str.contains("-", na=False)]  # Remove not installed
+df_historial = df_historial[df_historial['install_date'].astype(str) != '-'].copy()
 df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], dayfirst=True, errors='coerce')  # Convert install_date to datetime
 df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
 df_historial['id'] = df_historial['id'].astype(int)
