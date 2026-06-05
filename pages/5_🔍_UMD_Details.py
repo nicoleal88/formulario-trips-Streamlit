@@ -189,7 +189,12 @@ with colA:
                 f"- **{translations['other_modules_label'][st.session_state['language']]}**",
             ])
             def _is_empty(v):
-                return v is None or (isinstance(v, str) and (not v or v == '-'))
+                if v is None or (isinstance(v, str) and (not v or v == '-')):
+                    return True
+                try:
+                    return bool(pd.isna(v))
+                except (TypeError, ValueError):
+                    return False
 
             for col in MAIN_MODULE_COLS:
                 val = umd_info[col]

@@ -195,10 +195,12 @@ def create_umd_position_plot(umd_info, selected_umd):
         # Add UMDs — main slots (101-103) and CU slots (101-109)
         installed_modules = []
         for n in (101, 102, 103):
-            if umd_info.get(f'id_m{n}') not in (None, '-', ''):
+            v = umd_info.get(f'id_m{n}')
+            if pd.notna(v) and v not in (None, '-', ''):
                 installed_modules.append((n, ''))
         for n in range(101, 110):
-            if umd_info.get(f'id_m{n}_cu') not in (None, '-', ''):
+            v = umd_info.get(f'id_m{n}_cu')
+            if pd.notna(v) and v not in (None, '-', ''):
                 installed_modules.append((n, '_cu'))
 
         for module, sfx in installed_modules:
