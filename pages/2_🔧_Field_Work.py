@@ -26,7 +26,6 @@ column_indices = [1, 2, 3, 5, 6, 54]
 new_column_names = ['content', 'position(id)', 'type', 'team', 'date', 'photos']
 
 df = conn.read(usecols=column_indices, names=new_column_names,
-                parse_dates=['date'],
                 dayfirst=True,
                 header=0)
 

@@ -24,7 +24,6 @@ new_column_names = ['position', 'modules', 'date_report',
                     'summary', 'team', 'status', 'report']
 
 df = conn.read(usecols=column_indices, names=new_column_names,
-                parse_dates=['date_report'],
                 dayfirst=True,
                 header=0)
 
