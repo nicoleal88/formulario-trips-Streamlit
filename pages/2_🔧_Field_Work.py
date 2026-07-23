@@ -35,7 +35,7 @@ df[['name', 'id']] = df['position(id)'].str.extract(r'([\w\s.]+)\s*\(id=(\d+)\)'
 
 # Format the date column (keep original date column for sorting)
 # Ensure date column is in datetime format
-df['date'] = pd.to_datetime(df['date'], errors='coerce', dayfirst=True)
+df['date'] = pd.to_datetime(df['date'], format='mixed', errors='coerce', dayfirst=True)
 df['formatted_date'] = df['date'].dt.strftime('%Y-%m-%d')
 
 # Drop the position(id) column
@@ -138,7 +138,7 @@ with colA:
     final_table['photo_indicator'] = final_table['photos'].apply(photo_formatter)
 
     selection = st.dataframe(final_table, on_select="rerun", selection_mode="single-row",
-                                height=200 if len(df) > 5 else None, width=800, column_config={
+                                height=200 if len(final_table) > 5 else "content", width=800, column_config={
                                     "content": None,
                                     "photos": None,  # Hide the original photos column
                                     "photo_indicator": st.column_config.Column(

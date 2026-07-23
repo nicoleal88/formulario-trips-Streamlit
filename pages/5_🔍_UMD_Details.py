@@ -85,7 +85,9 @@ df_historial = conn_historial.read(
 
 # Clean installation data: keep all rows (CU SDs may have install_date = '-');
 # coerce install_date to datetime; NaT is acceptable — the UI hides the "From" row.
-df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], dayfirst=True, errors='coerce')
+df_historial['install_date'] = pd.to_datetime(
+    df_historial['install_date'], format='mixed', dayfirst=True, errors='coerce'
+)
 df_historial['id'] = df_historial['id'].astype(int)
 
 # Module column lists (main slots 101-103 + CU slots 101-109)
@@ -333,12 +335,12 @@ with colB:
                 showlegend=False,
                 hovermode='closest'
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
         
         with plot_col2:
             st.markdown(f"### {translations['umd_position_header'][st.session_state['language']]}")
             position_fig = create_umd_position_plot(umd_info, selected_umd)
             if position_fig is not None:
-                st.plotly_chart(position_fig, use_container_width=True)
+                st.plotly_chart(position_fig, width='stretch')
             else:
                 st.warning(translations['no_plot_data'][st.session_state['language']])

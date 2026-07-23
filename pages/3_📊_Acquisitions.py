@@ -139,7 +139,7 @@ with colA:
     st.caption(translations['click_report'][st.session_state['language']])
 
     selection = st.dataframe(final_table_colA, on_select="rerun", selection_mode="single-row",
-                                height=200 if len(final_table_colA) > 5 else None, width=800, 
+                                height=200 if len(final_table_colA) > 5 else "content", width=800, 
                                 column_config={
                                     "report": None,
                                     "date": "Date",

@@ -48,7 +48,9 @@ df_historial = conn_historial.read(
 
 # Clean installation data
 df_historial = df_historial[df_historial['install_date'].astype(str) != '-'].copy()
-df_historial['install_date'] = pd.to_datetime(df_historial['install_date'], dayfirst=True, errors='coerce')  # Convert install_date to datetime
+df_historial['install_date'] = pd.to_datetime(
+    df_historial['install_date'], format='mixed', dayfirst=True, errors='coerce'
+)  # Convert install_date to datetime
 df_historial = df_historial.dropna(subset=['install_date'])  # Remove rows without install date
 df_historial['id'] = df_historial['id'].astype(int)
 
@@ -250,7 +252,7 @@ if not df_stock.empty and not df_historial.empty:
     )
     
     # Fill NaN values with previous values or 0
-    df_combined = df_combined.fillna(method='ffill').fillna(0)
+    df_combined = df_combined.ffill().fillna(0)
 
     # Create the combined plot
     fig = px.line(df_combined,
@@ -295,7 +297,7 @@ if not df_stock.empty and not df_historial.empty:
     newnames = {'UMD_number': 'Assembled', 'cumulative_installations': 'Installed'}
     fig.for_each_trace(lambda t: t.update(name=newnames[t.name] if t.name in newnames else t.name))
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 else:
     st.info("No data available")
 
