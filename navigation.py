@@ -1,7 +1,5 @@
 import streamlit as st
 from time import sleep
-from streamlit.runtime.scriptrunner import get_script_run_ctx
-from streamlit.source_util import get_pages
 from translations import lang_content as translations
 from utils import switch_language
 
