@@ -182,7 +182,7 @@ with colA:
                                 img.save(img_byte_arr, format='JPEG')
                                 img_byte_arr = img_byte_arr.getvalue()
 
-                                st.image(img_byte_arr, use_column_width=True)
+                                st.image(img_byte_arr, width='stretch')
 
                             except Exception as e:
                                 st.error(f"{translations['image_load_error'][st.session_state['language']]} {str(e)}")
