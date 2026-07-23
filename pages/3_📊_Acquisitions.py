@@ -4,9 +4,7 @@ from streamlit_gsheets import GSheetsConnection
 from translations import lang_content as translations
 from navigation import make_sidebar
 from datetime import datetime
-import numpy as np
-from utils import search_dataframe
-from utils import check_login
+from utils import search_dataframe, check_login, select_options
 
 # Check if user is logged in, redirect to home page if not
 if not check_login():
@@ -73,7 +71,7 @@ with colA:
     with col1:
         st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
         name_dropdown = st.selectbox(translations['position_label'][st.session_state['language']],
-                                        np.sort(df['position'].unique()), index=None,
+                                        select_options(df['position']), index=None,
                                         placeholder=translations['position_placeholder'][st.session_state['language']],
                                         key="name_dropdown_2", label_visibility="collapsed")
 
@@ -86,14 +84,14 @@ with colA:
     with col2:
         st.markdown(f"### {translations['status_label'][st.session_state['language']]}")
         type_dropdown = st.selectbox(translations['status_label'][st.session_state['language']],
-                                        filtered_by_name['status'].unique(), index=None,
+                                        select_options(filtered_by_name['status']), index=None,
                                         placeholder=translations['status_placeholder'][st.session_state['language']],
                                         key="type_dropdown_2", label_visibility="collapsed")
 
     with col3:
         st.markdown(f"### {translations['team_label'][st.session_state['language']]}")
         team_dropdown = st.selectbox(translations['team_label'][st.session_state['language']],
-                                        np.sort(filtered_by_name['team'].unique()), index=None,
+                                        select_options(filtered_by_name['team']), index=None,
                                         placeholder=translations['team_placeholder'][st.session_state['language']],
                                         key="team_dropdown_2", label_visibility="collapsed")
 

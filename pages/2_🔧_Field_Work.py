@@ -3,9 +3,8 @@ from navigation import make_sidebar
 import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 from translations import lang_content as translations
-import numpy as np
 from datetime import datetime
-from utils import search_dataframe, get_image_content, clean_url, photo_formatter
+from utils import search_dataframe, get_image_content, clean_url, photo_formatter, select_options
 import re
 import time
 import io
@@ -81,7 +80,7 @@ with colA:
     with col1:
         st.markdown(f"### {translations['position_label'][st.session_state['language']]}")
         name_dropdown = st.selectbox(translations['position_label'][st.session_state['language']],
-                                        np.sort(df['name'].unique()), index=None,
+                                        select_options(df['name']), index=None,
                                         placeholder=translations['position_placeholder'][st.session_state['language']],
                                         key="name_dropdown_1", label_visibility="collapsed")
 
@@ -93,7 +92,7 @@ with colA:
     with col2:
         st.markdown(f"### {translations['type_label'][st.session_state['language']]}")
         type_dropdown = st.selectbox(translations['type_label'][st.session_state['language']],
-                                        filtered_by_name['type'].unique(), index=None,
+                                        select_options(filtered_by_name['type']), index=None,
                                         placeholder=translations['type_placeholder'][st.session_state['language']],
                                         key="type_dropdown_1", label_visibility="collapsed")
 

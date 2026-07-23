@@ -49,6 +49,12 @@ def photo_formatter(photo_links):
     return ""
 
 
+def select_options(series):
+    """Return stable selectbox options without nulls or mixed-type sort errors."""
+    values = series.dropna().astype(str)
+    return sorted(value for value in values.unique() if value)
+
+
 
 
 # Configuration for shaded periods
